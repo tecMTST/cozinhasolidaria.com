@@ -23,6 +23,10 @@
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+    font-style: normal;
+    font-weight: normal;
     color: #fff;
 }
 
@@ -49,7 +53,7 @@ p {
 
 header {
     margin: 0 auto;
-    padding: 50px 10px 120px;
+    padding: 50px 10px 200px;
     background: #DE1833;
     background-size: cover;
 }
@@ -90,12 +94,365 @@ header {
 
 #projeto {
     background: #364A98;
-    background-image: url(/assets/img/fundo-azul.png);
-    padding: 50px 10px 70px;
+    padding-bottom: 130px;
 }
 
+#projeto .container {
+    max-width: 1052px;
+}
 
+.bg-projeto {
+    background: url(/assets/img/azul-o-projeto.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 290px;
+    margin-top: -290px;
+    position: absolute;
+}
 
+.conjunto-dir {
+    float: right;
+    margin-top: 11%;
+}
 
+.titulo-secao {
+    display: inline-flex;
+}
 
+h2 {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 64px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFF;
+}
 
+.titulo-secao h2 {
+    padding: 0 30px;
+    margin-top: 6px;
+}
+
+.videos {
+    padding: 62px 0 32px;
+}
+
+.video-menor {
+    margin-bottom: 13px;
+}
+
+.txt-projeto p {
+    margin-bottom: 30px;
+}
+
+.txt-projeto {
+    padding-bottom: 62px;
+}
+
+.cta-amarelo {
+    background: url(/assets/img/cta-amarelo.png) no-repeat;
+}
+
+.saiba-mais {
+    text-align: center;
+}
+
+.saiba-mais .cta {
+    color: #000;
+}
+
+/* Seção Galeria */
+#galeria {
+    padding-bottom: 200px;
+    color: #fff;
+}
+
+.bg-galeria {
+    background-image: url(/assets/img/branco-pagina-o-projeto.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+    margin-top: -50px;
+    position: absolute;
+}
+
+.conjunto-esq {
+    margin-top: -38px;
+    margin-left: 40px;
+}
+
+#galeria .container {
+    max-width: 1052px;
+}
+
+#galeria .titulo-secao {
+    margin-top: 80px;
+}
+
+#galeria .titulo-secao h2 {
+    color: #000;
+}
+
+.wraper-galeria {
+    padding: 36px 20px 58px;
+}
+
+.ver-mais {
+    text-align: center;
+}
+
+/* Seção Como Posso Contribuir */
+#contribuir {
+    background-color: #DE1833;
+    padding-bottom: 80px;
+}
+
+.bg-contribuir {
+    background-image: url(/assets/img/vermelho-contribuir.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+    margin-top: -140px;
+    position: absolute;
+}
+
+.bg-contribuir .conjunto-dir {
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+#contribuir .container {
+    max-width: 1052px;
+}
+
+#contribuir .titulo-secao {
+    text-align: right;
+    display: block;
+    padding-top: 60px;
+}
+
+#contribuir .titulo-secao h2 {
+    margin-top: 0;
+    padding: 0;
+}
+
+.img-ajudar {
+    margin-top: 30px;
+    margin-left: -26%;
+}
+
+.content-dir {
+    margin-top: 36px;
+    text-align: right;
+}
+
+h3 {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+.content-dir p {
+    margin: 36px 0 56px;
+}
+
+.cta-contribua {
+    text-align: right;
+}
+
+.cta-preto {
+    background-image: url(/assets/img/cta-preto.png);
+    background-repeat: no-repeat;
+    width: 428px;
+    max-width: 100%;
+}
+
+/* Seção Imprensa */
+#imprensa {
+    background-color: #FFEB4C;
+    padding: 0 0 310px;
+    margin-top: 0;
+}
+
+#imprensa .container {
+    max-width: 1052px;
+}
+
+.bg-imprensa {
+    background-image: url(/assets/img/amarelo-imprensa.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 260px;
+    margin-top: -245px;
+    position: absolute;
+}
+
+.bg-imprensa .conjunto-dir {
+    float: right;
+    margin-top: 102px;
+    margin-right: 40px;
+}
+
+#imprensa .titulo-secao {
+    margin-top: 20px;
+}
+
+#imprensa .titulo-secao h2 {
+    color: #000;
+}
+
+#imprensa p {
+    margin: 34px 0 50px;
+    color: #000;
+    font-weight: 500;
+}
+
+/* Seção Prestação de Contas */
+#prestacao-de-contas {
+    background-color: #000;
+    padding: 0 0 100px;
+}
+
+.bg-prestacao-de-contas {
+    background-image: url(/assets/img/preto-contas.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 246px;
+    margin-top: -245px;
+    position: absolute;
+}
+
+#prestacao-de-contas .conjunto-esq {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+#prestacao-de-contas .container {
+    max-width: 1052px;
+}
+
+#prestacao-de-contas .row {
+    padding: 92px 0 0;
+}
+
+#prestacao-de-contas p {
+    margin-bottom: 30px;
+}
+
+.prestacao-img {
+    margin-top: -180px;
+}
+
+.garfo-prest {
+    margin-top: -30px;
+    margin-left: -18px;
+}
+
+.dados p {
+    text-align: center;
+}
+
+#prestacao-de-contas .dados .dados-num {
+    margin-bottom: 10px;
+    font-family: 'Gotham Black', sans-serif;
+    font-size: 130px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #000;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #DE1833;
+}
+
+.gastos h3 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+}
+
+.gastos h4 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    text-align: right;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+#prestacao-de-contas .gastos .num-porcent {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1;
+    text-align: left;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+    border-radius: 0px 50px 50px 0px;
+    padding: 10px;
+}
+
+.col-gastos {
+    margin-bottom: 10px;
+}
+
+.gastos .num-porcent.num-const {
+    background: #DE1833;
+    max-width: 48%;
+}
+
+.gastos .num-porcent.num-reparos {
+    background: #364A98;
+    max-width: 15%;
+}
+
+.gastos .num-porcent.num-trab {
+    background: #FFEB4C;
+    max-width: 30%;
+    color: #000;
+}
+
+.gastos .num-porcent.num-alim {
+    background: #DE1833;
+    max-width: 80%;
+}
+
+.gastos .num-porcent.num-utens {
+    background: #364A98;
+    max-width: 24%;
+}
+
+.gastos .num-porcent.num-gas {
+    background: #FFEB4C;
+    max-width: 3%;
+    color: #000;
+}
+
+.gastos .num-porcent.num-gas span {
+    color: #fff;
+}
+
+.gastos .num-porcent.num-log {
+    background: #DE1833;
+    max-width: 13%;
+}
+
+.gastos .num-porcent.num-outros {
+    background: #364A98;
+    max-width: 24%;
+}
