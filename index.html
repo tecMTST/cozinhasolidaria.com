@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" /> 
     <link href="assets/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -14,13 +16,24 @@
   
   <body>
     <header id="inicio">
+      
+      <nav id="menu-principal" class="menu-principal">
+        <ul>
+          <li><a class="nav-link active" href="#inicio">Início</a></li>
+          <li><a class="nav-link" href="#projeto">O Projeto</a></li>
+          <li><a class="nav-link" href="#contribuir">Contribua</a></li>
+          <li><a class="nav-link" href="#imprensa">Imprensa</a></li>
+          <li><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      
       <div class="container">
         <div class="topo">
           <img class="cozi" src="/assets/img/cozi.png" alt="">
           <div class="col-lg-10 col-md-10 offset-lg-2 offset-md-2">
               <img class="logo" src="/assets/img/logo.png" alt="Cozinha Solidária">
               <p>São 26 cozinhas distribuindo refeições gratuitas em diversos estados no Brasil, ajudando a combater a fome nas periferias.</p>
-              <a href="#" class="cta cta-azul" target="_blank">Contribua</a>
+              <a href="https://apoia.se/cozinhasolidaria" class="cta cta-azul" target="_blank">Contribua</a>
           </div>
         </div>
       </div>
@@ -53,7 +66,7 @@
             </p>
           </div>
           <div class="saiba-mais">
-            <a href="#" class="cta cta-amarelo">Saiba mais</a>
+            <a href="/o-projeto" class="cta cta-amarelo">Saiba mais</a>
           </div>
         </div>
       </section>
@@ -68,7 +81,7 @@
             <img src="/assets/img/galeria.png" alt="">
           </div>
           <div class="ver-mais">
-            <a href="#" class="cta cta-azul">Ver mais</a>
+            <a href="https://www.instagram.com/cozinhassolidariasmtst/" class="cta cta-azul">Ver mais</a>
           </div>
         </div>
       </section>
@@ -89,7 +102,7 @@
                 <p>Nossas Cozinhas Solidárias são o resultado do trabalho voluntário e das doações de diversas pessoas que acreditam na ação coletiva para um mundo melhor! Colabore com esse projeto também.</p>
               </div>
               <div class="cta-contribua">
-                <a href="#" class="cta cta-preto">CONTRIBUA TAMBÉM!</a>
+                <a href="https://apoia.se/cozinhasolidaria" class="cta cta-preto" target="_blank">CONTRIBUA TAMBÉM!</a>
               </div>
             </div>
           </div>
@@ -164,15 +177,79 @@
           </div>
         </div>
       </section>
+
+      <section id="divulgar">
+        <div class="bg-divulgar"><img class="conjunto-dir" src="/assets/img/conj-azul.png" alt=""></div>
+        <div class="container">
+          <div class="row ajude-divulgar">
+            <div class="col-lg-7">
+              <img class="cozinha-pessoas" src="/assets/img/cozinha-pessoas.png" alt="">
+            </div>
+            <div class="col-lg-5">
+              <div class="titulo-secao linha-um">
+                <img src="/assets/img/panela-div.png" alt=""><h2>Ajude</h2>
+              </div>
+              <div class="titulo-secao linha-dois">
+                <h2>a divulgar!</h2>
+              </div>
+              <p class="desc-divulgar">Além da sua contribuição no <a class="link-apoia-se" href="https://apoia.se/cozinhasolidaria" target="_blank">apoie.se/cozinhasolidaria</a> você também pode nos ajudar compartilhando o nosso projeto nas redes sociais e whatsapp. Clique e ajude a levar um prato de comida para quem tem fome!</p>
+              <div class="compartilhe">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcozinhasolidaria.com%2F&amp;src=sdkpreparse" class="cta cta-branco" target="_blank">Compartilhe</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
     </main>
 
     <footer>
-
+      <div class="bg-footer"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <nav class="nav-footer">
+              <ul>
+                <li><a class="menu-footer" href="#inicio">Início</a></li>
+                <li><a class="menu-footer" href="#projeto">O Projeto</a></li>
+                <li><a class="menu-footer" href="#contribuir">Contribua</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-4 footer-medium">
+            <img src="/assets/img/logo-mtst.png" alt="">
+            <div class="link-mtst">
+              <a href="https://mtst.org/">https://mtst.org</a>
+            </div>
+            <ul class="redes-sociais">
+              <li><a href="" target="_blank"><img src="/assets/img/instagram.png" alt="Instagram"></a></li>
+              <li><a href="" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a></li>
+              <li><a href="" target="_blank"><img src="/assets/img/twitter.png" alt="Twitter"></a></li>
+              <li><a href="" target="_blank"><img src="/assets/img/youtube.png" alt="Youtube"></a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <nav class="nav-footer nav-right">
+              <ul>
+                <li><a class="menu-footer" href="#imprensa">Imprensa</a></li>
+                <li><a class="menu-footer" href="#contato">Contato</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="link-nucleo">
+          <p>Desenvolvido pelo <a href="https://nucleodetecnologia.com.br/" target="_blank">Núcleo de Tecnologia do MTST</a></p>
+        </div>
+      </div>
     </footer>
 
+    <script src="node_modules/swiper/swiper-bundle.js"></script>
+    <script src="node_modules/swiper/swiper-bundle.min.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/menu.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 </html>
+
