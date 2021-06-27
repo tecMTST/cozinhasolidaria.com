@@ -371,6 +371,60 @@ h3 {
     font-weight: 500;
 }
 
+.noticia {
+    background-image: url(/assets/img/fundo-noticias.png);
+    background-repeat: no-repeat;
+    padding: 16px;
+}
+
+#imprensa .a-noticia {
+    text-decoration: none;
+}
+
+#imprensa .noticia h4 {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: #000;
+    margin: 10px 0 0;
+}
+
+#imprensa .noticia p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+    color: #000;
+    margin: 14px 0 0;
+}
+
+#imprensa .swiper-button-next {
+    background-image: url(/assets/img/botao-next.png);
+    background-repeat: no-repeat;
+    width: 63px;
+    height: 63px;
+}
+
+#imprensa .swiper-button-prev {
+    background-image: url(/assets/img/botao-prev.png);
+    background-repeat: no-repeat;
+    width: 63px;
+    height: 63px;
+}
+
+#imprensa .swiper-button-next.swiper-button-disabled, #imprensa .swiper-button-prev.swiper-button-disabled {
+    display: none;
+}
+
+#imprensa .swiper-button-next:after, #imprensa .swiper-button-prev:after {
+    content: none;
+}
+
 /* Seção Prestação de Contas */
 #prestacao-de-contas {
     background-color: #000;
