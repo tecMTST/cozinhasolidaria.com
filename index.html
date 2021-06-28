@@ -275,6 +275,29 @@
         <div class="cont-formulario">
           <span class="close cursor" onclick="closeModal()">&times;</span>
           <p>Quer ajudar de outra forma, saber mais das nossas Cozinhas Solidárias ou se informar sobre os locais para doações de alimentos e utensílios? Entre em contato com a gente:</p>
+          <form id="contactForm" name="sentMessage" novalidate="novalidate">
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                    <input class="form-control" id="name" type="text" placeholder="Digite seu nome." required="required" data-validation-required-message="Digite seu nome" />
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                    <input class="form-control" id="email" type="email" placeholder="Digite seu email." required="required" data-validation-required-message="Qual é o seu email?" />
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                    <textarea class="form-control" id="message" rows="7" placeholder="Digite sua mensagem." required="required" data-validation-required-message="Escreva sua Mensagem"></textarea>
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <br />
+            <div id="success"></div>
+            <div class="form-group"><button class="cta cta-form" id="sendMessageButton" type="submit">Enviar</button></div>
+          </form>
         </div>
       </div>
     </div>
@@ -327,6 +350,9 @@
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/carrossel.js"></script>
     <script src="assets/js/modal.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
 
   </body>
 </html>
