@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" /> 
     <link href="assets/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/modal.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Cozinha Solidária - MTST</title>
@@ -35,7 +36,7 @@
           <li><a class="nav-link" href="#projeto">O Projeto</a></li>
           <li><a class="nav-link" href="#contribuir">Contribua</a></li>
           <li><a class="nav-link" href="#imprensa">Imprensa</a></li>
-          <li><a class="nav-link" href="#contato">Contato</a></li>
+          <li><a class="nav-link" href="#" onclick="openModal();">Contato</a></li>
         </ul>
       </nav>
       
@@ -187,8 +188,7 @@
           </div>
         </div>
       </section>
-
-      
+   
       <section id="prestacao-de-contas">
         <div class="bg-prestacao-de-contas"><img class="conjunto-esq" src="/assets/img/panelas-vermelhas.png" alt=""></div>
         <div class="container">
@@ -270,6 +270,15 @@
       
     </main>
 
+    <div id="myModal" class="modal">
+      <div class="container modal-content">
+        <div class="cont-formulario">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <p>Quer ajudar de outra forma, saber mais das nossas Cozinhas Solidárias ou se informar sobre os locais para doações de alimentos e utensílios? Entre em contato com a gente:</p>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="bg-footer"></div>
       <div class="container">
@@ -317,6 +326,7 @@
     <script src="assets/js/menu.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/carrossel.js"></script>
+    <script src="assets/js/modal.js"></script>
 
   </body>
 </html>

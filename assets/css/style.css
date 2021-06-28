@@ -727,3 +727,43 @@ footer .container {
 .redes-sociais li {
     margin: 0 12px;
 }
+
+#myModal .cont-formulario {
+    max-width: 100%;
+    height: 1250px;
+    background-image: url(/assets/img/fundo-formulario.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top center;
+    margin: 0 auto;
+    padding: 130px 0 90px;
+}
+
+#myModal .cont-formulario p {
+    max-width: 1052px;
+    margin: 0 auto;
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #000;
+}
+
+.close {
+    color: rgba(0,0,0,0);
+    position: relative;
+    top: -107px;
+    float: right;
+    right: 32px;
+    font-weight: bold;
+    background-image: url(/assets/img/botao-sair.png);
+    width: 63px;
+    height: 63px;
+}
+
+.close:hover {
+    color: rgba(0,0,0,0);
+}
