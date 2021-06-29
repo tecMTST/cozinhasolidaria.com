@@ -9,12 +9,12 @@
     <meta property="og:site_name" content="Cozinha Solidária - MTST">
     <meta name="description" content="Cozinhas Solidárias. Distribuindo refeições gratuitas em diversos estados no Brasil, ajudando a combater a fome nas periferias">
     <meta property="og:description" content="Cozinhas Solidárias. Distribuindo refeições gratuitas em diversos estados no Brasil, ajudando a combater a fome nas periferias">
-    <meta property="og:image" content="https://cozinhasolidaria.com/assets/img/thumb-site-cozinha.png">
+    <meta property="og:image" content="http://cozinhasolidaria.com/assets/img/thumb-site-cozinha.png">
     <meta property="og:image:type" content="image/jpg">
     <meta property="og:image:width" content="800"> 
     <meta property="og:image:height" content="600">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cozinhasolidaria.com">
+    <meta property="og:url" content="http://cozinhasolidaria.com">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icone.ico">
 
     <!-- JQuery -->
@@ -30,14 +30,14 @@
     <link href="assets/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/modal.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/menu-mobile.css">
 
     <title>Cozinha Solidária - MTST</title>
   </head>
   
   <body>
-    <header id="inicio">
-      
-      <nav id="menu-principal" class="menu-principal">
+    <header id="inicio">  
+      <nav id="menu-principal" class="menu-principal" role="navigation">
         <ul>
           <li><a class="nav-link active" href="#inicio">Início</a></li>
           <li><a class="nav-link" href="#projeto">O Projeto</a></li>
@@ -46,11 +46,27 @@
           <li><a class="nav-link" href="#" onclick="openModal();">Contato</a></li>
         </ul>
       </nav>
-      
+
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <li><a class="item-menu" href="#inicio">Início</a></li>
+            <li><a class="item-menu" href="#projeto">O Projeto</a></li>
+            <li><a class="item-menu" href="#contribuir">Contribua</a></li>
+            <li><a class="item-menu" href="#imprensa">Imprensa</a></li>
+            <li><a class="item-menu" href="#" onclick="openModal();">Contato</a></li>
+          </ul>
+        </div>
+      </nav>
+          
       <div class="container">
         <div class="topo">
           <img class="cozi" src="/assets/img/cozi.png" alt="">
-          <div class="col-lg-10 col-md-10 offset-lg-2 offset-md-2">
+          <div class="col-lg-10 col-md-12 offset-lg-2">
               <img class="logo" src="/assets/img/logo.png" alt="Cozinha Solidária">
               <p>São 26 cozinhas distribuindo refeições gratuitas em diversos estados no Brasil, ajudando a combater a fome nas periferias.</p>
               <a href="https://apoia.se/cozinhasolidaria" class="cta cta-azul" target="_blank">Contribua</a>
@@ -240,6 +256,7 @@
               </div>     
             </div>
             
+            <div class="swiper-pagination"></div>
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
@@ -280,7 +297,7 @@
           </div>
           <div class="row gastos">
             <h3>Gastos das Cozinhas Solidárias</h3>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
               <div class="col-gastos"><h4>Construção</h4></div>
               <div class="col-gastos"><h4>Reparos</h4></div>
               <div class="col-gastos"><h4>Trabalhadoras</h4></div>
@@ -290,7 +307,7 @@
               <div class="col-gastos"><h4>Logística / Operativo</h4></div>
               <div class="col-gastos"><h4>Outros gastos</h4></div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
               <div class="col-gastos"><p class="num-porcent num-const">22,4%</p></div>
               <div class="col-gastos"><p class="num-porcent num-reparos">6,4%</p></div>
               <div class="col-gastos"><p class="num-porcent num-trab">15,9%</p></div>

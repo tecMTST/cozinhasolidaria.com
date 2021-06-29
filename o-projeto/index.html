@@ -37,14 +37,19 @@
   <body>
     <header id="inicio" class="header-projeto">
       
-      <nav id="menu-principal" class="menu-principal">
-        <ul>
-          <li><a class="nav-link" href="/#inicio">Início</a></li>
-          <li><a class="nav-link active" href="#">O Projeto</a></li>
-          <li><a class="nav-link" href="/#contribuir">Contribua</a></li>
-          <li><a class="nav-link" href="/#imprensa">Imprensa</a></li>
-          <li><a class="nav-link" href="#" onclick="openModal();">Contato</a></li>
-        </ul>
+      <nav id="menu-principal" class="menu-principal navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li><a class="nav-link nav-item" href="/#inicio">Início</a></li>
+            <li><a class="nav-link nav-item active" href="#">O Projeto</a></li>
+            <li><a class="nav-link nav-item" href="/#contribuir">Contribua</a></li>
+            <li><a class="nav-link nav-item" href="/#imprensa">Imprensa</a></li>
+            <li><a class="nav-link nav-item" href="#" onclick="openModal();">Contato</a></li>
+          </ul>
+        </div>
       </nav>
       
       <div class="container">
@@ -125,6 +130,9 @@
               </div>
               <p>As Cozinhas Solidárias nascem pelas mãos do MTST com o propósito de ajudar a combater a fome em um período de <strong>crise sanitária, social,<br>econômica e política.<br></strong>Infelizmente, depois de 1 ano de pandemia passamos a marca de 400 mil mortos, com o <strong>desemprego em alta, o botijão de gás caro e um auxílio</strong> que quando chega, não consegue pagar uma cesta básica. A fome sai dos noticiários e passa a orientar a urgência de nossas ações.</p>                 
               <p>Por isso, estamos <strong>construindo as Cozinhas Solidárias</strong> garantindo uma alimentação <strong>rica em nutrientes e cheia amor para as periferias no Brasil.</strong></p>
+              <div class="ver-mais">
+                <a href="https://apoia.se/cozinhasolidaria" class="cta cta-azul">Apoie esse projeto</a>
+              </div>
             </div>
           </div>
         </div>
