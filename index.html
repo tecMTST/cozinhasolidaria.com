@@ -7,15 +7,22 @@
     <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="Cozinha Solidária - MTST">
     <meta property="og:site_name" content="Cozinha Solidária - MTST">
-    <meta name="description" content="Contrate quem luta é um assistente virtual criado pelo Movimento dos Trabalhadores Sem Teto (MTST) para conectar nossos militantes a pessoas que precisam de alguma prestação de serviços.">
-    <meta property="og:description" content="Contrate quem luta é um assistente virtual criado pelo Movimento dos Trabalhadores Sem Teto (MTST) para conectar nossos militantes a pessoas que precisam de alguma prestação de serviços.">
-    <meta property="og:image" content="">
+    <meta name="description" content="Cozinhas Solidárias. Distribuindo refeições gratuitas em diversos estados no Brasil, ajudando a combater a fome nas periferias">
+    <meta property="og:description" content="Cozinhas Solidárias. Distribuindo refeições gratuitas em diversos estados no Brasil, ajudando a combater a fome nas periferias">
+    <meta property="og:image" content="https://cozinhasolidaria.com/assets/img/thumb-site-cozinha.png">
     <meta property="og:image:type" content="image/jpg">
     <meta property="og:image:width" content="800"> 
     <meta property="og:image:height" content="600">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cozinhasolidaria.com">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icone.ico">
+
+    <!-- JQuery -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+
+    <!-- Vídeo Modal -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/modal-video.min.css">
+    <script src="/assets/js/jquery-modal-video.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css" />
@@ -62,11 +69,11 @@
           </div>
           <div class="row videos">
             <div class="col-lg-8">
-              <a href="#"><img src="/assets/img/video.png" alt=""></a>
+              <a class="js-modal-btn" data-video-id="L0hK8LjcFTY" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="/assets/img/thumb-video-1.jpg" alt=""><img class="player-maior" src="/assets/img/player-yt.png" alt=""></figure></a>
             </div>
             <div class="col-lg-4">
-              <a href="#"><img class="video-menor" src="/assets/img/video-menor.png" alt=""></a>
-              <a href="#"><img src="/assets/img/video-menor.png" alt=""></a>
+              <a class="js-modal-btn" data-video-id="08DpFkL513k" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/video-2.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
+              <a class="js-modal-btn" data-video-id="imEm1ANhWms" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/video-3.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
             </div>
           </div>
           <div class="txt-projeto">
@@ -84,6 +91,10 @@
         </div>
       </section>
 
+      <script>
+        $(".js-modal-btn").modalVideo();
+      </script>
+
       <section id="galeria">
         <div class="bg-galeria"><img class="conjunto-esq" src="/assets/img/conjunto-preto.png" alt=""></div>
         <div class="container">
@@ -91,7 +102,28 @@
             <img src="/assets/img/coracao.png" alt=""><h2>Galeria</h2>
           </div>
           <div class="wraper-galeria">
-            <img src="/assets/img/galeria.png" alt="">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="/assets/img/galeria-1.jpg" alt="">
+              </div>
+              <div class="col-md-4">
+                <img src="/assets/img/galeria-2.jpg" alt="">
+              </div>
+              <div class="col-md-4">
+                <img src="/assets/img/galeria-3.jpg" alt="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <img src="/assets/img/galeria4.jpg" alt="">
+              </div>
+              <div class="col-md-4">
+                <img src="/assets/img/galeria5.jpg" alt="">
+              </div>
+              <div class="col-md-4">
+                <img src="/assets/img/galeria6.jpg" alt="">
+              </div>
+            </div>
           </div>
           <div class="ver-mais">
             <a href="https://www.instagram.com/cozinhassolidariasmtst/" class="cta cta-azul">Ver mais</a>
@@ -135,50 +167,77 @@
             <div class="swiper-wrapper">
               <!-- Slides -->
               <div class="swiper-slide">
-                <a class="a-noticia" href="#" target="_blank">
+                <a class="a-noticia" href="https://www.uol.com.br/ecoa/ultimas-noticias/2021/04/27/como-cozinhas-comunitarias-tem-atuado-para-aplacar-a-fome-pelo-brasil.htm" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-noticia-default.png" alt="" class="thumb-noticia">
-                    <h4>Portal xxxxxx</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim mauris, nulla</p>
+                    <img src="/assets/img/thumb-uol.webp" alt="" class="thumb-noticia">
+                    <h4>Portal UOL</h4>
+                    <p>Como cozinhas comunitárias têm atuado para aplacar a fome pelo Brasil </p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="a-noticia" href="https://globoplay.globo.com/v/9608976/" target="_blank">
+                  <div class="noticia">
+                    <img src="/assets/img/ne1-globo.jpg" alt="" class="thumb-noticia">
+                    <h4>Globo NE1</h4>
+                    <p>Cozinha Solidária do MTST ajuda a alimentar famílias pobres, no Recife</p>
                   </div>
                 </a>
               </div>
               <div class="swiper-slide">
                 <a class="a-noticia" href="#" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-noticia-default.png" alt="" class="thumb-noticia">
-                    <h4>Portal xxxxxx</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim mauris, nulla</p>
+                    <img src="/assets/img/thumb-folha.jpg" alt="" class="thumb-noticia">
+                    <h4>Folha de S.Paulo</h4>
+                    <p>MTST inaugura unidades das cozinhas solidárias</p>
                   </div>
                 </a>
               </div>
               <div class="swiper-slide">
-                <a class="a-noticia" href="#" target="_blank">
+                <a class="a-noticia" href="https://www.redebrasilatual.com.br/cidadania/2021/04/mais-do-que-matar-a-fome-cozinhas-solidarias-sao-espacos-de-resistencia/" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-noticia-default.png" alt="" class="thumb-noticia">
-                    <h4>Portal xxxxxx</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim mauris, nulla</p>
+                    <img src="/assets/img/thumb-brasil-atual.jpg" alt="" class="thumb-noticia">
+                    <h4>Brasil Atual</h4>
+                    <p>Mais do que matar a fome, cozinhas solidárias são espaços de resistência</p>
                   </div>
                 </a>
               </div>
               <div class="swiper-slide">
-                <a class="a-noticia" href="#" target="_blank">
+                <a class="a-noticia" href="https://www.anf.org.br/mtst-lanca-campanha-para-abrir-16-cozinhas-solidarias-no-brasil/" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-noticia-default.png" alt="" class="thumb-noticia">
-                    <h4>Portal xxxxxx</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim mauris, nulla</p>
+                    <img src="/assets/img/thumb-anf.jpg" alt="" class="thumb-noticia">
+                    <h4>Portal ANF</h4>
+                    <p>MTST lança campanha para abrir 16 Cozinhas Solidárias no Brasil</p>
                   </div>
                 </a>
               </div>
               <div class="swiper-slide">
-                <a class="a-noticia" href="#" target="_blank">
+                <a class="a-noticia" href="https://globoplay.globo.com/v/9608976/" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-noticia-default.png" alt="" class="thumb-noticia">
-                    <h4>Portal xxxxxx</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim mauris, nulla</p>
+                    <img src="/assets/img/noticia-sptv.jpeg" alt="" class="thumb-noticia">
+                    <h4>Globo SPTV</h4>
+                    <p>Cozinhas solidárias ajudam a matar a fome na Grande São Paulo</p>
                   </div>
                 </a>
               </div>
+              <div class="swiper-slide">
+                <a class="a-noticia" href="https://www.brasildefato.com.br/2021/03/13/para-combater-pandemia-da-fome-mtst-inaugura-cozinha-solidaria-em-sp/" target="_blank">
+                  <div class="noticia">
+                    <img src="/assets/img/thumb-brasil-de-fato.jpeg" alt="" class="thumb-noticia">
+                    <h4>Brasil de Fato</h4>
+                    <p>Para combater “pandemia da fome”, MTST inaugura cozinha solidária em SP</p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="a-noticia" href="https://www.metropoles.com/brasil/mtst-inaugura-mais-uma-cozinha-solidaria-em-sao-paulo" target="_blank">
+                  <div class="noticia">
+                    <img src="/assets/img/thumb-metropoles.jpg" alt="" class="thumb-noticia">
+                    <h4>Metrópoles</h4>
+                    <p>MTST inaugura mais uma cozinha solidária em São Paulo</p>
+                  </div>
+                </a>
+              </div>     
             </div>
             
             <!-- If we need navigation buttons -->
@@ -207,16 +266,16 @@
           </div>
           <div class="row dados">
             <div class="col-md-4">
-              <p class="dados-num">xx</p>
-              <p>Dados 1:</p>
+              <p class="dados-num">22</p>
+              <p>Mais de 22 mil marmitas em 3 meses</p>
             </div>
             <div class="col-md-4">
-              <p class="dados-num">xx</p>
-              <p>Dados 2:</p>
+              <p class="dados-num">26</p>
+              <p>Cozinhas Solidárias<br>pelo Brasil</p>
             </div>
             <div class="col-md-4">
-              <p class="dados-num">xx</p>
-              <p>Dados 3:</p>
+              <p class="dados-num">7,50</p>
+              <p> Com R$ 7,50 produzimos<br>1 marmita</p>
             </div>
           </div>
           <div class="row gastos">
@@ -321,17 +380,17 @@
               <a href="https://mtst.org/">https://mtst.org</a>
             </div>
             <ul class="redes-sociais">
-              <li><a href="" target="_blank"><img src="/assets/img/instagram.png" alt="Instagram"></a></li>
-              <li><a href="" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a></li>
-              <li><a href="" target="_blank"><img src="/assets/img/twitter.png" alt="Twitter"></a></li>
-              <li><a href="" target="_blank"><img src="/assets/img/youtube.png" alt="Youtube"></a></li>
+              <li><a href="https://www.instagram.com/mtstbrasil/" target="_blank"><img src="/assets/img/instagram.png" alt="Instagram"></a></li>
+              <li><a href="https://www.facebook.com/mtstbrasil" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a></li>
+              <li><a href="https://twitter.com/mtst" target="_blank"><img src="/assets/img/twitter.png" alt="Twitter"></a></li>
+              <li><a href="https://www.youtube.com/channel/UC3OzrZMhnmEgVtxpJoDRkeg" target="_blank"><img src="/assets/img/youtube.png" alt="Youtube"></a></li>
             </ul>
           </div>
           <div class="col-md-4">
             <nav class="nav-footer nav-right">
               <ul>
                 <li><a class="menu-footer" href="#imprensa">Imprensa</a></li>
-                <li><a class="menu-footer" href="#contato">Contato</a></li>
+                <li><a class="menu-footer" href="#contato" onclick="openModal();">Contato</a></li>
               </ul>
             </nav>
           </div>

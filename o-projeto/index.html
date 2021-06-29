@@ -17,6 +17,13 @@
     <meta property="og:url" content="https://cozinhasolidaria.com">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/icone.ico">
 
+    <!-- JQuery -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+
+    <!-- Vídeo Modal -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/modal-video.min.css">
+    <script src="/assets/js/jquery-modal-video.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.min.css" /> 
@@ -77,11 +84,11 @@
           </div>
           <div class="row videos">
             <div class="col-lg-8">
-              <a href="#"><img src="/assets/img/video.png" alt=""></a>
+              <a class="js-modal-btn" data-video-id="L0hK8LjcFTY" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="/assets/img/thumb-video-1.jpg" alt=""><img class="player-maior" src="/assets/img/player-yt.png" alt=""></figure></a>
             </div>
             <div class="col-lg-4">
-              <a href="#"><img class="video-menor" src="/assets/img/video-menor.png" alt=""></a>
-              <a href="#"><img src="/assets/img/video-menor.png" alt=""></a>
+              <a class="js-modal-btn" data-video-id="08DpFkL513k" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/video-2.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
+              <a class="js-modal-btn" data-video-id="imEm1ANhWms" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/video-3.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
             </div>
           </div>
           <div class="txt-projeto">
@@ -95,6 +102,11 @@
           </div>
         </div>
       </section>
+
+      <script>
+        $(".js-modal-btn").modalVideo();
+      </script>
+
       <div class="bg-projeto-branco"></div>
 
       <section id="apoie">
@@ -171,17 +183,17 @@
               <a href="https://mtst.org/">https://mtst.org</a>
             </div>
             <ul class="redes-sociais">
-              <li><a href="" target="_blank"><img src="/assets/img/instagram.png" alt="Instagram"></a></li>
-              <li><a href="" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a></li>
-              <li><a href="" target="_blank"><img src="/assets/img/twitter.png" alt="Twitter"></a></li>
-              <li><a href="" target="_blank"><img src="/assets/img/youtube.png" alt="Youtube"></a></li>
+              <li><a href="https://www.instagram.com/mtstbrasil/" target="_blank"><img src="/assets/img/instagram.png" alt="Instagram"></a></li>
+              <li><a href="https://www.facebook.com/mtstbrasil" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a></li>
+              <li><a href="https://twitter.com/mtst" target="_blank"><img src="/assets/img/twitter.png" alt="Twitter"></a></li>
+              <li><a href="https://www.youtube.com/channel/UC3OzrZMhnmEgVtxpJoDRkeg" target="_blank"><img src="/assets/img/youtube.png" alt="Youtube"></a></li>
             </ul>
           </div>
           <div class="col-md-4">
             <nav class="nav-footer nav-right">
               <ul>
                 <li><a class="menu-footer" href="/#imprensa">Imprensa</a></li>
-                <li><a class="menu-footer" href="/#contato">Contato</a></li>
+                <li><a class="menu-footer" href="/#contato" onclick="openModal();">Contato</a></li>
               </ul>
             </nav>
           </div>
