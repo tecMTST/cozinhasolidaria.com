@@ -811,3 +811,131 @@ textarea {
     font-size: 20px!important;
     color: red!important;
 }
+
+
+/* Página O Projeto */
+.topo-projeto {
+    padding: 120px 0 0;
+}
+
+.header-projeto .container {
+    max-width: 1052px;
+}
+
+.topo-projeto h3 {
+    text-transform: uppercase;
+    font-size: 48px;
+    margin: 30px 0;
+}
+
+.topo-projeto p {
+    margin-bottom: 30px;
+    padding-right: 40px;
+}
+
+.topo-projeto .icones-direita {
+    margin-top: 98px;
+    margin-left: -15%;
+}
+
+.topo-projeto .icones-direita img {
+    margin-right: 20px;
+}
+
+.topo-projeto .imagem-topo-projeto img {
+    position: absolute;
+    margin-top: -120px;
+    margin-left: -10%;
+}
+
+#o-projeto {
+    padding-bottom: 0;
+}
+
+#o-projeto .container {
+    max-width: 1052px;   
+}
+
+#o-projeto .bg-projeto {
+    background-image: url(/assets/img/branco-pagina-o-projeto.svg);
+    height: 120px;
+    margin-top: -34px;
+}
+
+.header-projeto {
+    padding: 50px 0 100px;
+}
+
+#o-projeto .titulo-secao {
+    margin-top: 90px;
+}
+
+#o-projeto .titulo-secao h2 {
+    color: #000;
+}
+
+#o-projeto .txt-projeto p {
+    color: #000;
+}
+
+.pagina-projeto .titulo-secao h2 {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 64px;
+    padding: 0;
+}
+
+.pagina-projeto .titulo-secao img {
+    width: 100%;
+}
+
+#apoie {
+    background-color: #DE1833;
+    padding-top: 100px;
+}
+
+#apoie .container {
+    max-width: 1052px;
+}
+
+.bg-projeto-branco {
+    background-image: url(/assets/img/branco-pagina-o-projeto.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+    height: 100px;
+    margin-top: -64px;
+    position: absolute;
+}
+
+.acontecer {
+    text-align: right;
+}
+
+.acontecer .titulo-secao h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 46px;
+    padding: 0;
+    margin: 0;
+}
+
+.apoie-projeto p {
+    padding-left: 22%;
+    margin-top: 40px;
+}
+
+.img-cozinheira {
+    margin-left: -10%;
+}
+
+.footer-o-projeto .bg-footer {
+    height: 100px;
+    margin-top: -34px;
+}
+
+.footer-o-projeto {
+    margin-top: -100px;
+}
