@@ -1085,6 +1085,10 @@ figure.thumb-menor {
     display: none;
 }
 
+.alert .close {
+    display: none;
+}
+
 
 
 /** Media Queries */
