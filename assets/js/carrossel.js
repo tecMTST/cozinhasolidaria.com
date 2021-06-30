@@ -1,22 +1,18 @@
 const swiper = new Swiper('.swiper-container', {
     
     breakpoints: {
-        640: {
+        540: {
             slidesPerView: 1,
             spaceBetween: 20,
         },
-        768: {
-            slidesPerView: 2.2,
-            spaceBetween: 40,
+        640: {
+            slidesPerView: 2.5,
+            spaceBetween: 20,
         },
-        1366: {
+        910: {
             slidesPerView: 3.2,
             spaceBetween: 20,
         },
-        1920: {
-            slidesPerView: 4.2,
-            spaceBetween: 20,
-        }
     },
 
      // Navigation arrows
