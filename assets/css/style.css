@@ -1002,7 +1002,7 @@ textarea {
 }
 
 .wraper-galeria .col-md-4 img {
-    max-width: 100%;
+    max-width: 94%;
     height: auto;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -1059,7 +1059,7 @@ button.js-modal-btn {
 
 
 .thumb-menor img.player-menor {
-    max-width: 60px;
+    max-width: 50px;
     margin: 22% -59%;
     position: relative;
     transition-duration: 0.5s;
@@ -1127,7 +1127,17 @@ figure.thumb-menor {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width:1100px) {
+    .menu-principal li a {
+        padding: 0 20px 10px;
+    }
+}
+
+@media (max-width: 540px) {
+    #inicio {
+        padding-top: 0;
+        padding-bottom: 100px;
+    }
     .cozi {
         position: absolute;
         display: block;
@@ -1149,7 +1159,7 @@ figure.thumb-menor {
         background-size: auto;
         background-position: top center;
         text-align: center;
-        padding: 60px 0 60px;
+        padding: 30px 0 60px;
         margin-top: 60px;
     }
     .topo p {
@@ -1162,37 +1172,40 @@ figure.thumb-menor {
     }
     .container {
         max-width: 100%;
-        padding: 20px 0;
+        padding: 0 0 30px;
     }
     .bg-projeto {
         width: 100%;
-        height: 190px;
-        margin-top: -190px;
+        height: 133px;
+        margin-top: -132px;
     }
     img {
         max-width: 100%;
         height: auto;
     }
+    .titulo-secao h2 {
+        padding: 0px 20px;
+        margin-top: 6px;
+    }
     h2 {
-        font-size: 40px;
-        line-height: 46px;
+        font-size: 36px;
+        line-height: 40px;
     }
     .cta {
         font-size: 20px;
         line-height: 20px;
         width: auto;
         height: auto;
-        padding: 14px 10%;
+        padding: 10px 10%;
         background-size: contain;
     }
     #inicio .cta {
-        float: right;
-        margin-right: 21%;
         margin-top: -10px;
     }
     .titulo-secao img {
-        width: 14%;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        max-width: 60px;
     }
     .bg-projeto .conjunto-dir {
         float: right;
@@ -1200,7 +1213,7 @@ figure.thumb-menor {
         width: 90%;
     }
     #projeto .container {
-        max-width: 100%;
+        max-width: 93%;
         padding: 0 12px;
     }
     .videos {
@@ -1209,16 +1222,16 @@ figure.thumb-menor {
         display: block;
     }
     .thumb-maior img {
-        width: 94.7%;
+        width: 94%;
         max-width: 100%;
         position: absolute;
     }
     .thumb-maior img.player-maior {
-        max-width: 60px;
-        margin: 22% 43%;
+        max-width: 50px;
+        margin: 22% 40%;
     }
     .thumb-menor img {
-        width: 94.7%;
+        width: 100%;
         max-width: 100%;
         position: relative;
     }
@@ -1232,8 +1245,8 @@ figure.thumb-menor {
         margin-bottom: 20px;
     }
     p {
-        font-size: 24px;
-        line-height: 28px;
+        font-size: 20px;
+        line-height: 26px;
     }
     .conjunto-esq {
         float: left;
@@ -1273,9 +1286,9 @@ figure.thumb-menor {
         height: 100px;
     }
     .img-ajudar {
-        margin-top: -10px;
-        margin-left: -10%;
-        max-width: 60%;
+        margin-top: 0px;
+        margin-left: -8%;
+        max-width: 46%;
     }
     .cont-contrbuir.row {
         display: table;
@@ -1296,7 +1309,7 @@ figure.thumb-menor {
     }
     .bg-imprensa {
         margin-top: -100px;
-        height: 138px;
+        height: 110px;
     }
     #imprensa {
         margin-top: -70px;
@@ -1335,7 +1348,7 @@ figure.thumb-menor {
         padding: 0 0 100px;
     }
     #prestacao-de-contas .container {
-        max-width: 94%;
+        max-width: 93%;
         padding: 28px 12px;
     }
     #prestacao-de-contas .row {
@@ -1364,7 +1377,7 @@ figure.thumb-menor {
         margin-top: 0;
     }
     .txt-projeto {
-        padding-bottom: 62px;
+        padding-bottom: 40px;
         width: 94%;
     }
     .cta-contribua {
@@ -1424,14 +1437,14 @@ figure.thumb-menor {
         margin-left: 0;
         padding-top: 0;
         padding: 0;
-        width: 70%;
-        padding-left: 30px;
+        width: 90%;
+        padding-left: 12px;
     }
     .desc-divulgar {
         margin-top: 30px;
         text-align: left;
         max-width: 90%;
-        padding-left: 30px;
+        padding-left: 12px;
     }
     .compartilhe {
         text-align: center;
@@ -1439,7 +1452,7 @@ figure.thumb-menor {
     }
     #divulgar {
         background-color: #DE1833;
-        padding-bottom: 90px;
+        padding-bottom: 60px;
     }
     footer nav {
         max-width: 100%;
@@ -1454,6 +1467,66 @@ figure.thumb-menor {
     footer {
         background-color: #000;
         padding-bottom: 50px;
+    }
+    .modal {
+        max-width: 98%;
+        background-color: #FFEB4C;
+    }
+    .close {
+        top: -70px;
+        right: 14px;
+    }
+    #myModal .cont-formulario {
+        padding: 30px 0 90px;
+    }
+    #myModal .cont-formulario p {
+        max-width: 96%;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: left;
+    }
+    input, textarea {
+        width: 80%;
+        padding: 16px 10px 16px 20px;
+        font-size: 20px;
+        line-height: 26px;
+    }
+    .form-group textarea {
+        margin-top: 0;
+        padding-top: 40px;
+    }
+    .form-group button.cta {
+        padding: 12px 10%;
+        background-size: contain;
+        width: 200px;
+        display: block;
+        float: inherit;
+        margin: -20px auto 0;
+    }
+    .content-dir p {
+        margin: 36px 0 40px;
+    }
+    #prestacao-de-contas {
+        background-color: #000;
+        padding: 0 0 70px;
+    }
+    #divulgar .titulo-secao h2 {
+        padding-left: 12px;
+    }
+    footer .container {
+        padding-top: 30px;
+    }
+    .bg-footer {
+        height: 50px;
+    }
+    .link-nucleo {
+        margin-top: 0;
+    }
+    #inicio .container {
+        padding: 40px 0 30px;
+    }
+    .compartilhe .cta {
+        padding: 15px 10%;
     }
 }
 
