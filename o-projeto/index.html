@@ -15,7 +15,7 @@
     <meta property="og:image:height" content="600">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://cozinhasolidaria.com">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icone.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/icone.ico">
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -25,12 +25,12 @@
     <script src="/assets/js/jquery-modal-video.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" /> 
-    <link href="assets/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/modal.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/menu-mobile.css">
+    <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.min.css" /> 
+    <link href="/assets/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/modal.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/menu-mobile.css">
 
     <title>Cozinha Solidária - MTST</title>
   </head>
@@ -52,21 +52,35 @@
           </ul>
         </div>
       </nav>
+
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <li><a class="item-menu" href="#inicio">Início</a></li>
+            <li><a class="item-menu" href="#projeto">O Projeto</a></li>
+            <li><a class="item-menu" href="#contribuir">Contribua</a></li>
+            <li><a class="item-menu" href="#imprensa">Imprensa</a></li>
+            <li><a class="item-menu" href="#" onclick="openModal();">Contato</a></li>
+          </ul>
+        </div>
+      </nav>
       
       <div class="container">
         <div class="row topo-projeto">
-          <div class="col-md-8">
+          <div class="col-md-7">
             <div class="titulo-secao">
               <img src="/assets/img/panela-amarela.png" alt=""><h2>O Projeto</h2>
             </div>
             <h3>Mais do que comida</h3>
+            <div class="icones-proj"><img class="icon-projeto" src="/assets/img/panelinha-pr.png"><img class="icon-projeto" src="/assets/img/coracao-pr.png"></div>
             <p>As Cozinhas Solidárias nascem pelas mãos do MTST com o propósito de ajudar a <strong>combater a fome</strong> em um período de <strong>crise sanitária, social, econômica e política</strong>. Infelizmente, depois de 1 ano de pandemia passamos a marca de 400 mil mortos, com o <strong>desemprego em alta, o botijão de gás caro e um auxílio</strong> que quando chega, não consegue pagar uma cesta básica. A fome sai dos noticiários e passa a orientar a <strong>urgência de nossas ações.</strong></p> 
             <p>Por isso, estamos <strong>construindo as Cozinhas Solidárias</strong> garantindo uma alimentação <strong>rica em nutrientes e cheia amor para as periferias no Brasil.</strong></p>
           </div>
-          <div class="col-md-4">
-            <div class="icones-direita">
-              <img src="/assets/img/panelinha-pr.png"><img src="/assets/img/coracao-pr.png">
-            </div>
+          <div class="col-md-5">
             <div class="imagem-topo-projeto">
               <img src="/assets/img/cozinheira-oprojeto.png" alt="">
             </div>
