@@ -1002,7 +1002,7 @@ textarea {
 }
 
 .wraper-galeria .col-md-4 img {
-    max-width: 94.6%;
+    max-width: 100%;
     height: auto;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -1142,7 +1142,16 @@ figure.thumb-menor {
     }
 }
 
+@media (min-width:541px) {
+    .hide-desktop {
+        display: none!important;
+    }
+}
+
 @media (max-width: 540px) {
+    .hide-mobile {
+        display: none!important;
+    }
     #inicio {
         padding-top: 0;
         padding-bottom: 100px;
@@ -1205,7 +1214,7 @@ figure.thumb-menor {
         line-height: 20px;
         width: auto;
         height: auto;
-        padding: 10px 10%;
+        padding: 12px 10%;
         background-size: contain;
     }
     #inicio .cta {
@@ -1561,6 +1570,16 @@ figure.thumb-menor {
     }
     #divulgar .titulo-secao {
         padding-top: 30px;
+    }
+    #galeria .ver-mais .cta {
+        padding: 9px 10%;
+    }
+    .wraper-galeria .col-md-4 img {
+        max-width: 95%;
+        margin: 0px 0 6px;
+    }
+    #galeria .ver-mais {
+        margin-top: 10px;
     }
 }
 
