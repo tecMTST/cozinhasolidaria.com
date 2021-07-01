@@ -22,7 +22,7 @@
 
 html {
     scroll-behavior: smooth;
-    background: #DE1833;
+    background: #efe;
 } 
 
 body {
@@ -1002,7 +1002,7 @@ textarea {
 }
 
 .wraper-galeria .col-md-4 img {
-    max-width: 94%;
+    max-width: 94.6%;
     height: auto;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -1127,6 +1127,15 @@ figure.thumb-menor {
     }
 }
 
+@media (max-width:1440px) {
+    .menu-principal {
+        width: 97.04%;
+    }
+    .container.modal-content {
+        max-width: 100%;
+    }
+}
+
 @media (max-width:1100px) {
     .menu-principal li a {
         padding: 0 20px 10px;
@@ -1141,9 +1150,9 @@ figure.thumb-menor {
     .cozi {
         position: absolute;
         display: block;
-        margin-left: -6%;
-        margin-top: 50%;
-        max-width: 54%;
+        margin-left: 0;
+        margin-top: 56%;
+        max-width: 44%;
         height: auto;
     }
     .logo {
@@ -1163,7 +1172,7 @@ figure.thumb-menor {
         margin-top: 60px;
     }
     .topo p {
-        font-size: 20px;
+        font-size: 19px;
         line-height: 28px;
         text-align: center;
         max-width: 100%;
@@ -1176,8 +1185,8 @@ figure.thumb-menor {
     }
     .bg-projeto {
         width: 100%;
-        height: 133px;
-        margin-top: -132px;
+        height: 142px;
+        margin-top: -142px;
     }
     img {
         max-width: 100%;
@@ -1188,7 +1197,7 @@ figure.thumb-menor {
         margin-top: 6px;
     }
     h2 {
-        font-size: 36px;
+        font-size: 34px;
         line-height: 40px;
     }
     .cta {
@@ -1213,16 +1222,15 @@ figure.thumb-menor {
         width: 90%;
     }
     #projeto .container {
-        max-width: 93%;
-        padding: 0 12px;
+        max-width: 90%;
     }
     .videos {
-        padding: 62px 0 20px;
+        padding: 50px 0 0;
         max-width: 100%;
         display: block;
     }
     .thumb-maior img {
-        width: 94%;
+        width: 90%;
         max-width: 100%;
         position: absolute;
     }
@@ -1249,7 +1257,7 @@ figure.thumb-menor {
         line-height: 26px;
     }
     .conjunto-esq {
-        float: left;
+        float: inherit;
         max-width: 90%;
         margin: -20px auto 0;
         display: block;
@@ -1276,7 +1284,7 @@ figure.thumb-menor {
     #contribuir .titulo-secao {
         text-align: left;
         padding-top: 0;
-        padding-left: 12px;
+        padding-left: 20px;
     }
     #galeria {
         padding-bottom: 110px;
@@ -1299,13 +1307,14 @@ figure.thumb-menor {
     .content-dir {
         margin-top: 30px;
         text-align: left;
-        max-width: 98%;
-        padding: 0 12px;
+        max-width: 100%;
+        padding: 0 20px;
     }
     .bg-imprensa .conjunto-dir {
-        float: left;
-        margin-top: 24px;
-        margin-right: 0;
+        float: inherit;
+        max-width: 90%;
+        margin: 24px auto 0;
+        display: block;
     }
     .bg-imprensa {
         margin-top: -100px;
@@ -1348,8 +1357,8 @@ figure.thumb-menor {
         padding: 0 0 100px;
     }
     #prestacao-de-contas .container {
-        max-width: 93%;
-        padding: 28px 12px;
+        max-width: 90%;
+        padding: 10px 19px 30px;
     }
     #prestacao-de-contas .row {
         padding: 40px 0 0;
@@ -1377,8 +1386,7 @@ figure.thumb-menor {
         margin-top: 0;
     }
     .txt-projeto {
-        padding-bottom: 40px;
-        width: 94%;
+        padding-bottom: 10px;
     }
     .cta-contribua {
         text-align: center;
@@ -1387,7 +1395,7 @@ figure.thumb-menor {
         padding: 20px 10%;
     }
     #imprensa p {
-        max-width: 95%;
+        max-width: 90%;
         margin: 0 auto 30px;
     }
     .gastos h3 {
@@ -1413,7 +1421,7 @@ figure.thumb-menor {
     .bg-divulgar .conjunto-dir {
         float: none;
         max-width: 90%;
-        margin: 0 auto;
+        margin: -10px auto 0;
         display: block;
     }
     .bg-divulgar {
@@ -1438,13 +1446,13 @@ figure.thumb-menor {
         padding-top: 0;
         padding: 0;
         width: 90%;
-        padding-left: 12px;
+        padding-left: 20px;
     }
     .desc-divulgar {
         margin-top: 30px;
         text-align: left;
         max-width: 90%;
-        padding-left: 12px;
+        padding-left: 20px;
     }
     .compartilhe {
         text-align: center;
@@ -1509,9 +1517,10 @@ figure.thumb-menor {
     #prestacao-de-contas {
         background-color: #000;
         padding: 0 0 70px;
+        max-width: 99.9%;
     }
     #divulgar .titulo-secao h2 {
-        padding-left: 12px;
+        padding-left: 20px;
     }
     footer .container {
         padding-top: 30px;
@@ -1528,11 +1537,36 @@ figure.thumb-menor {
     .compartilhe .cta {
         padding: 15px 10%;
     }
+    #projeto {
+        background: #364A98;
+        padding-bottom: 80px;
+    }
+    #contribuir {
+        background-color: #DE1833;
+        padding-bottom: 36px;
+    }
+    #imprensa .titulo-secao {
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+    #imprensa .noticia p {
+        max-width: 100%;
+    }
+    #divulgar .col-lg-7 {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    #divulgar .col-lg-7 img {
+        margin-left: -1%;
+    }
+    #divulgar .titulo-secao {
+        padding-top: 30px;
+    }
 }
 
 @media (max-width: 380px) {
     .cozi {
-        margin-left: -6%;
-        margin-top: 66%;
+        margin-left: -2%;
+        margin-top: 60%;
     }
 }
