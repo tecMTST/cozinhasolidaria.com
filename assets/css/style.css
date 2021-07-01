@@ -22,7 +22,7 @@
 
 html {
     scroll-behavior: smooth;
-    background: #eee;
+    background: #384a93;
 } 
 
 body {
@@ -993,6 +993,7 @@ img.icon-projeto {
     height: 100px;
     margin-top: -64px;
     position: absolute;
+    max-width: 1920px;
 }
 
 .acontecer {
@@ -1696,6 +1697,12 @@ figure.thumb-menor {
         padding: 16px 16%;
         font-size: 19px;
         line-height: 21px;
+    }
+    .titulo-secao {
+        padding-top: 10px;
+    }
+    footer .row {
+        padding-top: 30px;
     }
 }
 
