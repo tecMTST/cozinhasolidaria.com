@@ -915,7 +915,7 @@ img.icon-projeto {
 .topo-projeto .imagem-topo-projeto img {
     position: relative;
     float: right;
-    margin-top: 10px;
+    margin-top: 180px;
     left: 50px;
 }
 
@@ -928,7 +928,7 @@ img.icon-projeto {
 #o-projeto.pagina-projeto {
     padding-bottom: 0;
     background: #fff;
-    margin-top: -40px;
+    margin-top: -60px;
 }
 
 #o-projeto.pagina-projeto .container {
@@ -942,7 +942,7 @@ img.icon-projeto {
 }
 
 #inicio.header-projeto {
-    padding: 50px 0px 0;
+    padding: 50px 0px 70px;
 }
 
 #o-projeto.pagina-projeto .titulo-secao {
@@ -979,6 +979,7 @@ img.icon-projeto {
 #apoie {
     background-color: #DE1833;
     padding-top: 100px;
+    padding-bottom: 50px;
 }
 
 #apoie .container {
@@ -1025,7 +1026,7 @@ img.icon-projeto {
 }
 
 .footer-o-projeto {
-    margin-top: -80px;
+    margin-top: 0;
 }
 
 .wraper-galeria .col-md-4 img {
