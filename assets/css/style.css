@@ -43,6 +43,10 @@ section#projeto:target {
     max-width: 1209px;
 }
 
+.cont-projeto {
+    margin-top: 90px;
+}
+
 .menu-principal {
     font-family: Roboto;
     font-style: normal;
@@ -767,6 +771,11 @@ footer a:hover {
     color: #fff;
 }
 
+img.logo-rodape {
+    max-width: 180px;
+    height: auto;
+}
+
 .link-mtst {
     margin-top: 24px;
 }
@@ -878,7 +887,7 @@ textarea {
 
 /* Página O Projeto */
 .topo-projeto {
-    padding: 120px 0 0;
+    padding: 0;
 }
 
 .header-projeto .container {
@@ -891,11 +900,13 @@ textarea {
     margin: 30px 0;
     margin-right: 30px;
     display: inline-flex;
+    color: #000;
 }
 
 .topo-projeto p {
     margin-bottom: 30px;
     padding-right: 40px;
+    color: #000;
 }
 
 img.icon-projeto {
@@ -926,7 +937,7 @@ img.icon-projeto {
 }
 
 #o-projeto.pagina-projeto {
-    padding-bottom: 0;
+    padding-bottom: 50px;
     background: #fff;
     margin-top: -60px;
 }
@@ -978,7 +989,7 @@ img.icon-projeto {
 
 #apoie {
     background-color: #DE1833;
-    padding-top: 100px;
+    padding-top: 150px;
     padding-bottom: 90px;
 }
 
@@ -1613,7 +1624,7 @@ figure.thumb-menor {
         padding: 0 0 100px;
     }
     #prestacao-de-contas .container {
-        max-width: 90%;
+        max-width: 89%;
         padding: 10px 19px 30px;
     }
     #prestacao-de-contas .row {
@@ -1818,14 +1829,14 @@ figure.thumb-menor {
         padding-top: 30px;
     }
     .wraper-galeria .col-md-4 img {
-        max-width: 95%;
+        max-width: 94%;
         margin: 0px 0 6px;
     }
     #galeria .ver-mais {
         margin-top: 10px;
     }
     .topo-projeto {
-        padding: 30px 20px 0;
+        padding: 30px 0 0;
     }
     .topo-projeto h3 {
         font-size: 24px;
@@ -1875,6 +1886,7 @@ figure.thumb-menor {
         float: left;
         margin-left: 0;
         margin-top: 20px;
+        margin-bottom: 30px;
         padding-left: 20px;
     }
     .apoie-projeto {
@@ -1912,9 +1924,9 @@ figure.thumb-menor {
         margin: 30px 0;
     }
     #apoie .cta {
-        padding: 16px 16%;
-        font-size: 19px;
-        line-height: 21px;
+        padding: 14px 16%;
+        font-size: 18px;
+        line-height: 23px;
     }
     .titulo-secao {
         padding-top: 10px;
@@ -1924,6 +1936,13 @@ figure.thumb-menor {
     }
     .img-projeto {
         padding: 30px 0 0;
+    }
+    #inicio .container.cont-projeto {
+        margin-top: 40px;
+        max-width: 90%;
+    }
+    #o-projeto.pagina-projeto {
+        padding-bottom: 0;
     }
 }
 
