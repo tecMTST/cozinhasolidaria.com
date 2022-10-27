@@ -443,8 +443,8 @@ img.thumb-noticia {
     font-family: Gotham;
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 26px;
+    line-height: 26px;
     letter-spacing: 0.05em;
     color: #000;
     margin: 10px 0 0;
@@ -454,8 +454,8 @@ img.thumb-noticia {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 15px;
+    line-height: 19px;
     letter-spacing: 0.05em;
     color: #000;
     margin: 14px 0 0;
@@ -533,7 +533,7 @@ img.thumb-noticia {
 #prestacao-de-contas .dados .dados-num {
     margin-bottom: 10px;
     font-family: 'Gotham Black', sans-serif;
-    font-size: 130px;
+    font-size: 100px;
     line-height: 1;
     font-weight: 900;
     letter-spacing: 0.05em;
@@ -1675,7 +1675,7 @@ figure.thumb-menor {
         line-height: 36px;
     }
     #prestacao-de-contas .dados .dados-num {
-        font-size: 100px;
+        font-size: 54px;
     }
     .gastos h4 {
         font-size: 16px;
