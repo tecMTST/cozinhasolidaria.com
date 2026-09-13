@@ -175,13 +175,40 @@
             <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/coracao.png')); ?>" alt=""><h2><?php echo esc_html(cozinha_solidaria_get_field('home_gallery_title', cozinha_solidaria_home_default('home_gallery_title'))); ?></h2>
           </div>
 
-          <?php $gallery_images = cozinha_solidaria_get_rows('home_gallery_images', cozinha_solidaria_home_default('home_gallery_images')); ?>
+          <?php
+          $gallery_images = array(
+              array(
+                  'image' => cozinha_solidaria_get_image_url('home_gallery_image_1', cozinha_solidaria_get_field('home_gallery_image_1_url', cozinha_solidaria_home_default('home_gallery_image_1_url'))),
+                  'alt' => cozinha_solidaria_get_image_alt('home_gallery_image_1'),
+              ),
+              array(
+                  'image' => cozinha_solidaria_get_image_url('home_gallery_image_2', cozinha_solidaria_get_field('home_gallery_image_2_url', cozinha_solidaria_home_default('home_gallery_image_2_url'))),
+                  'alt' => cozinha_solidaria_get_image_alt('home_gallery_image_2'),
+              ),
+              array(
+                  'image' => cozinha_solidaria_get_image_url('home_gallery_image_3', cozinha_solidaria_get_field('home_gallery_image_3_url', cozinha_solidaria_home_default('home_gallery_image_3_url'))),
+                  'alt' => cozinha_solidaria_get_image_alt('home_gallery_image_3'),
+              ),
+              array(
+                  'image' => cozinha_solidaria_get_image_url('home_gallery_image_4', cozinha_solidaria_get_field('home_gallery_image_4_url', cozinha_solidaria_home_default('home_gallery_image_4_url'))),
+                  'alt' => cozinha_solidaria_get_image_alt('home_gallery_image_4'),
+              ),
+              array(
+                  'image' => cozinha_solidaria_get_image_url('home_gallery_image_5', cozinha_solidaria_get_field('home_gallery_image_5_url', cozinha_solidaria_home_default('home_gallery_image_5_url'))),
+                  'alt' => cozinha_solidaria_get_image_alt('home_gallery_image_5'),
+              ),
+              array(
+                  'image' => cozinha_solidaria_get_image_url('home_gallery_image_6', cozinha_solidaria_get_field('home_gallery_image_6_url', cozinha_solidaria_home_default('home_gallery_image_6_url'))),
+                  'alt' => cozinha_solidaria_get_image_alt('home_gallery_image_6'),
+              ),
+          );
+          ?>
           <div class="wraper-galeria hide-mobile">
             <?php foreach (array_chunk($gallery_images, 3) as $gallery_row) : ?>
               <div class="row">
                 <?php foreach ($gallery_row as $gallery_image) : ?>
                   <div class="col-md-4">
-                    <img src="<?php echo esc_url(cozinha_solidaria_sub_image_url($gallery_image, 'image', $gallery_image['image_url'] ?? '')); ?>" alt="<?php echo esc_attr($gallery_image['alt'] ?? ''); ?>">
+                    <img src="<?php echo esc_url($gallery_image['image']); ?>" alt="<?php echo esc_attr($gallery_image['alt']); ?>">
                   </div>
                 <?php endforeach; ?>
               </div>
@@ -192,7 +219,7 @@
             <div class="swiper-wrapper">
               <?php foreach ($gallery_images as $gallery_image) : ?>
                 <div class="swiper-slide col-md-4">
-                  <img src="<?php echo esc_url(cozinha_solidaria_sub_image_url($gallery_image, 'image', $gallery_image['image_url'] ?? '')); ?>" alt="<?php echo esc_attr($gallery_image['alt'] ?? ''); ?>">
+                  <img src="<?php echo esc_url($gallery_image['image']); ?>" alt="<?php echo esc_attr($gallery_image['alt']); ?>">
                 </div>
               <?php endforeach; ?>
             </div>
@@ -203,16 +230,24 @@
             <a href="<?php echo esc_url(cozinha_solidaria_get_field('home_gallery_button_link', cozinha_solidaria_home_default('home_gallery_button_link'))); ?>" target="_blank" class="cta cta-azul"><?php echo esc_html(cozinha_solidaria_get_field('home_gallery_button_text', cozinha_solidaria_home_default('home_gallery_button_text'))); ?></a>
           </div>
 
-          <?php $home_videos = cozinha_solidaria_get_rows('home_videos', cozinha_solidaria_home_default('home_videos')); ?>
+          <?php
+          $home_videos = array(
+              cozinha_solidaria_get_field('home_video_1_youtube_id', cozinha_solidaria_home_default('home_video_1_youtube_id')),
+              cozinha_solidaria_get_field('home_video_2_youtube_id', cozinha_solidaria_home_default('home_video_2_youtube_id')),
+              cozinha_solidaria_get_field('home_video_3_youtube_id', cozinha_solidaria_home_default('home_video_3_youtube_id')),
+          );
+          ?>
           <div class="row videos">
             <?php if (! empty($home_videos[0])) : ?>
               <div class="col-lg-8 col-md-8">
-                <a class="js-video-button" data-video-id="<?php echo esc_attr($home_videos[0]['youtube_id'] ?? ''); ?>" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="<?php echo esc_url(cozinha_solidaria_sub_image_url($home_videos[0], 'thumbnail', $home_videos[0]['thumbnail_url'] ?? '')); ?>" alt=""><img class="player-maior" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
+                <a class="js-video-button" data-video-id="<?php echo esc_attr($home_videos[0]); ?>" href="<?php echo esc_url(cozinha_solidaria_youtube_embed_url($home_videos[0])); ?>"><figure class="thumb-maior"><img class="thumb-youtube" src="<?php echo esc_url(cozinha_solidaria_youtube_thumbnail_url($home_videos[0])); ?>" alt=""><img class="player-maior" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
               </div>
             <?php endif; ?>
             <div class="col-lg-4 col-md-4">
-              <?php foreach (array_slice($home_videos, 1, 2) as $home_video) : ?>
-                <a class="js-video-button" data-video-id="<?php echo esc_attr($home_video['youtube_id'] ?? ''); ?>" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_sub_image_url($home_video, 'thumbnail', $home_video['thumbnail_url'] ?? '')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
+              <?php foreach (array_slice($home_videos, 1, 2) as $home_video_id) : ?>
+                <?php if ($home_video_id !== '') : ?>
+                  <a class="js-video-button" data-video-id="<?php echo esc_attr($home_video_id); ?>" href="<?php echo esc_url(cozinha_solidaria_youtube_embed_url($home_video_id)); ?>"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_youtube_thumbnail_url($home_video_id)); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
+                <?php endif; ?>
               <?php endforeach; ?>
             </div>
           </div>

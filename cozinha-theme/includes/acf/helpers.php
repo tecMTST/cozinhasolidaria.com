@@ -29,6 +29,22 @@ function cozinha_solidaria_get_image_url($field_name, $fallback = '', $post_id =
     return cozinha_solidaria_image_url($image, $fallback);
 }
 
+function cozinha_solidaria_get_image_alt($field_name, $fallback = '', $post_id = false)
+{
+    $image = cozinha_solidaria_get_field($field_name, '', $post_id);
+
+    if (is_array($image) && ! empty($image['alt'])) {
+        return $image['alt'];
+    }
+
+    if (is_numeric($image)) {
+        $alt = get_post_meta((int) $image, '_wp_attachment_image_alt', true);
+        return $alt !== '' ? $alt : $fallback;
+    }
+
+    return $fallback;
+}
+
 function cozinha_solidaria_image_url($image, $fallback = '')
 {
     if (empty($image)) {
@@ -73,6 +89,28 @@ function cozinha_solidaria_sub_image_url($row, $field_name, $fallback = '')
     }
 
     return cozinha_solidaria_image_url($row[$field_name], $fallback);
+}
+
+function cozinha_solidaria_youtube_thumbnail_url($youtube_id)
+{
+    $youtube_id = trim((string) $youtube_id);
+
+    if ($youtube_id === '') {
+        return '';
+    }
+
+    return 'https://img.youtube.com/vi/' . rawurlencode($youtube_id) . '/maxresdefault.jpg';
+}
+
+function cozinha_solidaria_youtube_embed_url($youtube_id)
+{
+    $youtube_id = trim((string) $youtube_id);
+
+    if ($youtube_id === '') {
+        return '#';
+    }
+
+    return 'https://www.youtube-nocookie.com/embed/' . rawurlencode($youtube_id);
 }
 
 function cozinha_solidaria_the_html_field($field_name, $fallback = '', $post_id = false)
