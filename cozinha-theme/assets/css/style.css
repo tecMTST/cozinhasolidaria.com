@@ -2082,6 +2082,10 @@ figure.thumb-menor {
         margin-top: 0;
         margin-bottom: -40px;
     }
+    .txt-projeto p, .conteudo-editor-projeto, .conteudo-editor-projeto p {
+        font-size: 20px;
+        line-height: 25px;
+    }
 }
 
 @media (max-width: 380px) {
