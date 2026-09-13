@@ -146,6 +146,10 @@
         padding-top: 0;
     }
 
+    .menu-novo {
+        padding: 70px 16px 24px;
+    }
+
     #menu .item-menu {
         font-family: 'Roboto';
         color: #fff;

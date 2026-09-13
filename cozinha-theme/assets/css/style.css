@@ -86,6 +86,28 @@ section#projeto:target {
     color: #FFEB4C;
 }
 
+.menu-novo {
+    background-color: #DE1833;
+    padding: 140px 20px 35px;
+}
+
+.menu-novo a {
+    display: block;
+    max-width: 1263px;
+    margin: 0 auto;
+}
+
+.menu-novo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: -110px;
+}
+
+body.admin-bar .menu-principal {
+    top: 32px;
+}
+
 .nav-link.active {
     background-image: url(../img/bg-menu-target.png);
     background-repeat: no-repeat;
@@ -1190,6 +1212,12 @@ figure.thumb-menor {
     }
 }
 
+@media (max-width:782px) {
+    body.admin-bar .menu-principal {
+        top: 46px;
+    }
+}
+
 @media (min-width:541px) {
     .hide-desktop {
         display: none!important;
@@ -1945,6 +1973,10 @@ figure.thumb-menor {
     }
     #o-projeto.pagina-projeto {
         padding-bottom: 0;
+    }
+    .menu-novo img {
+        margin-top: -70px;
+        margin-bottom: -40px;
     }
 }
 

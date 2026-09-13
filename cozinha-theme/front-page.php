@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.min.css')); ?>" /> 
     <link href="<?php echo esc_url(cozinha_solidaria_asset('/bootstrap/css/bootstrap-grid.min.css')); ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/modal.css')); ?>">
-    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/style.css?v1.0.6')); ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/style.css?v1.0.7')); ?>">
     <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/menu-mobile.css')); ?>">
 
     <title>Cozinha Solidária - MTST</title>
@@ -110,8 +110,8 @@
           </ul>
         </div>
       </nav>
-      <div class="menu-novo menu-principal">
-        <a class="item-menu" href="https://euapoioascozinhas.com/" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/banner-apoio-cozinhas.webp')); ?>" alt=""></a></li>
+      <div class="menu-novo">
+        <a class="item-menu" href="https://euapoioascozinhas.com/" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/banner-apoio-cozinhas.webp')); ?>" alt=""></a>
       </div>   
       <div class="container">
         <div class="topo row">
@@ -153,7 +153,7 @@
           </div>
           <div class="txt-projeto">
             <p>
-              <span style="line-height: 2;">PROGRAMA COZINHA SOLIDÁRIA</span><br /><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image.png')); ?>" alt="" style="max-width: 190px;background-color: #fff;text-align: left;float:left;margin-right: 14px;">Em 2024, firmamos um Termo de Colaboração com o Ministério do Desenvolvimento Social, no âmbito do Programa Cozinha Solidária, que garantiu apoio financeiro parcial a mais de 50 Cozinhas Solidárias durante o período de um ano, além de possibilitar a entrega regular de alimentos in natura provenientes do Programa de Aquisição de Alimentos (PAA). Essa política pública visa fortalecer ações de segurança alimentar e nutricional, promovendo o acesso a alimentos saudáveis e o combate à fome em comunidades em situação de vulnerabilidade social.
+              <span style="line-height: 2;">PROGRAMA COZINHA SOLIDÁRIA</span><br /><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image.webp')); ?>" alt="" style="max-width: 190px;background-color: #fff;text-align: left;float:left;margin-right: 14px;">Em 2024, firmamos um Termo de Colaboração com o Ministério do Desenvolvimento Social, no âmbito do Programa Cozinha Solidária, que garantiu apoio financeiro parcial a mais de 50 Cozinhas Solidárias durante o período de um ano, além de possibilitar a entrega regular de alimentos in natura provenientes do Programa de Aquisição de Alimentos (PAA). Essa política pública visa fortalecer ações de segurança alimentar e nutricional, promovendo o acesso a alimentos saudáveis e o combate à fome em comunidades em situação de vulnerabilidade social.
             </p>
             <p>
               A partir de 2023, iniciativas de combate à fome voltaram a ter protagonismo e vimos os números da fome reduzirem. Entretanto, em um país de dimensões continentais como o Brasil, essa realidade não é uniforme e, em várias regiões, principalmente, nas periferias dos grandes centros, as Cozinhas Solidárias ainda cumprem um papel importante: o de garantir alimentação gratuita, de qualidade, rica em nutriente e afeto.
@@ -618,4 +618,3 @@
   <?php wp_footer(); ?>
   </body>
 </html>
-
