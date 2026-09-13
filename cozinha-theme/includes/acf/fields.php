@@ -90,16 +90,6 @@ add_action('acf/init', function () {
         return;
     }
 
-    if (function_exists('acf_add_options_page')) {
-        acf_add_options_page(array(
-            'page_title' => 'Cozinha Solidaria',
-            'menu_title' => 'Cozinha Solidaria',
-            'menu_slug' => 'cozinha-solidaria',
-            'capability' => 'edit_posts',
-            'redirect' => false,
-        ));
-    }
-
     acf_add_local_field_group(array(
         'key' => 'group_cozinha_home',
         'title' => 'Conteudo da Home',
@@ -295,45 +285,4 @@ add_action('acf/init', function () {
         'active' => true,
     ));
 
-    acf_add_local_field_group(array(
-        'key' => 'group_cozinha_global',
-        'title' => 'Conteudo global',
-        'fields' => array(
-            array(
-                'key' => 'field_global_contact_intro',
-                'label' => 'Texto do modal de contato',
-                'name' => 'global_contact_intro',
-                'type' => 'textarea',
-                'rows' => 3,
-                'new_lines' => 'br',
-                'default_value' => 'Quer ajudar de outra forma, saber mais das nossas Cozinhas Solidárias ou se informar sobre os locais para doações de alimentos e utensílios? Entre em contato com a gente:',
-            ),
-            array(
-                'key' => 'field_global_footer_html',
-                'label' => 'Rodape',
-                'name' => 'global_footer_html',
-                'type' => 'wysiwyg',
-                'tabs' => 'all',
-                'toolbar' => 'full',
-                'media_upload' => 1,
-                'instructions' => 'Opcional. Se vazio, o tema usa o rodape padrao.',
-                'default_value' => cozinha_solidaria_acf_default('global_footer_html'),
-            ),
-        ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'options_page',
-                    'operator' => '==',
-                    'value' => 'cozinha-solidaria',
-                ),
-            ),
-        ),
-        'menu_order' => 0,
-        'position' => 'normal',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'active' => true,
-    ));
 });

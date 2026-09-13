@@ -40,3 +40,4 @@ add_action('admin_init', 'cozinha_solidaria_disable_front_page_editor');
 require_once get_template_directory() . '/includes/acf/helpers.php';
 require_once get_template_directory() . '/includes/acf/defaults.php';
 require_once get_template_directory() . '/includes/acf/fields.php';
+require_once get_template_directory() . '/includes/contact-leads.php';

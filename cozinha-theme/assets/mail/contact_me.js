@@ -18,12 +18,22 @@ $(function () {
             if (firstName.indexOf(" ") >= 0) {
                 firstName = name.split(" ").slice(0, -1).join(" ");
             }
-            $this = $("#sendMessageButton");
+            var $this = $("#sendMessageButton");
             $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
             $.ajax({
-                url: "/assets/mail/contact_me.php",
+                url:
+                    window.CozinhaSolidariaContact &&
+                    window.CozinhaSolidariaContact.ajaxUrl
+                        ? window.CozinhaSolidariaContact.ajaxUrl
+                        : "/wp-admin/admin-ajax.php",
                 type: "POST",
                 data: {
+                    action: "cozinha_solidaria_contact",
+                    nonce:
+                        window.CozinhaSolidariaContact &&
+                        window.CozinhaSolidariaContact.nonce
+                            ? window.CozinhaSolidariaContact.nonce
+                            : "",
                     name: name,
                     //phone: phone,
                     email: email,
@@ -39,7 +49,7 @@ $(function () {
                         )
                         .append("</button>");
                     $("#success > .alert-success").append(
-                        "<strong>Your message has been sent. </strong>"
+                        "<strong>Sua mensagem foi enviada. </strong>"
                     );
                     $("#success > .alert-success").append("</div>");
                     //clear all fields
@@ -55,9 +65,9 @@ $(function () {
                         .append("</button>");
                     $("#success > .alert-danger").append(
                         $("<strong>").text(
-                            "Sorry " +
+                            "Desculpe, " +
                                 firstName +
-                                ", it seems that my mail server is not responding. Please try again later!"
+                                ". Nao foi possivel enviar sua mensagem agora. Tente novamente mais tarde."
                         )
                     );
                     $("#success > .alert-danger").append("</div>");

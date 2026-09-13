@@ -560,7 +560,13 @@
     <script src="<?php echo esc_url(cozinha_solidaria_asset('/js/modal.js')); ?>"></script>
     <!-- Contact form JS-->
     <script src="<?php echo esc_url(cozinha_solidaria_asset('/mail/jqBootstrapValidation.js')); ?>"></script>
-    <script src="<?php echo esc_url(cozinha_solidaria_asset('/mail/contact_me.js')); ?>"></script>
+    <script>
+      window.CozinhaSolidariaContact = {
+        ajaxUrl: "<?php echo esc_url(admin_url('admin-ajax.php')); ?>",
+        nonce: "<?php echo esc_attr(wp_create_nonce('cozinha_solidaria_contact')); ?>"
+      };
+    </script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/mail/contact_me.js?v1.0.1')); ?>"></script>
 
   <?php wp_footer(); ?>
   </body>
