@@ -10,9 +10,6 @@ if (! defined('ABSPATH')) {
 function cozinha_solidaria_acf_default($field_name)
 {
     $templates = array(
-        'project_header_html' => 'page-o-projeto.php',
-        'project_more_food_html' => 'page-o-projeto.php',
-        'project_support_html' => 'page-o-projeto.php',
         'global_footer_html' => 'front-page.php',
     );
 
@@ -118,6 +115,21 @@ function cozinha_solidaria_home_default($field_name)
     return array_key_exists($field_name, $defaults) ? $defaults[$field_name] : '';
 }
 
+function cozinha_solidaria_project_default($field_name)
+{
+    $defaults = array(
+        'project_header_intro' => '<p><strong>A má gestão da pandemia que tirou  a vida de quase 700 mil brasileiros por parte do governo Bolsonaro, provocou uma crise econômica e social no país</strong> que levou ao aumento do desemprego, inflação recorde e a triste volta do Brasil ao mapa da fome. Nesse contexto, <strong>as Cozinhas Solidárias do MTST nasceram em 2021, a partir de uma rede de afeto e solidariedade.</strong></p><p>Inauguramos o projeto visando a construção de 16 cozinhas. Logo percebemos a necessidade de fazer mais e atualmente <strong>já são mais de 30 cozinhas erguidas sem qualquer investimento público, contando apenas com a contribuição solidária dos nossos apoiadores.</strong></p>',
+        'project_more_food_title' => 'Mais que comida',
+        'project_more_food_content' => '<p><strong>As Cozinhas Solidárias também são locais de luta, resistência, apoio e cultura para a população periférica.</strong></p><p>Os espaços recebem mutirões de apoio jurídico coletivo e individual, cines-debate, rodas de conversa com gestantes, oficinas culturais, cursos, reforço escolar para crianças e alfabetização de jovens e adultos.</p><p>A fim de contribuir para a soberania alimentar na periferia, <strong>as cozinhas promovem o cultivo de hortas urbanas comunitárias</strong> nas proximidades para fornecerem alimentos para as próprias cozinhas e, sempre que possível, para doação às comunidades próximas.</p>',
+        'project_support_title' => 'Quem faz acontecer',
+        'project_support_content' => '<p><strong>Para que cada Cozinha Solidária possa oferecer desde as refeições diárias até uma rede apoio e afeto, muitas pessoas e organizações colaboram de diversas formas.</strong> Ou seja, quem faz o projeto das cozinhas funcionar não é apenas o MTST, é também cada pessoa que contribui do modo como pode, seja atuando no dia-a-dia no projeto ou doando através do nosso <a href="https://apoia.se/cozinhasolidaria" target="_blank" style="color:#fff">financiamento coletivo.</a></p><p>Todos os espaços são construídos em mutirões que unem moradores da região, militantes do MTST e de movimentos parceiros, além de voluntários que colaboram também com a manutenção dos espaços, organização das filas e distribuição das marmitas.</p><p><strong>O pleno funcionamento do projeto, até aqui, vem sendo possível graças a cada a ajuda de todos.</strong></p>',
+        'project_support_button_text' => 'Faça parte desse time da solidariedade! Contamos com você, doe agora!',
+        'project_support_button_link' => 'https://apoia.se/cozinhasolidaria',
+    );
+
+    return array_key_exists($field_name, $defaults) ? $defaults[$field_name] : '';
+}
+
 function cozinha_solidaria_acf_clean_url($url)
 {
     return function_exists('esc_url') ? esc_url($url) : $url;
@@ -214,15 +226,55 @@ function cozinha_solidaria_acf_load_default_value($value, $post_id, $field)
 }
 
 $cozinha_solidaria_default_fields = array(
-    'project_header_html',
-    'project_more_food_html',
-    'project_support_html',
     'global_footer_html',
 );
 
 foreach ($cozinha_solidaria_default_fields as $cozinha_solidaria_default_field) {
     add_filter('acf/prepare_field/name=' . $cozinha_solidaria_default_field, 'cozinha_solidaria_acf_field_default');
     add_filter('acf/load_value/name=' . $cozinha_solidaria_default_field, 'cozinha_solidaria_acf_load_default_value', 10, 3);
+}
+
+function cozinha_solidaria_acf_project_field_default($field)
+{
+    if (! empty($field['name'])) {
+        $default = cozinha_solidaria_project_default($field['name']);
+
+        if ($default !== '') {
+            $field['default_value'] = $default;
+        }
+    }
+
+    return $field;
+}
+
+function cozinha_solidaria_acf_project_load_default_value($value, $post_id, $field)
+{
+    if ($value !== null && $value !== false && $value !== '') {
+        return $value;
+    }
+
+    if (empty($field['name'])) {
+        return $value;
+    }
+
+    $default = cozinha_solidaria_project_default($field['name']);
+
+    return $default !== '' ? $default : $value;
+}
+
+$cozinha_solidaria_project_default_fields = array(
+    'project_header_intro',
+    'project_more_food_title',
+    'project_more_food_content',
+    'project_support_title',
+    'project_support_content',
+    'project_support_button_text',
+    'project_support_button_link',
+);
+
+foreach ($cozinha_solidaria_project_default_fields as $cozinha_solidaria_project_default_field) {
+    add_filter('acf/prepare_field/name=' . $cozinha_solidaria_project_default_field, 'cozinha_solidaria_acf_project_field_default');
+    add_filter('acf/load_value/name=' . $cozinha_solidaria_project_default_field, 'cozinha_solidaria_acf_project_load_default_value', 10, 3);
 }
 
 function cozinha_solidaria_acf_home_load_default_value($value, $post_id, $field)
@@ -327,7 +379,7 @@ foreach ($cozinha_solidaria_home_default_fields as $cozinha_solidaria_home_defau
     add_filter('acf/load_value/name=' . $cozinha_solidaria_home_default_field, 'cozinha_solidaria_acf_home_load_default_value', 10, 3);
 }
 
-add_action('acf/init', function () {
+add_action('acf/init', function () use ($cozinha_solidaria_project_default_fields) {
     if (! function_exists('update_field') || ! function_exists('get_field')) {
         return;
     }
@@ -338,14 +390,14 @@ add_action('acf/init', function () {
         return;
     }
 
-    foreach (array('project_header_html', 'project_more_food_html', 'project_support_html') as $field_name) {
+    foreach ($cozinha_solidaria_project_default_fields as $field_name) {
         $current_value = get_field($field_name, $project_page->ID, false);
 
         if ($current_value !== null && $current_value !== false && $current_value !== '') {
             continue;
         }
 
-        $default_value = cozinha_solidaria_acf_default($field_name);
+        $default_value = cozinha_solidaria_project_default($field_name);
 
         if ($default_value !== '') {
             update_field($field_name, $default_value, $project_page->ID);

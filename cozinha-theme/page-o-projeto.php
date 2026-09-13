@@ -108,7 +108,6 @@ Template Name: O Projeto
         </div>
       </nav>
 
-      <?php ob_start(); ?>
       <div class="container cont-projeto">
         <div class="titulo-secao row">
           <div class="titulo-secao">
@@ -128,33 +127,24 @@ Template Name: O Projeto
           <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/o-projeto.png')); ?>" alt="">
         </div>
         <div class="txt-projeto">
-          <p>
-            <strong>A má gestão da pandemia que tirou  a vida de quase 700 mil brasileiros por parte do governo Bolsonaro, provocou uma crise econômica e social no país</strong> que levou ao aumento do desemprego, inflação recorde e a triste volta do Brasil ao mapa da fome. Nesse contexto, <strong>as Cozinhas Solidárias do MTST nasceram em 2021, a partir de uma rede de afeto e solidariedade.</strong>
-          </p>
-          <p>
-            Inauguramos o projeto visando a construção de 16 cozinhas. Logo percebemos a necessidade de fazer mais e atualmente <strong>já são mais de 30 cozinhas erguidas sem qualquer investimento público, contando apenas com a contribuição solidária dos nossos apoiadores.</strong> 
-          </p>
+          <?php echo wp_kses_post(cozinha_solidaria_get_formatted_field('project_header_intro', cozinha_solidaria_project_default('project_header_intro'))); ?>
         </div>
       </div>
-      <?php cozinha_solidaria_the_html_field('project_header_html', ob_get_clean()); ?>
       
       
     </header>
 
     <main>
 
-      <?php ob_start(); ?>
       <section id="o-projeto" class="pagina-projeto">
         <div class="bg-projeto"></div>
         <div class="container mais-que-comida">
           <div class="row topo-projeto">
             <div class="col-md-12">
               
-              <h3>Mais que comida</h3>
+              <h3><?php echo esc_html(cozinha_solidaria_get_field('project_more_food_title', cozinha_solidaria_project_default('project_more_food_title'))); ?></h3>
               <div class="icones-proj"><img class="icon-projeto" src="<?php echo esc_url(cozinha_solidaria_asset('/img/panelinha-pr.png')); ?>"><img class="icon-projeto" src="<?php echo esc_url(cozinha_solidaria_asset('/img/coracao-pr.png')); ?>"></div>
-              <p><strong>As Cozinhas Solidárias também são locais de luta, resistência, apoio e cultura para a população periférica</p> 
-              <p>Os espaços recebem mutirões de apoio jurídico coletivo e individual, cines-debate, rodas de conversa com gestantes, oficinas culturais, cursos, reforço escolar para crianças e alfabetização de jovens e adultos.</p>
-              <p>A fim de contribuir para a soberania alimentar na periferia, <strong>as cozinhas promovem o cultivo de hortas urbanas comunitárias</strong> nas proximidades para fornecerem alimentos para as próprias cozinhas e, sempre que possível, para doação às comunidades próximas.</p>
+              <?php echo wp_kses_post(cozinha_solidaria_get_formatted_field('project_more_food_content', cozinha_solidaria_project_default('project_more_food_content'))); ?>
             </div>
             <!-- <div class="col-md-5">
               <div class="imagem-topo-projeto">
@@ -164,11 +154,9 @@ Template Name: O Projeto
           </div>
         </div>
       </section>
-      <?php cozinha_solidaria_the_html_field('project_more_food_html', ob_get_clean()); ?>
 
       <div class="bg-projeto-branco"></div>
 
-      <?php ob_start(); ?>
       <section id="apoie">
         
         <div class="container">
@@ -184,22 +172,19 @@ Template Name: O Projeto
             </div>
             <div class="col-md-8 apoie-projeto">
               <div class="titulo-secao">
-                <h2>Quem faz acontecer</h2>
+                <h2><?php echo esc_html(cozinha_solidaria_get_field('project_support_title', cozinha_solidaria_project_default('project_support_title'))); ?></h2>
               </div>
-              <p><strong>Para que cada Cozinha Solidária possa oferecer desde as refeições diárias até uma rede apoio e afeto, muitas pessoas e organizações colaboram de diversas formas.</strong> Ou seja, quem faz o projeto das cozinhas funcionar não é apenas o MTST, é também cada pessoa que contribui do modo como pode, seja atuando no dia-a-dia no projeto ou doando através do nosso <a href="https://apoia.se/cozinhasolidaria" target="_blank" style="color:#fff">financiamento coletivo.</a></p>                 
-              <p>Todos os espaços são construídos em mutirões que unem moradores da região, militantes do MTST e de movimentos parceiros, além de voluntários que colaboram também com a manutenção dos espaços, organização das filas e distribuição das marmitas.</p>
-              <p><strong>O pleno funcionamento do projeto, até aqui, vem sendo possível graças a cada a ajuda de todos.</strong></p>
+              <?php echo wp_kses_post(cozinha_solidaria_get_formatted_field('project_support_content', cozinha_solidaria_project_default('project_support_content'))); ?>
               <!-- <div class="ver-mais hide-desktop">
                 <a href="https://apoia.se/cozinhasolidaria" target="_blank" class="cta cta-azul">Faça parte desse time da solidariedade! Contamos com você, doe agora!</a>
               </div> -->
             </div>
             <div class="ver-mais">
-              <a href="https://apoia.se/cozinhasolidaria" target="_blank" class="cta cta-azul" style="background:#364A98;width:100%;font-size:22px;padding:20px;height:auto;">Faça parte desse time da solidariedade! Contamos com você, doe agora!</a>
+              <a href="<?php echo esc_url(cozinha_solidaria_get_field('project_support_button_link', cozinha_solidaria_project_default('project_support_button_link'))); ?>" target="_blank" class="cta cta-azul" style="background:#364A98;width:100%;font-size:22px;padding:20px;height:auto;"><?php echo esc_html(cozinha_solidaria_get_field('project_support_button_text', cozinha_solidaria_project_default('project_support_button_text'))); ?></a>
             </div>
           </div>
         </div>
       </section>
-      <?php cozinha_solidaria_the_html_field('project_support_html', ob_get_clean()); ?>
            
     </main>
 
