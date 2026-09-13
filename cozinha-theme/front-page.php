@@ -333,7 +333,25 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
-              <?php $press_items = cozinha_solidaria_get_rows('home_press_items', cozinha_solidaria_home_default('home_press_items')); ?>
+              <?php
+              $press_items = array();
+              $press_group = cozinha_solidaria_get_field('home_press_news', cozinha_solidaria_home_default('home_press_news'));
+
+              for ($press_index = 1; $press_index <= 13; $press_index++) {
+                  $press_key = 'news_' . $press_index;
+                  $press_item = $press_group[$press_key] ?? array();
+
+                  if (! is_array($press_item)) {
+                      $press_item = array();
+                  }
+
+                  if (empty($press_item['source']) && empty($press_item['description'])) {
+                      continue;
+                  }
+
+                  $press_items[] = $press_item;
+              }
+              ?>
               <?php foreach ($press_items as $press_item) : ?>
                 <div class="swiper-slide">
                   <a class="a-noticia" href="<?php echo esc_url($press_item['link'] ?? '#'); ?>" target="_blank">

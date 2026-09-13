@@ -57,6 +57,7 @@ function cozinha_solidaria_home_default($field_name)
 {
     $asset = 'cozinha_solidaria_asset';
     $home_project_content = '<p><img class="alignleft" src="' . $asset('/img/programa-cozinha-solidaria.jpg') . '" alt="Programa Cozinha Solidária">Em 2024, firmamos um Termo de Colaboração com o Ministério do Desenvolvimento Social, no âmbito do Programa Cozinha Solidária, que garantiu apoio financeiro parcial a mais de 50 Cozinhas Solidárias durante o período de um ano, além de possibilitar a entrega regular de alimentos in natura provenientes do Programa de Aquisição de Alimentos (PAA). Essa política pública visa fortalecer ações de segurança alimentar e nutricional, promovendo o acesso a alimentos saudáveis e o combate à fome em comunidades em situação de vulnerabilidade social.</p><p>A partir de 2023, iniciativas de combate à fome voltaram a ter protagonismo e vimos os números da fome reduzirem. Entretanto, em um país de dimensões continentais como o Brasil, essa realidade não é uniforme e, em várias regiões, principalmente, nas periferias dos grandes centros, as Cozinhas Solidárias ainda cumprem um papel importante: o de garantir alimentação gratuita, de qualidade, rica em nutriente e afeto.</p><p>O projeto teve início no auge da pandemia, sendo a primeira Cozinha Solidária inaugurada em março de 2021. Nesses quase quatro anos, as Cozinhas Solidárias estão presentes em todas as regiões do país, contando hoje com 55 cozinhas que garantem alimentação de mais de 12 mil pessoas de baixa renda. São mais de 6 milhões de marmitas distribuídas e quase 4,5 milhões de quilos de alimentos produzidos. Além disso, o projeto oferece oficinas, rodas de conversa, atendimento jurídico, psicológico, e de saúde, saraus e cursos de alfabetização para a comunidade, funcionando como um equipamento social importante em locais carentes desses espaços de convivência.</p><p>As Cozinhas Solidárias estão presentes, ainda, nos momentos de maior dificuldade da população mais pobre do país. Estamos vendo, diariamente, notícias de chuvas incessantes e aumento das temperaturas, com enchentes e alagamentos com um número enorme de desabrigados. Por esse motivo, além das cozinhas que já funcionavam em atendimento à população vulnerável, também foram abertas Cozinhas Solidárias Emergenciais em várias regiões do Brasil, tais como Rio Grande do Sul, Minas Gerais, Acre, Rio de Janeiro, Pernambuco, Piauí e São Paulo, garantindo a alimentação de pessoas que, muitas vezes, perderam suas casas e família.</p><p>As Cozinhas Solidárias existem para suprir o vácuo deixado pelo poder público e por isso vem se expandindo, abrindo novas unidades e chegando a mais gente. Mas para seu pleno funcionamento, o projeto precisa muito de apoio. As doações são fundamentais para a manutenção das cozinhas e para a compra dos alimentos distribuídos.</p>';
+    $press_defaults = cozinha_solidaria_home_press_group_default();
     $defaults = array(
         'home_top_banner_enabled' => 1,
         'home_top_banner_image_url' => $asset('/img/banner-apoio-cozinhas.webp'),
@@ -93,21 +94,6 @@ function cozinha_solidaria_home_default($field_name)
         'home_contribute_button_link' => 'https://apoia.se/cozinhasolidaria',
         'home_press_title' => 'Imprensa',
         'home_press_intro' => 'Venha saber mais da importância das nossas Cozinhas Solidárias nessas reportagens que estão na mídia:',
-        'home_press_items' => array(
-            array('image_url' => $asset('/img/image_processing20220627-30869-1rtwszj.jpeg'), 'source' => 'Brasil de Fato', 'description' => 'Conheça as cozinhas solidárias do MTST que distribuem refeições gratuitas por todo o Brasil', 'link' => 'https://www.brasildefato.com.br/2022/06/27/conheca-as-cozinhas-solidarias-do-mtst-que-distribuem-refeicoes-gratuitas-por-todo-o-brasil'),
-            array('image_url' => $asset('/img/cozinha-5.webp'), 'source' => 'Portal G1', 'description' => 'Cozinhas solidárias proporcionam refeições a pessoas em insegurança alimentar em Fortaleza', 'link' => 'https://g1.globo.com/ce/ceara/noticia/2022/07/24/cozinhas-solidarias-proporcionam-refeicoes-a-pessoas-em-inseguranca-alimentar-em-fortaleza.ghtml'),
-            array('image_url' => $asset('/img/image-h5pyx9.jpeg'), 'source' => 'Brasil de Fato', 'description' => 'Cozinhas Solidárias são um recurso de sobrevivências', 'link' => 'https://www.brasildefato.com.br/2022/07/18/cozinhas-solidarias-sao-um-recurso-de-sobrevivencia'),
-            array('image_url' => $asset('/img/image_processing20220826-4411-1tjztp.jpeg'), 'source' => 'Brasil de Fato', 'description' => 'Combate à fome: um dia na rotina da Cozinha Solidária do MTST', 'link' => 'https://www.brasildefators.com.br/2022/08/26/combate-a-fome-um-dia-na-rotina-da-cozinha-solidaria-do-mtst'),
-            array('image_url' => $asset('/img/user-campaign-about-desc-foto-apoia-20210511-09153161.webp'), 'source' => 'Portal G1', 'description' => 'MTST inaugura Cozinha Solidária em Uberlândia; 150 refeições serão servidas diariamente', 'link' => 'https://g1.globo.com/ce/ceara/noticia/2022/07/24/cozinhas-solidarias-proporcionam-refeicoes-a-pessoas-em-inseguranca-alimentar-em-fortaleza.ghtml'),
-            array('image_url' => $asset('/img/thumb-uol.webp'), 'source' => 'Portal UOL', 'description' => 'Como cozinhas comunitárias têm atuado para aplacar a fome pelo Brasil', 'link' => 'https://www.uol.com.br/ecoa/ultimas-noticias/2021/04/27/como-cozinhas-comunitarias-tem-atuado-para-aplacar-a-fome-pelo-brasil.htm'),
-            array('image_url' => $asset('/img/ne1-globo.jpg'), 'source' => 'Globo NE1', 'description' => 'Cozinha Solidária do MTST ajuda a alimentar famílias pobres, no Recife', 'link' => 'https://globoplay.globo.com/v/9608976/'),
-            array('image_url' => $asset('/img/thumb-folha.jpg'), 'source' => 'Folha de S.Paulo', 'description' => 'MTST inaugura unidades das cozinhas solidárias', 'link' => '#'),
-            array('image_url' => $asset('/img/thumb-brasil-atual.jpg'), 'source' => 'Brasil Atual', 'description' => 'Mais do que matar a fome, cozinhas solidárias são espaços de resistência', 'link' => 'https://www.redebrasilatual.com.br/cidadania/2021/04/mais-do-que-matar-a-fome-cozinhas-solidarias-sao-espacos-de-resistencia/'),
-            array('image_url' => $asset('/img/thumb-anf.jpg'), 'source' => 'Portal ANF', 'description' => 'MTST lança campanha para abrir 16 Cozinhas Solidárias no Brasil', 'link' => 'https://www.anf.org.br/mtst-lanca-campanha-para-abrir-16-cozinhas-solidarias-no-brasil/'),
-            array('image_url' => $asset('/img/noticia-sptv.jpeg'), 'source' => 'Globo SPTV', 'description' => 'Cozinhas solidárias ajudam a matar a fome na Grande São Paulo', 'link' => 'https://globoplay.globo.com/v/9608976/'),
-            array('image_url' => $asset('/img/thumb-brasil-de-fato.jpeg'), 'source' => 'Brasil de Fato', 'description' => 'Para combater “pandemia da fome”, MTST inaugura cozinha solidária em SP', 'link' => 'https://www.brasildefato.com.br/2021/03/13/para-combater-pandemia-da-fome-mtst-inaugura-cozinha-solidaria-em-sp/'),
-            array('image_url' => $asset('/img/thumb-metropoles.jpg'), 'source' => 'Metrópoles', 'description' => 'MTST inaugura mais uma cozinha solidária em São Paulo', 'link' => 'https://www.metropoles.com/brasil/mtst-inaugura-mais-uma-cozinha-solidaria-em-sao-paulo'),
-        ),
         'home_accountability_title' => 'Prestação de contas',
         'home_accountability_paragraphs' => array(
             array('text' => 'Desde o início da pandemia é notório que as desigualdades sociais brasileiras foram expostas e, principalmente, intensificadas. A população periférica é a mais prejudicada, morta e invisibilizada, seja pelo vírus, pela fome ou pelo desprezo do governo. Frente a esse cenário, o MTST verificou a necessidade de resistir não apenas pelo direito à moradia, mas também, pelo direito à vida e à alimentação básica. Assim nasceram as Cozinhas Solidárias.'),
@@ -127,6 +113,8 @@ function cozinha_solidaria_home_default($field_name)
         'home_share_button_text' => 'Compartilhe',
         'home_share_button_link' => 'http://cozinhasolidaria.com',
     );
+
+    $defaults['home_press_news'] = $press_defaults;
 
     return array_key_exists($field_name, $defaults) ? $defaults[$field_name] : '';
 }
@@ -164,6 +152,38 @@ function cozinha_solidaria_acf_resolve_template_urls($html)
     );
 
     return $html;
+}
+
+function cozinha_solidaria_home_press_defaults()
+{
+    $asset = 'cozinha_solidaria_asset';
+
+    return array(
+        array('image_url' => $asset('/img/image_processing20220627-30869-1rtwszj.jpeg'), 'source' => 'Brasil de Fato', 'description' => 'Conheça as cozinhas solidárias do MTST que distribuem refeições gratuitas por todo o Brasil', 'link' => 'https://www.brasildefato.com.br/2022/06/27/conheca-as-cozinhas-solidarias-do-mtst-que-distribuem-refeicoes-gratuitas-por-todo-o-brasil'),
+        array('image_url' => $asset('/img/cozinha-5.webp'), 'source' => 'Portal G1', 'description' => 'Cozinhas solidárias proporcionam refeições a pessoas em insegurança alimentar em Fortaleza', 'link' => 'https://g1.globo.com/ce/ceara/noticia/2022/07/24/cozinhas-solidarias-proporcionam-refeicoes-a-pessoas-em-inseguranca-alimentar-em-fortaleza.ghtml'),
+        array('image_url' => $asset('/img/image-h5pyx9.jpeg'), 'source' => 'Brasil de Fato', 'description' => 'Cozinhas Solidárias são um recurso de sobrevivências', 'link' => 'https://www.brasildefato.com.br/2022/07/18/cozinhas-solidarias-sao-um-recurso-de-sobrevivencia'),
+        array('image_url' => $asset('/img/image_processing20220826-4411-1tjztp.jpeg'), 'source' => 'Brasil de Fato', 'description' => 'Combate à fome: um dia na rotina da Cozinha Solidária do MTST', 'link' => 'https://www.brasildefators.com.br/2022/08/26/combate-a-fome-um-dia-na-rotina-da-cozinha-solidaria-do-mtst'),
+        array('image_url' => $asset('/img/user-campaign-about-desc-foto-apoia-20210511-09153161.webp'), 'source' => 'Portal G1', 'description' => 'MTST inaugura Cozinha Solidária em Uberlândia; 150 refeições serão servidas diariamente', 'link' => 'https://g1.globo.com/ce/ceara/noticia/2022/07/24/cozinhas-solidarias-proporcionam-refeicoes-a-pessoas-em-inseguranca-alimentar-em-fortaleza.ghtml'),
+        array('image_url' => $asset('/img/thumb-uol.webp'), 'source' => 'Portal UOL', 'description' => 'Como cozinhas comunitárias têm atuado para aplacar a fome pelo Brasil', 'link' => 'https://www.uol.com.br/ecoa/ultimas-noticias/2021/04/27/como-cozinhas-comunitarias-tem-atuado-para-aplacar-a-fome-pelo-brasil.htm'),
+        array('image_url' => $asset('/img/ne1-globo.jpg'), 'source' => 'Globo NE1', 'description' => 'Cozinha Solidária do MTST ajuda a alimentar famílias pobres, no Recife', 'link' => 'https://globoplay.globo.com/v/9608976/'),
+        array('image_url' => $asset('/img/thumb-folha.jpg'), 'source' => 'Folha de S.Paulo', 'description' => 'MTST inaugura unidades das cozinhas solidárias', 'link' => '#'),
+        array('image_url' => $asset('/img/thumb-brasil-atual.jpg'), 'source' => 'Brasil Atual', 'description' => 'Mais do que matar a fome, cozinhas solidárias são espaços de resistência', 'link' => 'https://www.redebrasilatual.com.br/cidadania/2021/04/mais-do-que-matar-a-fome-cozinhas-solidarias-sao-espacos-de-resistencia/'),
+        array('image_url' => $asset('/img/thumb-anf.jpg'), 'source' => 'Portal ANF', 'description' => 'MTST lança campanha para abrir 16 Cozinhas Solidárias no Brasil', 'link' => 'https://www.anf.org.br/mtst-lanca-campanha-para-abrir-16-cozinhas-solidarias-no-brasil/'),
+        array('image_url' => $asset('/img/noticia-sptv.jpeg'), 'source' => 'Globo SPTV', 'description' => 'Cozinhas solidárias ajudam a matar a fome na Grande São Paulo', 'link' => 'https://globoplay.globo.com/v/9608976/'),
+        array('image_url' => $asset('/img/thumb-brasil-de-fato.jpeg'), 'source' => 'Brasil de Fato', 'description' => 'Para combater “pandemia da fome”, MTST inaugura cozinha solidária em SP', 'link' => 'https://www.brasildefato.com.br/2021/03/13/para-combater-pandemia-da-fome-mtst-inaugura-cozinha-solidaria-em-sp/'),
+        array('image_url' => $asset('/img/thumb-metropoles.jpg'), 'source' => 'Metrópoles', 'description' => 'MTST inaugura mais uma cozinha solidária em São Paulo', 'link' => 'https://www.metropoles.com/brasil/mtst-inaugura-mais-uma-cozinha-solidaria-em-sao-paulo'),
+    );
+}
+
+function cozinha_solidaria_home_press_group_default()
+{
+    $press_defaults = array();
+
+    foreach (cozinha_solidaria_home_press_defaults() as $index => $press_item) {
+        $press_defaults['news_' . ($index + 1)] = $press_item;
+    }
+
+    return $press_defaults;
 }
 
 function cozinha_solidaria_acf_field_default($field)
@@ -283,7 +303,7 @@ $cozinha_solidaria_home_default_fields = array(
     'home_contribute_button_link',
     'home_press_title',
     'home_press_intro',
-    'home_press_items',
+    'home_press_news',
     'home_accountability_title',
     'home_accountability_paragraphs',
     'home_accountability_stats',

@@ -40,6 +40,51 @@ add_filter('acf/location/rule_match/page_slug', function ($match, $rule, $option
     return $rule['operator'] === '!=' ? ! $is_match : $is_match;
 }, 10, 3);
 
+function cozinha_solidaria_home_press_acf_fields()
+{
+    $news_sub_fields = array();
+    $press_defaults = cozinha_solidaria_home_press_group_default();
+
+    for ($index = 1; $index <= 13; $index++) {
+        $field_name = 'news_' . $index;
+        $press_item_default = $press_defaults[$field_name] ?? array();
+
+        $news_sub_fields[] = array(
+            'key' => 'field_home_press_' . $field_name,
+            'label' => 'Noticia ' . $index,
+            'name' => $field_name,
+            'type' => 'group',
+            'layout' => 'block',
+            'default_value' => $press_item_default,
+            'sub_fields' => array(
+                array('key' => 'field_home_press_' . $field_name . '_image', 'label' => 'Imagem', 'name' => 'image', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'thumbnail', 'library' => 'all'),
+                array('key' => 'field_home_press_' . $field_name . '_image_url', 'label' => 'URL alternativa da imagem', 'name' => 'image_url', 'type' => 'url', 'default_value' => $press_item_default['image_url'] ?? ''),
+                array('key' => 'field_home_press_' . $field_name . '_source', 'label' => 'Titulo/fonte', 'name' => 'source', 'type' => 'text', 'default_value' => $press_item_default['source'] ?? ''),
+                array('key' => 'field_home_press_' . $field_name . '_description', 'label' => 'Descricao', 'name' => 'description', 'type' => 'textarea', 'rows' => 2, 'default_value' => $press_item_default['description'] ?? ''),
+                array('key' => 'field_home_press_' . $field_name . '_link', 'label' => 'Link da noticia', 'name' => 'link', 'type' => 'text', 'default_value' => $press_item_default['link'] ?? ''),
+            ),
+        );
+    }
+
+    $fields = array(
+        array('key' => 'field_home_press_tab', 'label' => 'Secao Imprensa', 'type' => 'tab', 'placement' => 'top'),
+        array('key' => 'field_home_press_title', 'label' => 'Titulo', 'name' => 'home_press_title', 'type' => 'text', 'default_value' => cozinha_solidaria_home_default('home_press_title')),
+        array('key' => 'field_home_press_intro', 'label' => 'Texto introdutorio', 'name' => 'home_press_intro', 'type' => 'textarea', 'rows' => 2, 'new_lines' => 'br', 'default_value' => cozinha_solidaria_home_default('home_press_intro')),
+        array(
+            'key' => 'field_home_press_news',
+            'label' => 'Noticias',
+            'name' => 'home_press_news',
+            'type' => 'group',
+            'instructions' => 'Edite ate 13 noticias fixas exibidas no carrossel da home.',
+            'layout' => 'block',
+            'default_value' => cozinha_solidaria_home_default('home_press_news'),
+            'sub_fields' => $news_sub_fields,
+        ),
+    );
+
+    return $fields;
+}
+
 add_action('acf/init', function () {
     if (! function_exists('acf_add_local_field_group')) {
         return;
@@ -121,25 +166,7 @@ add_action('acf/init', function () {
             array('key' => 'field_home_contribute_button_text', 'label' => 'Texto do botao', 'name' => 'home_contribute_button_text', 'type' => 'text', 'default_value' => cozinha_solidaria_home_default('home_contribute_button_text')),
             array('key' => 'field_home_contribute_button_link', 'label' => 'Link do botao', 'name' => 'home_contribute_button_link', 'type' => 'text', 'default_value' => cozinha_solidaria_home_default('home_contribute_button_link')),
 
-            array('key' => 'field_home_press_tab', 'label' => 'Secao Imprensa', 'type' => 'tab', 'placement' => 'top'),
-            array('key' => 'field_home_press_title', 'label' => 'Titulo', 'name' => 'home_press_title', 'type' => 'text', 'default_value' => cozinha_solidaria_home_default('home_press_title')),
-            array('key' => 'field_home_press_intro', 'label' => 'Texto introdutorio', 'name' => 'home_press_intro', 'type' => 'textarea', 'rows' => 2, 'new_lines' => 'br', 'default_value' => cozinha_solidaria_home_default('home_press_intro')),
-            array(
-                'key' => 'field_home_press_items',
-                'label' => 'Noticias',
-                'name' => 'home_press_items',
-                'type' => 'repeater',
-                'layout' => 'block',
-                'button_label' => 'Adicionar noticia',
-                'default_value' => cozinha_solidaria_home_default('home_press_items'),
-                'sub_fields' => array(
-                    array('key' => 'field_home_press_item_image', 'label' => 'Imagem', 'name' => 'image', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'thumbnail', 'library' => 'all'),
-                    array('key' => 'field_home_press_item_image_url', 'label' => 'URL alternativa da imagem', 'name' => 'image_url', 'type' => 'url'),
-                    array('key' => 'field_home_press_item_source', 'label' => 'Titulo/fonte', 'name' => 'source', 'type' => 'text'),
-                    array('key' => 'field_home_press_item_description', 'label' => 'Descricao', 'name' => 'description', 'type' => 'textarea', 'rows' => 2),
-                    array('key' => 'field_home_press_item_link', 'label' => 'Link da noticia', 'name' => 'link', 'type' => 'text'),
-                ),
-            ),
+            ...cozinha_solidaria_home_press_acf_fields(),
 
             array('key' => 'field_home_accountability_tab', 'label' => 'Prestacao de contas', 'type' => 'tab', 'placement' => 'top'),
             array('key' => 'field_home_accountability_title', 'label' => 'Titulo', 'name' => 'home_accountability_title', 'type' => 'text', 'default_value' => cozinha_solidaria_home_default('home_accountability_title')),
