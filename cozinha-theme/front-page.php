@@ -2,7 +2,8 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <!-- Required meta tags -->
+    <?php /* WordPress theme hooks. */ ?>
+<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:locale" content="pt_BR">
@@ -16,22 +17,22 @@
     <meta property="og:image:height" content="600">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://cozinhasolidaria.com/">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icone.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url(cozinha_solidaria_asset('/img/icone.ico')); ?>">
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Vídeo Modal -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/modal-video.min.css">
-    <script src="/assets/js/jquery-modal-video.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(cozinha_solidaria_asset('/css/modal-video.min.css')); ?>">
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/js/jquery-modal-video.min.js')); ?>"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" /> 
-    <link href="assets/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/modal.css">
-    <link rel="stylesheet" href="assets/css/style.css?v1.0.6">
-    <link rel="stylesheet" href="assets/css/menu-mobile.css">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.css')); ?>" />
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.min.css')); ?>" /> 
+    <link href="<?php echo esc_url(cozinha_solidaria_asset('/bootstrap/css/bootstrap-grid.min.css')); ?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/modal.css')); ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/style.css?v1.0.6')); ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/menu-mobile.css')); ?>">
 
     <title>Cozinha Solidária - MTST</title>
 
@@ -78,9 +79,11 @@
     }
 
     </style>
+  <?php wp_head(); ?>
   </head>
   
-  <body>
+  <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <header id="inicio">  
       <nav id="menu-principal" class="menu-principal" role="navigation">
         <ul>
@@ -108,15 +111,15 @@
         </div>
       </nav>
       <div class="menu-novo menu-principal">
-        <a class="item-menu" href="https://euapoioascozinhas.com/" target="_blank"><img src="assets/img/banner-apoio-cozinhas.jpeg" alt=""></a></li>
+        <a class="item-menu" href="https://euapoioascozinhas.com/" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/banner-apoio-cozinhas.webp')); ?>" alt=""></a></li>
       </div>   
       <div class="container">
         <div class="topo row">
           <div class="col-lg-2 col-md-2">
-            <img class="cozi" src="/assets/img/cozi.png" alt="">
+            <img class="cozi" src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozi.png')); ?>" alt="">
           </div>
           <div class="col-lg-10 col-md-10">
-              <img class="logo" src="/assets/img/logo.png" alt="Cozinha Solidária">
+              <img class="logo" src="<?php echo esc_url(cozinha_solidaria_asset('/img/logo.png')); ?>" alt="Cozinha Solidária">
               <p style="font-size: 28px;">Enquanto houver emergência, haverá solidariedade. Participe da campanha para apoiar as vítimas das enchentes, garantindo refeições nutritivas em seus territórios.</p>
               <a href="https://apoia.se/enchentes2025?fbclid=PAQ0xDSwLskUVleHRuA2FlbQIxMAABp8JkIg3zoFEHeTzX4KwjVXlJbYhaWMZxVbnxv4pQZ3OfIXF3WVsmvNp_5Fo-_aem_7THt3qdRBkr6_2b-3nlKLA" class="cta cta-azul" target="_blank">SOS Enchentes</a>
           </div>
@@ -131,26 +134,26 @@
     <main>
 
       <section id="projeto">
-        <div class="bg-projeto"><img class="conjunto-dir" src="/assets/img/conjunto-dir.png" alt=""></div>
+        <div class="bg-projeto"><img class="conjunto-dir" src="<?php echo esc_url(cozinha_solidaria_asset('/img/conjunto-dir.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <img src="/assets/img/panela-amarela.png" alt=""><h2>O Projeto</h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/panela-amarela.png')); ?>" alt=""><h2>O Projeto</h2>
           </div>
           <!-- <div class="row videos">
             <div class="col-lg-8 col-md-8">
-              <a class="js-video-button" data-video-id="L0hK8LjcFTY" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="/assets/img/thumb-video-1.jpg" alt=""><img class="player-maior" src="/assets/img/player-yt.png" alt=""></figure></a>
+              <a class="js-video-button" data-video-id="L0hK8LjcFTY" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-video-1.jpg')); ?>" alt=""><img class="player-maior" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
             </div>
             <div class="col-lg-4 col-md-4">
-              <a class="js-video-button" data-video-id="08DpFkL513k" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/video-2.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
-              <a class="js-video-button" data-video-id="imEm1ANhWms" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/video-3.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
+              <a class="js-video-button" data-video-id="08DpFkL513k" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/video-2.jpg')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
+              <a class="js-video-button" data-video-id="imEm1ANhWms" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/video-3.jpg')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
             </div>
           </div> -->
           <div class="img-projeto">
-            <img src="/assets/img/o-projeto.png" alt="">
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/o-projeto.png')); ?>" alt="">
           </div>
           <div class="txt-projeto">
             <p>
-              <span style="line-height: 2;">PROGRAMA COZINHA SOLIDÁRIA</span><br /><img src="assets/img/image.png" alt="" style="max-width: 190px;background-color: #fff;text-align: left;float:left;margin-right: 14px;">Em 2024, firmamos um Termo de Colaboração com o Ministério do Desenvolvimento Social, no âmbito do Programa Cozinha Solidária, que garantiu apoio financeiro parcial a mais de 50 Cozinhas Solidárias durante o período de um ano, além de possibilitar a entrega regular de alimentos in natura provenientes do Programa de Aquisição de Alimentos (PAA). Essa política pública visa fortalecer ações de segurança alimentar e nutricional, promovendo o acesso a alimentos saudáveis e o combate à fome em comunidades em situação de vulnerabilidade social.
+              <span style="line-height: 2;">PROGRAMA COZINHA SOLIDÁRIA</span><br /><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image.png')); ?>" alt="" style="max-width: 190px;background-color: #fff;text-align: left;float:left;margin-right: 14px;">Em 2024, firmamos um Termo de Colaboração com o Ministério do Desenvolvimento Social, no âmbito do Programa Cozinha Solidária, que garantiu apoio financeiro parcial a mais de 50 Cozinhas Solidárias durante o período de um ano, além de possibilitar a entrega regular de alimentos in natura provenientes do Programa de Aquisição de Alimentos (PAA). Essa política pública visa fortalecer ações de segurança alimentar e nutricional, promovendo o acesso a alimentos saudáveis e o combate à fome em comunidades em situação de vulnerabilidade social.
             </p>
             <p>
               A partir de 2023, iniciativas de combate à fome voltaram a ter protagonismo e vimos os números da fome reduzirem. Entretanto, em um país de dimensões continentais como o Brasil, essa realidade não é uniforme e, em várias regiões, principalmente, nas periferias dos grandes centros, as Cozinhas Solidárias ainda cumprem um papel importante: o de garantir alimentação gratuita, de qualidade, rica em nutriente e afeto.
@@ -166,39 +169,39 @@
             </p>
           </div>
           <div class="saiba-mais">
-            <a href="/o-projeto" class="cta cta-amarelo">Saiba mais</a>
+            <a href="<?php echo esc_url(home_url('/o-projeto/')); ?>" class="cta cta-amarelo">Saiba mais</a>
           </div>
         </div>
       </section>
 
       <section id="galeria">
-        <div class="bg-galeria"><img class="conjunto-esq" src="/assets/img/conjunto-preto.png" alt=""></div>
+        <div class="bg-galeria"><img class="conjunto-esq" src="<?php echo esc_url(cozinha_solidaria_asset('/img/conjunto-preto.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <img src="/assets/img/coracao.png" alt=""><h2>Galeria</h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/coracao.png')); ?>" alt=""><h2>Galeria</h2>
           </div>
 
           <div class="wraper-galeria hide-mobile">
             <div class="row">
               <div class="col-md-4">
-                <img src="/assets/img/cozinha-solidaria-1.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-1.jpg')); ?>" alt="">
               </div>
               <div class="col-md-4">
-                <img src="/assets/img/cozinha-solidaria-2.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-2.jpg')); ?>" alt="">
               </div>
               <div class="col-md-4">
-                <img src="/assets/img/cozinha-solidaria-3.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-3.jpg')); ?>" alt="">
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <img src="/assets/img/cozinha-solidaria-4.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-4.jpg')); ?>" alt="">
               </div>
               <div class="col-md-4">
-                <img src="/assets/img/cozinha-solidaria-5.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-5.jpg')); ?>" alt="">
               </div>
               <div class="col-md-4">
-                <img src="/assets/img/cozinha-solidaria-6.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-6.jpg')); ?>" alt="">
               </div>
             </div>
           </div>
@@ -206,22 +209,22 @@
           <div class="swiper-container swiperGaleria wraper-galeria hide-desktop">
             <div class="swiper-wrapper">
               <div class="swiper-slide col-md-4">
-                <img  src="/assets/img/cozinha-solidaria-1.jpg" alt="">
+                <img  src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-1.jpg')); ?>" alt="">
               </div>
               <div class="swiper-slide col-md-4">
-                <img src="/assets/img/cozinha-solidaria-2.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-2.jpg')); ?>" alt="">
               </div>
               <div class="swiper-slide col-md-4">
-                <img src="/assets/img/cozinha-solidaria-3.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-3.jpg')); ?>" alt="">
               </div>
               <div class="swiper-slide col-md-4">
-                <img src="/assets/img/cozinha-solidaria-4.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-4.jpg')); ?>" alt="">
               </div>
               <div class="swiper-slide col-md-4">
-                <img src="/assets/img/cozinha-solidaria-5.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-5.jpg')); ?>" alt="">
               </div>
               <div class="swiper-slide col-md-4">
-                <img src="/assets/img/cozinha-solidaria-6.jpg" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-6.jpg')); ?>" alt="">
               </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -233,11 +236,11 @@
 
           <div class="row videos">
             <div class="col-lg-8 col-md-8">
-              <a class="js-video-button" data-video-id="NObqUoVIXPU" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="/assets/img/thumb-video01.jpg" alt=""><img class="player-maior" src="/assets/img/player-yt.png" alt=""></figure></a>
+              <a class="js-video-button" data-video-id="NObqUoVIXPU" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-video01.jpg')); ?>" alt=""><img class="player-maior" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
             </div>
             <div class="col-lg-4 col-md-4">
-              <a class="js-video-button" data-video-id="ftXWFGSBQh8" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/thumb-video02.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
-              <a class="js-video-button" data-video-id="aAtwYdNzgOc" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/thumb-video03.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
+              <a class="js-video-button" data-video-id="ftXWFGSBQh8" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-video02.jpg')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
+              <a class="js-video-button" data-video-id="aAtwYdNzgOc" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-video03.jpg')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
             </div>
           </div>
 
@@ -259,14 +262,14 @@
       </script>
 
       <section id="contribuir">
-        <div class="bg-contribuir"><img class="conjunto-dir" src="/assets/img/conjunto-preto.png" alt=""></div>
+        <div class="bg-contribuir"><img class="conjunto-dir" src="<?php echo esc_url(cozinha_solidaria_asset('/img/conjunto-preto.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
             <h2>Como posso contribuir?</h2>
           </div>
           <div class="cont-contrbuir row">
             <div class="col-md-4">
-              <img class="img-ajudar" src="/assets/img/como-ajudar-img.png" alt="Como ajudar">
+              <img class="img-ajudar" src="<?php echo esc_url(cozinha_solidaria_asset('/img/como-ajudar-img.png')); ?>" alt="Como ajudar">
             </div>
             <div class="col-md-8">
               <div class="content-dir">
@@ -282,10 +285,10 @@
       </section>
 
       <section id="imprensa">
-        <div class="bg-imprensa"><img class="conjunto-dir" src="/assets/img/conj-azul.png" alt=""></div>
+        <div class="bg-imprensa"><img class="conjunto-dir" src="<?php echo esc_url(cozinha_solidaria_asset('/img/conj-azul.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <img src="/assets/img/imprensa-azul.png" alt=""><h2>Imprensa</h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/imprensa-azul.png')); ?>" alt=""><h2>Imprensa</h2>
           </div>
           <p>Venha saber mais da importância das nossas Cozinhas Solidárias nessas reportagens que estão na mídia:</p>
           <!-- Slider main container -->
@@ -296,7 +299,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://www.brasildefato.com.br/2022/06/27/conheca-as-cozinhas-solidarias-do-mtst-que-distribuem-refeicoes-gratuitas-por-todo-o-brasil" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/image_processing20220627-30869-1rtwszj.jpeg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image_processing20220627-30869-1rtwszj.jpeg')); ?>" alt="" class="thumb-noticia">
                     <h4>Brasil de Fato</h4>
                     <p>Conheça as cozinhas solidárias do MTST que distribuem refeições gratuitas por todo o Brasil</p>
                   </div>
@@ -305,7 +308,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://g1.globo.com/ce/ceara/noticia/2022/07/24/cozinhas-solidarias-proporcionam-refeicoes-a-pessoas-em-inseguranca-alimentar-em-fortaleza.ghtml" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/cozinha-5.webp" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-5.webp')); ?>" alt="" class="thumb-noticia">
                     <h4>Portal G1</h4>
                     <p>Cozinhas solidárias proporcionam refeições a pessoas em insegurança alimentar em Fortaleza</p>
                   </div>
@@ -314,7 +317,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://www.brasildefato.com.br/2022/07/18/cozinhas-solidarias-sao-um-recurso-de-sobrevivencia" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/image-h5pyx9.jpeg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image-h5pyx9.jpeg')); ?>" alt="" class="thumb-noticia">
                     <h4>Brasil de Fato</h4>
                     <p>Cozinhas Solidárias são um recurso de sobrevivências</p>
                   </div>
@@ -323,7 +326,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://www.brasildefators.com.br/2022/08/26/combate-a-fome-um-dia-na-rotina-da-cozinha-solidaria-do-mtst" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/image_processing20220826-4411-1tjztp.jpeg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image_processing20220826-4411-1tjztp.jpeg')); ?>" alt="" class="thumb-noticia">
                     <h4>Brasil de Fato</h4>
                     <p>Combate à fome: um dia na rotina da Cozinha Solidária do MTST</p>
                   </div>
@@ -332,7 +335,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://g1.globo.com/ce/ceara/noticia/2022/07/24/cozinhas-solidarias-proporcionam-refeicoes-a-pessoas-em-inseguranca-alimentar-em-fortaleza.ghtml" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/user-campaign-about-desc-foto-apoia-20210511-09153161.webp" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/user-campaign-about-desc-foto-apoia-20210511-09153161.webp')); ?>" alt="" class="thumb-noticia">
                     <h4>Portal G1</h4>
                     <p>MTST inaugura Cozinha Solidária em Uberlândia; 150 refeições serão servidas diariamente</p>
                   </div>
@@ -341,7 +344,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://www.uol.com.br/ecoa/ultimas-noticias/2021/04/27/como-cozinhas-comunitarias-tem-atuado-para-aplacar-a-fome-pelo-brasil.htm" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-uol.webp" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-uol.webp')); ?>" alt="" class="thumb-noticia">
                     <h4>Portal UOL</h4>
                     <p>Como cozinhas comunitárias têm atuado para aplacar a fome pelo Brasil </p>
                   </div>
@@ -350,7 +353,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://globoplay.globo.com/v/9608976/" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/ne1-globo.jpg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/ne1-globo.jpg')); ?>" alt="" class="thumb-noticia">
                     <h4>Globo NE1</h4>
                     <p>Cozinha Solidária do MTST ajuda a alimentar famílias pobres, no Recife</p>
                   </div>
@@ -359,7 +362,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="#" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-folha.jpg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-folha.jpg')); ?>" alt="" class="thumb-noticia">
                     <h4>Folha de S.Paulo</h4>
                     <p>MTST inaugura unidades das cozinhas solidárias</p>
                   </div>
@@ -368,7 +371,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://www.redebrasilatual.com.br/cidadania/2021/04/mais-do-que-matar-a-fome-cozinhas-solidarias-sao-espacos-de-resistencia/" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-brasil-atual.jpg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-brasil-atual.jpg')); ?>" alt="" class="thumb-noticia">
                     <h4>Brasil Atual</h4>
                     <p>Mais do que matar a fome, cozinhas solidárias são espaços de resistência</p>
                   </div>
@@ -377,7 +380,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://www.anf.org.br/mtst-lanca-campanha-para-abrir-16-cozinhas-solidarias-no-brasil/" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-anf.jpg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-anf.jpg')); ?>" alt="" class="thumb-noticia">
                     <h4>Portal ANF</h4>
                     <p>MTST lança campanha para abrir 16 Cozinhas Solidárias no Brasil</p>
                   </div>
@@ -386,7 +389,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://globoplay.globo.com/v/9608976/" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/noticia-sptv.jpeg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/noticia-sptv.jpeg')); ?>" alt="" class="thumb-noticia">
                     <h4>Globo SPTV</h4>
                     <p>Cozinhas solidárias ajudam a matar a fome na Grande São Paulo</p>
                   </div>
@@ -395,7 +398,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://www.brasildefato.com.br/2021/03/13/para-combater-pandemia-da-fome-mtst-inaugura-cozinha-solidaria-em-sp/" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-brasil-de-fato.jpeg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-brasil-de-fato.jpeg')); ?>" alt="" class="thumb-noticia">
                     <h4>Brasil de Fato</h4>
                     <p>Para combater “pandemia da fome”, MTST inaugura cozinha solidária em SP</p>
                   </div>
@@ -404,7 +407,7 @@
               <div class="swiper-slide">
                 <a class="a-noticia" href="https://www.metropoles.com/brasil/mtst-inaugura-mais-uma-cozinha-solidaria-em-sao-paulo" target="_blank">
                   <div class="noticia">
-                    <img src="/assets/img/thumb-metropoles.jpg" alt="" class="thumb-noticia">
+                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-metropoles.jpg')); ?>" alt="" class="thumb-noticia">
                     <h4>Metrópoles</h4>
                     <p>MTST inaugura mais uma cozinha solidária em São Paulo</p>
                   </div>
@@ -422,10 +425,10 @@
       </section>
    
       <section id="prestacao-de-contas">
-        <div class="bg-prestacao-de-contas"><img class="conjunto-esq" src="/assets/img/panelas-vermelhas.png" alt=""></div>
+        <div class="bg-prestacao-de-contas"><img class="conjunto-esq" src="<?php echo esc_url(cozinha_solidaria_asset('/img/panelas-vermelhas.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <img src="/assets/img/cachecol.png" alt=""><h2>Prestação de contas</h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cachecol.png')); ?>" alt=""><h2>Prestação de contas</h2>
           </div>
           <div class="row">
             <div class="col-md-7">
@@ -433,7 +436,7 @@
               <p><strong>Em pouco mais de dois anos, já foram servidas mais de 5.800.000 quentinhas e mais de 3.800.000 quilos de alimentos distribuídos para que milhares de famílias garantam, ao menos, uma refeição rica em nutrientes por dia.</strong></p>
             </div>
             <div class="col-md-5">
-              <img src="/assets/img/compa-horta.png" alt="" class="prestacao-img">
+              <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/compa-horta.png')); ?>" alt="" class="prestacao-img">
             </div>
           </div>
           <div class="row dados">
@@ -486,15 +489,15 @@
       </section>
 
       <section id="divulgar">
-        <div class="bg-divulgar"><img class="conjunto-dir" src="/assets/img/conj-azul.png" alt=""></div>
+        <div class="bg-divulgar"><img class="conjunto-dir" src="<?php echo esc_url(cozinha_solidaria_asset('/img/conj-azul.png')); ?>" alt=""></div>
         <div class="container">
           <div class="row ajude-divulgar">
             <div class="col-lg-7 col-md-6">
-              <img class="cozinha-pessoas" src="/assets/img/cozinha-pessoas.png" alt="">
+              <img class="cozinha-pessoas" src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-pessoas.png')); ?>" alt="">
             </div>
             <div class="col-lg-5 col-md-6">
               <div class="titulo-secao linha-um">
-                <img src="/assets/img/panela-div.png" alt=""><h2>Ajude</h2>
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/panela-div.png')); ?>" alt=""><h2>Ajude</h2>
               </div>
               <div class="titulo-secao linha-dois">
                 <h2>a divulgar!</h2>
@@ -574,15 +577,15 @@
             </nav>
           </div>
           <div class="col-md-4 footer-medium">
-            <img class="logo-rodape" src="/assets/img/logo-mtst-novo.png" alt="">
+            <img class="logo-rodape" src="<?php echo esc_url(cozinha_solidaria_asset('/img/logo-mtst-novo.png')); ?>" alt="">
             <div class="link-mtst">
               <a href="https://mtst.org/" target="_blank">https://mtst.org</a>
             </div>
             <ul class="redes-sociais">
-              <li><a href="https://www.instagram.com/cozinhassolidariasmtst/" target="_blank"><img src="/assets/img/instagram.png" alt="Instagram"></a></li>
-              <li><a href="https://www.facebook.com/mtstbrasil" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a></li>
-              <li><a href="https://twitter.com/mtst" target="_blank"><img src="/assets/img/twitter.png" alt="Twitter"></a></li>
-              <li><a href="https://www.youtube.com/channel/UC3OzrZMhnmEgVtxpJoDRkeg" target="_blank"><img src="/assets/img/youtube.png" alt="Youtube"></a></li>
+              <li><a href="https://www.instagram.com/cozinhassolidariasmtst/" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/instagram.png')); ?>" alt="Instagram"></a></li>
+              <li><a href="https://www.facebook.com/mtstbrasil" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/facebook.png')); ?>" alt="Facebook"></a></li>
+              <li><a href="https://twitter.com/mtst" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/twitter.png')); ?>" alt="Twitter"></a></li>
+              <li><a href="https://www.youtube.com/channel/UC3OzrZMhnmEgVtxpJoDRkeg" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/youtube.png')); ?>" alt="Youtube"></a></li>
             </ul>
           </div>
           <div class="col-md-4">
@@ -600,18 +603,19 @@
       </div>
     </footer>
 
-    <script src="node_modules/swiper/swiper-bundle.js"></script>
-    <script src="node_modules/swiper/swiper-bundle.min.js"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.js')); ?>"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.min.js')); ?>"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
-    <script src="assets/js/menu.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/carrossel.js"></script>
-    <script src="assets/js/modal.js"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/js/menu.js')); ?>"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/js/carrossel.js')); ?>"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/js/modal.js')); ?>"></script>
     <!-- Contact form JS-->
-    <script src="assets/mail/jqBootstrapValidation.js"></script>
-    <script src="assets/mail/contact_me.js"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/mail/jqBootstrapValidation.js')); ?>"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/mail/contact_me.js')); ?>"></script>
 
+  <?php wp_footer(); ?>
   </body>
 </html>
 

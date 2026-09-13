@@ -1,8 +1,13 @@
-
+<?php
+/*
+Template Name: O Projeto
+*/
+?>
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <!-- Required meta tags -->
+    <?php /* WordPress theme hooks. */ ?>
+<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:locale" content="pt_BR">
@@ -16,22 +21,22 @@
     <meta property="og:image:height" content="600">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cozinhasolidaria.com">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/icone.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url(cozinha_solidaria_asset('/img/icone.ico')); ?>">
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Vídeo Modal -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/modal-video.min.css">
-    <script src="/assets/js/jquery-modal-video.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(cozinha_solidaria_asset('/css/modal-video.min.css')); ?>">
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/js/jquery-modal-video.min.js')); ?>"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.min.css" /> 
-    <link href="/assets/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/modal.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/menu-mobile.css">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.css')); ?>" />
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.min.css')); ?>" /> 
+    <link href="<?php echo esc_url(cozinha_solidaria_asset('/bootstrap/css/bootstrap-grid.min.css')); ?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/modal.css')); ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/style.css')); ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/menu-mobile.css')); ?>">
 
     <title>Cozinha Solidária - MTST</title>
 
@@ -65,9 +70,11 @@
 
       gtag('config', 'UA-205480195-1');
     </script>
+  <?php wp_head(); ?>
   </head>
   
-  <body>
+  <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <header id="inicio" class="header-projeto">
       
       <nav id="menu-principal" class="menu-principal navbar navbar-expand-lg navbar-dark bg-dark">
@@ -76,10 +83,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            <li><a class="nav-link nav-item" href="/#inicio">Início</a></li>
+            <li><a class="nav-link nav-item" href="<?php echo esc_url(home_url('/#inicio')); ?>">Início</a></li>
             <li><a class="nav-link nav-item active" href="#">O Projeto</a></li>
-            <li><a class="nav-link nav-item" href="/#contribuir">Contribua</a></li>
-            <li><a class="nav-link nav-item" href="/#imprensa">Imprensa</a></li>
+            <li><a class="nav-link nav-item" href="<?php echo esc_url(home_url('/#contribuir')); ?>">Contribua</a></li>
+            <li><a class="nav-link nav-item" href="<?php echo esc_url(home_url('/#imprensa')); ?>">Imprensa</a></li>
             <li><a class="nav-link nav-item" href="#" onclick="openModal();">Contato</a></li>
           </ul>
         </div>
@@ -92,10 +99,10 @@
           <span></span>
           <span></span>
           <ul id="menu">
-            <li><a class="item-menu" href="/#inicio">Início</a></li>
-            <li><a class="item-menu" href="/#projeto">O Projeto</a></li>
-            <li><a class="item-menu" href="/#contribuir">Contribua</a></li>
-            <li><a class="item-menu" href="/#imprensa">Imprensa</a></li>
+            <li><a class="item-menu" href="<?php echo esc_url(home_url('/#inicio')); ?>">Início</a></li>
+            <li><a class="item-menu" href="<?php echo esc_url(home_url('/#projeto')); ?>">O Projeto</a></li>
+            <li><a class="item-menu" href="<?php echo esc_url(home_url('/#contribuir')); ?>">Contribua</a></li>
+            <li><a class="item-menu" href="<?php echo esc_url(home_url('/#imprensa')); ?>">Imprensa</a></li>
             <li><a class="item-menu" href="#" onclick="openModal();">Contato</a></li>
           </ul>
         </div>
@@ -104,20 +111,20 @@
       <div class="container cont-projeto">
         <div class="titulo-secao row">
           <div class="titulo-secao">
-            <img src="/assets/img/panela-amarela.png" alt=""><h2>O Projeto</h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/panela-amarela.png')); ?>" alt=""><h2>O Projeto</h2>
           </div>
         </div>
         <!-- <div class="row videos">
           <div class="col-lg-8 col-md-8">
-            <a class="js-modal-btn" data-video-id="L0hK8LjcFTY" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="/assets/img/thumb-video-1.jpg" alt=""><img class="player-maior" src="/assets/img/player-yt.png" alt=""></figure></a>
+            <a class="js-modal-btn" data-video-id="L0hK8LjcFTY" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-video-1.jpg')); ?>" alt=""><img class="player-maior" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
           </div>
           <div class="col-lg-4 col-md-4">
-            <a class="js-modal-btn" data-video-id="08DpFkL513k" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/video-2.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
-            <a class="js-modal-btn" data-video-id="imEm1ANhWms" href="#"><figure class="thumb-menor"><img class="video-menor" src="/assets/img/video-3.jpg" alt=""><img class="player-menor" src="/assets/img/player-yt.png" alt=""></figure></a>
+            <a class="js-modal-btn" data-video-id="08DpFkL513k" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/video-2.jpg')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
+            <a class="js-modal-btn" data-video-id="imEm1ANhWms" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/video-3.jpg')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
           </div>
         </div> -->
         <div class="img-projeto">
-          <img src="/assets/img/o-projeto.png" alt="">
+          <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/o-projeto.png')); ?>" alt="">
         </div>
         <div class="txt-projeto">
           <p>
@@ -141,14 +148,14 @@
             <div class="col-md-12">
               
               <h3>Mais que comida</h3>
-              <div class="icones-proj"><img class="icon-projeto" src="/assets/img/panelinha-pr.png"><img class="icon-projeto" src="/assets/img/coracao-pr.png"></div>
+              <div class="icones-proj"><img class="icon-projeto" src="<?php echo esc_url(cozinha_solidaria_asset('/img/panelinha-pr.png')); ?>"><img class="icon-projeto" src="<?php echo esc_url(cozinha_solidaria_asset('/img/coracao-pr.png')); ?>"></div>
               <p><strong>As Cozinhas Solidárias também são locais de luta, resistência, apoio e cultura para a população periférica</p> 
               <p>Os espaços recebem mutirões de apoio jurídico coletivo e individual, cines-debate, rodas de conversa com gestantes, oficinas culturais, cursos, reforço escolar para crianças e alfabetização de jovens e adultos.</p>
               <p>A fim de contribuir para a soberania alimentar na periferia, <strong>as cozinhas promovem o cultivo de hortas urbanas comunitárias</strong> nas proximidades para fornecerem alimentos para as próprias cozinhas e, sempre que possível, para doação às comunidades próximas.</p>
             </div>
             <!-- <div class="col-md-5">
               <div class="imagem-topo-projeto">
-                <img src="/assets/img/MaisQueComida.png" alt="">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/MaisQueComida.png')); ?>" alt="">
               </div>
             </div> -->
           </div>
@@ -163,9 +170,9 @@
           <div class="row acontecer">
             <div class="col-md-4">
               <div class="topo-pan">
-                <img src="/assets/img/icones-panelas-pr.png" alt="Conjunto de panelas">
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/icones-panelas-pr.png')); ?>" alt="Conjunto de panelas">
               </div>
-              <img class="img-cozinheira" src="/assets/img/cozinheria-colher.png" alt="Cozinheira">
+              <img class="img-cozinheira" src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinheria-colher.png')); ?>" alt="Cozinheira">
               <!-- <div class="ver-mais hide-mobile">
                 <a href="https://apoia.se/cozinhasolidaria" target="_blank" class="cta cta-azul">Faça parte desse time da solidariedade! Contamos com você, doe agora!</a>
               </div> -->
@@ -229,29 +236,29 @@
           <div class="col-md-4">
             <nav class="nav-footer">
               <ul>
-                <li><a class="menu-footer" href="/#inicio">Início</a></li>
-                <li><a class="menu-footer" href="/#projeto">O Projeto</a></li>
-                <li><a class="menu-footer" href="/#contribuir">Contribua</a></li>
+                <li><a class="menu-footer" href="<?php echo esc_url(home_url('/#inicio')); ?>">Início</a></li>
+                <li><a class="menu-footer" href="<?php echo esc_url(home_url('/#projeto')); ?>">O Projeto</a></li>
+                <li><a class="menu-footer" href="<?php echo esc_url(home_url('/#contribuir')); ?>">Contribua</a></li>
               </ul>
             </nav>
           </div>
           <div class="col-md-4 footer-medium">
-            <img class="logo-rodape" src="/assets/img/logo-mtst-novo.png" alt="">
+            <img class="logo-rodape" src="<?php echo esc_url(cozinha_solidaria_asset('/img/logo-mtst-novo.png')); ?>" alt="">
             <div class="link-mtst">
               <a href="https://mtst.org/">https://mtst.org</a>
             </div>
             <ul class="redes-sociais">
-              <li><a href="https://www.instagram.com/cozinhassolidariasmtst/" target="_blank"><img src="/assets/img/instagram.png" alt="Instagram"></a></li>
-              <li><a href="https://www.facebook.com/mtstbrasil" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a></li>
-              <li><a href="https://twitter.com/mtst" target="_blank"><img src="/assets/img/twitter.png" alt="Twitter"></a></li>
-              <li><a href="https://www.youtube.com/channel/UC3OzrZMhnmEgVtxpJoDRkeg" target="_blank"><img src="/assets/img/youtube.png" alt="Youtube"></a></li>
+              <li><a href="https://www.instagram.com/cozinhassolidariasmtst/" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/instagram.png')); ?>" alt="Instagram"></a></li>
+              <li><a href="https://www.facebook.com/mtstbrasil" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/facebook.png')); ?>" alt="Facebook"></a></li>
+              <li><a href="https://twitter.com/mtst" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/twitter.png')); ?>" alt="Twitter"></a></li>
+              <li><a href="https://www.youtube.com/channel/UC3OzrZMhnmEgVtxpJoDRkeg" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/youtube.png')); ?>" alt="Youtube"></a></li>
             </ul>
           </div>
           <div class="col-md-4">
             <nav class="nav-footer nav-right">
               <ul>
-                <li><a class="menu-footer" href="/#imprensa">Imprensa</a></li>
-                <li><a class="menu-footer" href="/o-projeto/#contato" onclick="openModal();">Contato</a></li>
+                <li><a class="menu-footer" href="<?php echo esc_url(home_url('/#imprensa')); ?>">Imprensa</a></li>
+                <li><a class="menu-footer" href="<?php echo esc_url(home_url('/o-projeto/#contato')); ?>" onclick="openModal();">Contato</a></li>
               </ul>
             </nav>
           </div>
@@ -262,18 +269,18 @@
       </div>
     </footer>
 
-    <script src="/node_modules/swiper/swiper-bundle.js"></script>
-    <script src="/node_modules/swiper/swiper-bundle.min.js"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.js')); ?>"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.min.js')); ?>"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
-    <!-- <script src="/assets/js/menu.js"></script> -->
-    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/carrossel.js"></script>
-    <script src="/assets/js/modal.js"></script>
+    <!-- <script src="<?php echo esc_url(cozinha_solidaria_asset('/js/menu.js')); ?>"></script> -->
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/js/carrossel.js')); ?>"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/js/modal.js')); ?>"></script>
     <!-- Contact form JS-->
-    <script src="/assets/mail/jqBootstrapValidation.js"></script>
-    <script src="/assets/mail/contact_me.js"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/mail/jqBootstrapValidation.js')); ?>"></script>
+    <script src="<?php echo esc_url(cozinha_solidaria_asset('/mail/contact_me.js')); ?>"></script>
 
+  <?php wp_footer(); ?>
   </body>
 </html>
-
