@@ -110,9 +110,16 @@
           </ul>
         </div>
       </nav>
-      <div class="menu-novo">
-        <a class="item-menu" href="https://euapoioascozinhas.com/" target="_blank"><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/banner-apoio-cozinhas.webp')); ?>" alt=""></a>
-      </div>   
+      <?php if (cozinha_solidaria_acf_is_enabled('home_top_banner_enabled', true)) : ?>
+        <?php
+        $home_banner_link = cozinha_solidaria_get_field('home_top_banner_link', 'https://euapoioascozinhas.com/');
+        $home_banner_image_url = cozinha_solidaria_get_field('home_top_banner_image_url', cozinha_solidaria_home_default('home_top_banner_image_url'));
+        $home_banner_image = cozinha_solidaria_get_image_url('home_top_banner_image', $home_banner_image_url ?: cozinha_solidaria_asset('/img/banner-apoio-cozinhas.webp'));
+        ?>
+        <div class="menu-novo">
+          <a class="item-menu" href="<?php echo esc_url($home_banner_link); ?>" target="_blank"><img src="<?php echo esc_url($home_banner_image); ?>" alt=""></a>
+        </div>
+      <?php endif; ?>
       <div class="container">
         <div class="topo row">
           <div class="col-lg-2 col-md-2">
@@ -120,12 +127,12 @@
           </div>
           <div class="col-lg-10 col-md-10">
               <img class="logo" src="<?php echo esc_url(cozinha_solidaria_asset('/img/logo.png')); ?>" alt="Cozinha Solidária">
-              <p style="font-size: 28px;">Enquanto houver emergência, haverá solidariedade. Participe da campanha para apoiar as vítimas das enchentes, garantindo refeições nutritivas em seus territórios.</p>
-              <a href="https://apoia.se/enchentes2025?fbclid=PAQ0xDSwLskUVleHRuA2FlbQIxMAABp8JkIg3zoFEHeTzX4KwjVXlJbYhaWMZxVbnxv4pQZ3OfIXF3WVsmvNp_5Fo-_aem_7THt3qdRBkr6_2b-3nlKLA" class="cta cta-azul" target="_blank">SOS Enchentes</a>
+              <p style="font-size: 28px;"><?php echo wp_kses_post(cozinha_solidaria_get_field('home_hero_text', cozinha_solidaria_home_default('home_hero_text'))); ?></p>
+              <a href="<?php echo esc_url(cozinha_solidaria_get_field('home_hero_button_link', cozinha_solidaria_home_default('home_hero_button_link'))); ?>" class="cta cta-azul" target="_blank"><?php echo esc_html(cozinha_solidaria_get_field('home_hero_button_text', cozinha_solidaria_home_default('home_hero_button_text'))); ?></a>
           </div>
           <div class="col-lg-10 col-md-10 sos-enchentes" style="margin-top: 120px;">
-            <p style="color: #fff;">Somos 55 cozinhas distribuindo refeições gratuitas em 14 estados e no DF, ajudando a combater a fome nas periferias.</p>
-            <a href="https://apoia.se/cozinhasolidaria" class="cta cta-amarelo" target="_blank" style="color: #000;">Contribua!</a>
+            <p style="color: #fff;"><?php echo wp_kses_post(cozinha_solidaria_get_field('home_hero_secondary_text', cozinha_solidaria_home_default('home_hero_secondary_text'))); ?></p>
+            <a href="<?php echo esc_url(cozinha_solidaria_get_field('home_hero_secondary_button_link', cozinha_solidaria_home_default('home_hero_secondary_button_link'))); ?>" class="cta cta-amarelo" target="_blank" style="color: #000;"><?php echo esc_html(cozinha_solidaria_get_field('home_hero_secondary_button_text', cozinha_solidaria_home_default('home_hero_secondary_button_text'))); ?></a>
         </div>
         </div>
       </div>
@@ -137,7 +144,7 @@
         <div class="bg-projeto"><img class="conjunto-dir" src="<?php echo esc_url(cozinha_solidaria_asset('/img/conjunto-dir.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/panela-amarela.png')); ?>" alt=""><h2>O Projeto</h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/panela-amarela.png')); ?>" alt=""><h2><?php echo esc_html(cozinha_solidaria_get_field('home_project_title', cozinha_solidaria_home_default('home_project_title'))); ?></h2>
           </div>
           <!-- <div class="row videos">
             <div class="col-lg-8 col-md-8">
@@ -152,24 +159,11 @@
             <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/o-projeto.png')); ?>" alt="">
           </div>
           <div class="txt-projeto">
-            <p>
-              <span style="line-height: 2;">PROGRAMA COZINHA SOLIDÁRIA</span><br /><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image.webp')); ?>" alt="" style="max-width: 190px;background-color: #fff;text-align: left;float:left;margin-right: 14px;">Em 2024, firmamos um Termo de Colaboração com o Ministério do Desenvolvimento Social, no âmbito do Programa Cozinha Solidária, que garantiu apoio financeiro parcial a mais de 50 Cozinhas Solidárias durante o período de um ano, além de possibilitar a entrega regular de alimentos in natura provenientes do Programa de Aquisição de Alimentos (PAA). Essa política pública visa fortalecer ações de segurança alimentar e nutricional, promovendo o acesso a alimentos saudáveis e o combate à fome em comunidades em situação de vulnerabilidade social.
-            </p>
-            <p>
-              A partir de 2023, iniciativas de combate à fome voltaram a ter protagonismo e vimos os números da fome reduzirem. Entretanto, em um país de dimensões continentais como o Brasil, essa realidade não é uniforme e, em várias regiões, principalmente, nas periferias dos grandes centros, as Cozinhas Solidárias ainda cumprem um papel importante: o de garantir alimentação gratuita, de qualidade, rica em nutriente e afeto.
-            </p>
-            <p>
-              O projeto teve início no auge da pandemia, sendo a primeira Cozinha Solidária inaugurada em março de 2021. Nesses quase quatro anos, as Cozinhas Solidárias estão presentes em todas as regiões do país, contando hoje com 55 cozinhas que garantem alimentação de mais de 12 mil pessoas de baixa renda. São mais de 6 milhões de marmitas distribuídas e quase 4,5 milhões de quilos de alimentos produzidos. Além disso, o projeto oferece oficinas, rodas de conversa, atendimento jurídico, psicológico, e de saúde, saraus e cursos de alfabetização para a comunidade, funcionando como um equipamento social importante em locais carentes desses espaços de convivência.
-            </p>
-            <p>
-              As Cozinhas Solidárias estão presentes, ainda, nos momentos de maior dificuldade da população mais pobre do país. Estamos vendo, diariamente, notícias de chuvas incessantes e aumento das temperaturas, com enchentes e alagamentos com um número enorme de desabrigados. Por esse motivo, além das cozinhas que já funcionavam em atendimento à população vulnerável, também foram abertas Cozinhas Solidárias Emergenciais em várias regiões do Brasil, tais como Rio Grande do Sul, Minas Gerais, Acre, Rio de Janeiro, Pernambuco, Piauí e São Paulo, garantindo a alimentação de pessoas que, muitas vezes, perderam suas casas e família.
-            </p>
-            <p>
-              As Cozinhas Solidárias existem para suprir o vácuo deixado pelo poder público e por isso vem se expandindo, abrindo novas unidades e chegando a mais gente. Mas para seu pleno funcionamento, o projeto precisa muito de apoio. As doações são fundamentais para a manutenção das cozinhas e para a compra dos alimentos distribuídos.
-            </p>
+            <span style="line-height: 2;"><?php echo esc_html(cozinha_solidaria_get_field('home_project_program_label', cozinha_solidaria_home_default('home_project_program_label'))); ?></span><br /><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image.webp')); ?>" alt="" style="max-width: 190px;background-color: #fff;text-align: left;float:left;margin-right: 14px;">
+            <?php echo wp_kses_post(cozinha_solidaria_get_field('home_project_content', cozinha_solidaria_home_default('home_project_content'))); ?>
           </div>
           <div class="saiba-mais">
-            <a href="<?php echo esc_url(home_url('/o-projeto/')); ?>" class="cta cta-amarelo">Saiba mais</a>
+            <a href="<?php echo esc_url(cozinha_solidaria_get_field('home_project_button_link', cozinha_solidaria_home_default('home_project_button_link'))); ?>" class="cta cta-amarelo"><?php echo esc_html(cozinha_solidaria_get_field('home_project_button_text', cozinha_solidaria_home_default('home_project_button_text'))); ?></a>
           </div>
         </div>
       </section>
@@ -178,74 +172,53 @@
         <div class="bg-galeria"><img class="conjunto-esq" src="<?php echo esc_url(cozinha_solidaria_asset('/img/conjunto-preto.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/coracao.png')); ?>" alt=""><h2>Galeria</h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/coracao.png')); ?>" alt=""><h2><?php echo esc_html(cozinha_solidaria_get_field('home_gallery_title', cozinha_solidaria_home_default('home_gallery_title'))); ?></h2>
           </div>
 
+          <?php $gallery_images = cozinha_solidaria_get_rows('home_gallery_images', cozinha_solidaria_home_default('home_gallery_images')); ?>
           <div class="wraper-galeria hide-mobile">
-            <div class="row">
-              <div class="col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-1.jpg')); ?>" alt="">
+            <?php foreach (array_chunk($gallery_images, 3) as $gallery_row) : ?>
+              <div class="row">
+                <?php foreach ($gallery_row as $gallery_image) : ?>
+                  <div class="col-md-4">
+                    <img src="<?php echo esc_url(cozinha_solidaria_sub_image_url($gallery_image, 'image', $gallery_image['image_url'] ?? '')); ?>" alt="<?php echo esc_attr($gallery_image['alt'] ?? ''); ?>">
+                  </div>
+                <?php endforeach; ?>
               </div>
-              <div class="col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-2.jpg')); ?>" alt="">
-              </div>
-              <div class="col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-3.jpg')); ?>" alt="">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-4.jpg')); ?>" alt="">
-              </div>
-              <div class="col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-5.jpg')); ?>" alt="">
-              </div>
-              <div class="col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-6.jpg')); ?>" alt="">
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
 
           <div class="swiper-container swiperGaleria wraper-galeria hide-desktop">
             <div class="swiper-wrapper">
-              <div class="swiper-slide col-md-4">
-                <img  src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-1.jpg')); ?>" alt="">
-              </div>
-              <div class="swiper-slide col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-2.jpg')); ?>" alt="">
-              </div>
-              <div class="swiper-slide col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-3.jpg')); ?>" alt="">
-              </div>
-              <div class="swiper-slide col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-4.jpg')); ?>" alt="">
-              </div>
-              <div class="swiper-slide col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-5.jpg')); ?>" alt="">
-              </div>
-              <div class="swiper-slide col-md-4">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-solidaria-6.jpg')); ?>" alt="">
-              </div>
+              <?php foreach ($gallery_images as $gallery_image) : ?>
+                <div class="swiper-slide col-md-4">
+                  <img src="<?php echo esc_url(cozinha_solidaria_sub_image_url($gallery_image, 'image', $gallery_image['image_url'] ?? '')); ?>" alt="<?php echo esc_attr($gallery_image['alt'] ?? ''); ?>">
+                </div>
+              <?php endforeach; ?>
             </div>
             <div class="swiper-pagination"></div>
           </div>
 
           <div class="ver-mais">
-            <a href="https://www.instagram.com/cozinhassolidariasmtst/" target="_blank" class="cta cta-azul">Ver mais</a>
+            <a href="<?php echo esc_url(cozinha_solidaria_get_field('home_gallery_button_link', cozinha_solidaria_home_default('home_gallery_button_link'))); ?>" target="_blank" class="cta cta-azul"><?php echo esc_html(cozinha_solidaria_get_field('home_gallery_button_text', cozinha_solidaria_home_default('home_gallery_button_text'))); ?></a>
           </div>
 
+          <?php $home_videos = cozinha_solidaria_get_rows('home_videos', cozinha_solidaria_home_default('home_videos')); ?>
           <div class="row videos">
-            <div class="col-lg-8 col-md-8">
-              <a class="js-video-button" data-video-id="NObqUoVIXPU" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-video01.jpg')); ?>" alt=""><img class="player-maior" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
-            </div>
+            <?php if (! empty($home_videos[0])) : ?>
+              <div class="col-lg-8 col-md-8">
+                <a class="js-video-button" data-video-id="<?php echo esc_attr($home_videos[0]['youtube_id'] ?? ''); ?>" href="#"><figure class="thumb-maior"><img class="thumb-youtube" src="<?php echo esc_url(cozinha_solidaria_sub_image_url($home_videos[0], 'thumbnail', $home_videos[0]['thumbnail_url'] ?? '')); ?>" alt=""><img class="player-maior" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
+              </div>
+            <?php endif; ?>
             <div class="col-lg-4 col-md-4">
-              <a class="js-video-button" data-video-id="ftXWFGSBQh8" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-video02.jpg')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
-              <a class="js-video-button" data-video-id="aAtwYdNzgOc" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-video03.jpg')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
+              <?php foreach (array_slice($home_videos, 1, 2) as $home_video) : ?>
+                <a class="js-video-button" data-video-id="<?php echo esc_attr($home_video['youtube_id'] ?? ''); ?>" href="#"><figure class="thumb-menor"><img class="video-menor" src="<?php echo esc_url(cozinha_solidaria_sub_image_url($home_video, 'thumbnail', $home_video['thumbnail_url'] ?? '')); ?>" alt=""><img class="player-menor" src="<?php echo esc_url(cozinha_solidaria_asset('/img/player-yt.png')); ?>" alt=""></figure></a>
+              <?php endforeach; ?>
             </div>
           </div>
 
           <div class="ver-mais">
-            <a href="https://www.youtube.com/watch?v=NObqUoVIXPU&list=PLZsFOaKOvLj5Zjxc7SFv8TfSB6ghGB2xb" target="_blank" class="cta cta-azul">Ver mais vídeos</a>
+            <a href="<?php echo esc_url(cozinha_solidaria_get_field('home_videos_button_link', cozinha_solidaria_home_default('home_videos_button_link'))); ?>" target="_blank" class="cta cta-azul"><?php echo esc_html(cozinha_solidaria_get_field('home_videos_button_text', cozinha_solidaria_home_default('home_videos_button_text'))); ?></a>
           </div>
 
         </div>
@@ -265,19 +238,19 @@
         <div class="bg-contribuir"><img class="conjunto-dir" src="<?php echo esc_url(cozinha_solidaria_asset('/img/conjunto-preto.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <h2>Como posso contribuir?</h2>
+            <h2><?php echo esc_html(cozinha_solidaria_get_field('home_contribute_title', cozinha_solidaria_home_default('home_contribute_title'))); ?></h2>
           </div>
           <div class="cont-contrbuir row">
             <div class="col-md-4">
-              <img class="img-ajudar" src="<?php echo esc_url(cozinha_solidaria_asset('/img/como-ajudar-img.png')); ?>" alt="Como ajudar">
+              <img class="img-ajudar" src="<?php echo esc_url(cozinha_solidaria_get_image_url('home_contribute_image', cozinha_solidaria_asset('/img/como-ajudar-img.png'))); ?>" alt="Como ajudar">
             </div>
             <div class="col-md-8">
               <div class="content-dir">
-                <h3 style="font-size:35px;line-height:40px;">Ajudar é fácil, faça a diferença e garanta sua doação pelo <a href="https://apoia.se/cozinhasolidaria" target="_blank" style="color:#fff">'apoia.se'.</a></h3>
-                <p style="font-size:20px;line-height:25px;">Nossas Cozinhas Solidárias são o resultado do trabalho voluntário e das doações de diversas pessoas que acreditam na ação coletiva para um mundo melhor!</p>
+                <h3 style="font-size:35px;line-height:40px;"><?php echo wp_kses_post(cozinha_solidaria_get_field('home_contribute_heading', cozinha_solidaria_home_default('home_contribute_heading'))); ?></h3>
+                <p style="font-size:20px;line-height:25px;"><?php echo wp_kses_post(cozinha_solidaria_get_field('home_contribute_text', cozinha_solidaria_home_default('home_contribute_text'))); ?></p>
               </div>
               <div class="cta-contribua">
-                <a href="https://apoia.se/cozinhasolidaria" class="cta cta-preto" target="_blank" style="line-height:1.2;">Colabore com esse projeto também!</a>
+                <a href="<?php echo esc_url(cozinha_solidaria_get_field('home_contribute_button_link', cozinha_solidaria_home_default('home_contribute_button_link'))); ?>" class="cta cta-preto" target="_blank" style="line-height:1.2;"><?php echo esc_html(cozinha_solidaria_get_field('home_contribute_button_text', cozinha_solidaria_home_default('home_contribute_button_text'))); ?></a>
               </div>
             </div>
           </div>
@@ -288,131 +261,26 @@
         <div class="bg-imprensa"><img class="conjunto-dir" src="<?php echo esc_url(cozinha_solidaria_asset('/img/conj-azul.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/imprensa-azul.png')); ?>" alt=""><h2>Imprensa</h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/imprensa-azul.png')); ?>" alt=""><h2><?php echo esc_html(cozinha_solidaria_get_field('home_press_title', cozinha_solidaria_home_default('home_press_title'))); ?></h2>
           </div>
-          <p>Venha saber mais da importância das nossas Cozinhas Solidárias nessas reportagens que estão na mídia:</p>
+          <p><?php echo wp_kses_post(cozinha_solidaria_get_field('home_press_intro', cozinha_solidaria_home_default('home_press_intro'))); ?></p>
           <!-- Slider main container -->
           <div class="swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://www.brasildefato.com.br/2022/06/27/conheca-as-cozinhas-solidarias-do-mtst-que-distribuem-refeicoes-gratuitas-por-todo-o-brasil" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image_processing20220627-30869-1rtwszj.jpeg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Brasil de Fato</h4>
-                    <p>Conheça as cozinhas solidárias do MTST que distribuem refeições gratuitas por todo o Brasil</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://g1.globo.com/ce/ceara/noticia/2022/07/24/cozinhas-solidarias-proporcionam-refeicoes-a-pessoas-em-inseguranca-alimentar-em-fortaleza.ghtml" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-5.webp')); ?>" alt="" class="thumb-noticia">
-                    <h4>Portal G1</h4>
-                    <p>Cozinhas solidárias proporcionam refeições a pessoas em insegurança alimentar em Fortaleza</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://www.brasildefato.com.br/2022/07/18/cozinhas-solidarias-sao-um-recurso-de-sobrevivencia" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image-h5pyx9.jpeg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Brasil de Fato</h4>
-                    <p>Cozinhas Solidárias são um recurso de sobrevivências</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://www.brasildefators.com.br/2022/08/26/combate-a-fome-um-dia-na-rotina-da-cozinha-solidaria-do-mtst" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image_processing20220826-4411-1tjztp.jpeg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Brasil de Fato</h4>
-                    <p>Combate à fome: um dia na rotina da Cozinha Solidária do MTST</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://g1.globo.com/ce/ceara/noticia/2022/07/24/cozinhas-solidarias-proporcionam-refeicoes-a-pessoas-em-inseguranca-alimentar-em-fortaleza.ghtml" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/user-campaign-about-desc-foto-apoia-20210511-09153161.webp')); ?>" alt="" class="thumb-noticia">
-                    <h4>Portal G1</h4>
-                    <p>MTST inaugura Cozinha Solidária em Uberlândia; 150 refeições serão servidas diariamente</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://www.uol.com.br/ecoa/ultimas-noticias/2021/04/27/como-cozinhas-comunitarias-tem-atuado-para-aplacar-a-fome-pelo-brasil.htm" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-uol.webp')); ?>" alt="" class="thumb-noticia">
-                    <h4>Portal UOL</h4>
-                    <p>Como cozinhas comunitárias têm atuado para aplacar a fome pelo Brasil </p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://globoplay.globo.com/v/9608976/" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/ne1-globo.jpg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Globo NE1</h4>
-                    <p>Cozinha Solidária do MTST ajuda a alimentar famílias pobres, no Recife</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="#" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-folha.jpg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Folha de S.Paulo</h4>
-                    <p>MTST inaugura unidades das cozinhas solidárias</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://www.redebrasilatual.com.br/cidadania/2021/04/mais-do-que-matar-a-fome-cozinhas-solidarias-sao-espacos-de-resistencia/" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-brasil-atual.jpg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Brasil Atual</h4>
-                    <p>Mais do que matar a fome, cozinhas solidárias são espaços de resistência</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://www.anf.org.br/mtst-lanca-campanha-para-abrir-16-cozinhas-solidarias-no-brasil/" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-anf.jpg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Portal ANF</h4>
-                    <p>MTST lança campanha para abrir 16 Cozinhas Solidárias no Brasil</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://globoplay.globo.com/v/9608976/" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/noticia-sptv.jpeg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Globo SPTV</h4>
-                    <p>Cozinhas solidárias ajudam a matar a fome na Grande São Paulo</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://www.brasildefato.com.br/2021/03/13/para-combater-pandemia-da-fome-mtst-inaugura-cozinha-solidaria-em-sp/" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-brasil-de-fato.jpeg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Brasil de Fato</h4>
-                    <p>Para combater “pandemia da fome”, MTST inaugura cozinha solidária em SP</p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a class="a-noticia" href="https://www.metropoles.com/brasil/mtst-inaugura-mais-uma-cozinha-solidaria-em-sao-paulo" target="_blank">
-                  <div class="noticia">
-                    <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/thumb-metropoles.jpg')); ?>" alt="" class="thumb-noticia">
-                    <h4>Metrópoles</h4>
-                    <p>MTST inaugura mais uma cozinha solidária em São Paulo</p>
-                  </div>
-                </a>
-              </div>     
+              <?php $press_items = cozinha_solidaria_get_rows('home_press_items', cozinha_solidaria_home_default('home_press_items')); ?>
+              <?php foreach ($press_items as $press_item) : ?>
+                <div class="swiper-slide">
+                  <a class="a-noticia" href="<?php echo esc_url($press_item['link'] ?? '#'); ?>" target="_blank">
+                    <div class="noticia">
+                      <img src="<?php echo esc_url(cozinha_solidaria_sub_image_url($press_item, 'image', $press_item['image_url'] ?? '')); ?>" alt="" class="thumb-noticia">
+                      <h4><?php echo esc_html($press_item['source'] ?? ''); ?></h4>
+                      <p><?php echo esc_html($press_item['description'] ?? ''); ?></p>
+                    </div>
+                  </a>
+                </div>
+              <?php endforeach; ?>
             </div>
             
             <div class="swiper-pagination"></div>
@@ -428,40 +296,29 @@
         <div class="bg-prestacao-de-contas"><img class="conjunto-esq" src="<?php echo esc_url(cozinha_solidaria_asset('/img/panelas-vermelhas.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cachecol.png')); ?>" alt=""><h2>Prestação de contas</h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cachecol.png')); ?>" alt=""><h2><?php echo esc_html(cozinha_solidaria_get_field('home_accountability_title', cozinha_solidaria_home_default('home_accountability_title'))); ?></h2>
           </div>
           <div class="row">
             <div class="col-md-7">
-              <p>Desde o início da pandemia é notório que as desigualdades sociais brasileiras foram expostas e, principalmente, intensificadas. A população periférica é a mais prejudicada, morta e invisibilizada, seja pelo vírus, pela fome ou pelo desprezo do governo. Frente a esse cenário, o MTST verificou a necessidade de resistir não apenas pelo direito à moradia, mas também, pelo direito à vida e à alimentação básica. Assim nasceram as Cozinhas Solidárias.</p>
-              <p><strong>Em pouco mais de dois anos, já foram servidas mais de 5.800.000 quentinhas e mais de 3.800.000 quilos de alimentos distribuídos para que milhares de famílias garantam, ao menos, uma refeição rica em nutrientes por dia.</strong></p>
+              <?php $accountability_paragraphs = cozinha_solidaria_get_rows('home_accountability_paragraphs', cozinha_solidaria_home_default('home_accountability_paragraphs')); ?>
+              <?php foreach ($accountability_paragraphs as $paragraph) : ?>
+                <p><?php echo wp_kses_post($paragraph['text'] ?? ''); ?></p>
+              <?php endforeach; ?>
             </div>
             <div class="col-md-5">
-              <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/compa-horta.png')); ?>" alt="" class="prestacao-img">
+              <img src="<?php echo esc_url(cozinha_solidaria_get_image_url('home_accountability_image', cozinha_solidaria_asset('/img/compa-horta.png'))); ?>" alt="" class="prestacao-img">
             </div>
           </div>
           <div class="row dados">
-            <div class="col-md-6">
-              <p class="dados-num">5.800.000</p>
-              <p>refeições</p>
-            </div>
-            <div class="col-md-6">
-              <p class="dados-num">55</p>
-              <p>Cozinhas Solidárias pelo Brasil</p>
-            </div>
-            <div class="col-md-6">
-              <p class="dados-num">14</p>
-              <p>Estados</p>
-            </div>
-            <div class="col-md-6">
-              <p class="dados-num">97</p>
-              <p>Cozinheiras</p>
-            </div>
-            <div class="col-md-6">
-              <p class="dados-num">3.800.000</p>
-              <p>quilos de alimentos</p>
-            </div>
+            <?php $accountability_stats = cozinha_solidaria_get_rows('home_accountability_stats', cozinha_solidaria_home_default('home_accountability_stats')); ?>
+            <?php foreach ($accountability_stats as $stat) : ?>
+              <div class="col-md-6">
+                <p class="dados-num"><?php echo esc_html($stat['number'] ?? ''); ?></p>
+                <p><?php echo esc_html($stat['label'] ?? ''); ?></p>
+              </div>
+            <?php endforeach; ?>
           </div>
-          <p style="text-align:center;font-size:20px;line-height:1;margin-top: 10px;">Dados compilados até 12/2024</p>
+          <p style="text-align:center;font-size:20px;line-height:1;margin-top: 10px;"><?php echo esc_html(cozinha_solidaria_get_field('home_accountability_note', cozinha_solidaria_home_default('home_accountability_note'))); ?></p>
           <!-- <div class="row gastos">
             <h3>Gastos das Cozinhas Solidárias</h3>
             <div class="col-md-6 col-xs-6">
@@ -493,18 +350,18 @@
         <div class="container">
           <div class="row ajude-divulgar">
             <div class="col-lg-7 col-md-6">
-              <img class="cozinha-pessoas" src="<?php echo esc_url(cozinha_solidaria_asset('/img/cozinha-pessoas.png')); ?>" alt="">
+              <img class="cozinha-pessoas" src="<?php echo esc_url(cozinha_solidaria_get_image_url('home_share_image', cozinha_solidaria_asset('/img/cozinha-pessoas.png'))); ?>" alt="">
             </div>
             <div class="col-lg-5 col-md-6">
               <div class="titulo-secao linha-um">
-                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/panela-div.png')); ?>" alt=""><h2>Ajude</h2>
+                <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/panela-div.png')); ?>" alt=""><h2><?php echo esc_html(cozinha_solidaria_get_field('home_share_title_line_1', cozinha_solidaria_home_default('home_share_title_line_1'))); ?></h2>
               </div>
               <div class="titulo-secao linha-dois">
-                <h2>a divulgar!</h2>
+                <h2><?php echo esc_html(cozinha_solidaria_get_field('home_share_title_line_2', cozinha_solidaria_home_default('home_share_title_line_2'))); ?></h2>
               </div>
-              <p class="desc-divulgar">Além de contribuir doando através do nosso <a class="link-apoia-se" href="https://apoia.se/cozinhasolidaria" target="_blank">FINANCIAMENTO COLETIVO</a>, você também pode ajudar compartilhando as cozinhas com seus amigos nas redes!</p>
+              <p class="desc-divulgar"><?php echo wp_kses_post(cozinha_solidaria_get_field('home_share_text', cozinha_solidaria_home_default('home_share_text'))); ?></p>
               <div class="compartilhe">
-                <a href="http://cozinhasolidaria.com" class="cta cta-branco a2a_dd">Compartilhe</a>
+                <a href="<?php echo esc_url(cozinha_solidaria_get_field('home_share_button_link', cozinha_solidaria_home_default('home_share_button_link'))); ?>" class="cta cta-branco a2a_dd"><?php echo esc_html(cozinha_solidaria_get_field('home_share_button_text', cozinha_solidaria_home_default('home_share_button_text'))); ?></a>
                 <!-- AddToAny BEGIN -->
                 <!-- <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a> -->
                 <script async src="https://static.addtoany.com/menu/page.js"></script>
@@ -535,7 +392,7 @@
       <div class="container modal-content">
         <div class="cont-formulario">
           <span class="close cursor" onclick="closeModal()">&times;</span>
-          <p>Quer ajudar de outra forma, saber mais das nossas Cozinhas Solidárias ou se informar sobre os locais para doações de alimentos e utensílios? Entre em contato com a gente:</p>
+          <p><?php echo wp_kses_post(cozinha_solidaria_get_field('global_contact_intro', 'Quer ajudar de outra forma, saber mais das nossas Cozinhas Solidárias ou se informar sobre os locais para doações de alimentos e utensílios? Entre em contato com a gente:', 'option')); ?></p>
           <form id="contactForm" name="sentMessage" novalidate="novalidate">
             <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -563,6 +420,7 @@
       </div>
     </div>
 
+    <?php ob_start(); ?>
     <footer>
       <div class="bg-footer"></div>
       <div class="container">
@@ -602,6 +460,7 @@
         </div>
       </div>
     </footer>
+    <?php cozinha_solidaria_the_html_field('global_footer_html', ob_get_clean(), 'option'); ?>
 
     <script src="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.js')); ?>"></script>
     <script src="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.min.js')); ?>"></script>

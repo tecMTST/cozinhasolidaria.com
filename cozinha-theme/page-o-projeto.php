@@ -108,6 +108,7 @@ Template Name: O Projeto
         </div>
       </nav>
 
+      <?php ob_start(); ?>
       <div class="container cont-projeto">
         <div class="titulo-secao row">
           <div class="titulo-secao">
@@ -135,12 +136,14 @@ Template Name: O Projeto
           </p>
         </div>
       </div>
+      <?php cozinha_solidaria_the_html_field('project_header_html', ob_get_clean()); ?>
       
       
     </header>
 
     <main>
 
+      <?php ob_start(); ?>
       <section id="o-projeto" class="pagina-projeto">
         <div class="bg-projeto"></div>
         <div class="container mais-que-comida">
@@ -161,9 +164,11 @@ Template Name: O Projeto
           </div>
         </div>
       </section>
+      <?php cozinha_solidaria_the_html_field('project_more_food_html', ob_get_clean()); ?>
 
       <div class="bg-projeto-branco"></div>
 
+      <?php ob_start(); ?>
       <section id="apoie">
         
         <div class="container">
@@ -194,6 +199,7 @@ Template Name: O Projeto
           </div>
         </div>
       </section>
+      <?php cozinha_solidaria_the_html_field('project_support_html', ob_get_clean()); ?>
            
     </main>
 
@@ -201,7 +207,7 @@ Template Name: O Projeto
       <div class="container modal-content">
         <div class="cont-formulario">
           <span class="close cursor" onclick="closeModal()">&times;</span>
-          <p>Quer ajudar de outra forma, saber mais das nossas Cozinhas Solidárias ou se informar sobre os locais para doações de alimentos e utensílios? Entre em contato com a gente:</p>
+          <p><?php echo wp_kses_post(cozinha_solidaria_get_field('global_contact_intro', 'Quer ajudar de outra forma, saber mais das nossas Cozinhas Solidárias ou se informar sobre os locais para doações de alimentos e utensílios? Entre em contato com a gente:', 'option')); ?></p>
           <form id="contactForm" name="sentMessage" novalidate="novalidate">
             <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -229,6 +235,7 @@ Template Name: O Projeto
       </div>
     </div>
 
+    <?php ob_start(); ?>
     <footer class="footer-o-projeto">
       <div class="bg-footer"></div>
       <div class="container">
@@ -268,6 +275,7 @@ Template Name: O Projeto
         </div>
       </div>
     </footer>
+    <?php cozinha_solidaria_the_html_field('global_footer_html', ob_get_clean(), 'option'); ?>
 
     <script src="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.js')); ?>"></script>
     <script src="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.min.js')); ?>"></script>
