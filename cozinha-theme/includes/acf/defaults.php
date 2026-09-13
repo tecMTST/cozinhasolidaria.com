@@ -56,6 +56,7 @@ function cozinha_solidaria_acf_default($field_name)
 function cozinha_solidaria_home_default($field_name)
 {
     $asset = 'cozinha_solidaria_asset';
+    $home_project_content = '<p><img class="alignleft" src="' . $asset('/img/programa-cozinha-solidaria.jpg') . '" alt="Programa Cozinha Solidária">Em 2024, firmamos um Termo de Colaboração com o Ministério do Desenvolvimento Social, no âmbito do Programa Cozinha Solidária, que garantiu apoio financeiro parcial a mais de 50 Cozinhas Solidárias durante o período de um ano, além de possibilitar a entrega regular de alimentos in natura provenientes do Programa de Aquisição de Alimentos (PAA). Essa política pública visa fortalecer ações de segurança alimentar e nutricional, promovendo o acesso a alimentos saudáveis e o combate à fome em comunidades em situação de vulnerabilidade social.</p><p>A partir de 2023, iniciativas de combate à fome voltaram a ter protagonismo e vimos os números da fome reduzirem. Entretanto, em um país de dimensões continentais como o Brasil, essa realidade não é uniforme e, em várias regiões, principalmente, nas periferias dos grandes centros, as Cozinhas Solidárias ainda cumprem um papel importante: o de garantir alimentação gratuita, de qualidade, rica em nutriente e afeto.</p><p>O projeto teve início no auge da pandemia, sendo a primeira Cozinha Solidária inaugurada em março de 2021. Nesses quase quatro anos, as Cozinhas Solidárias estão presentes em todas as regiões do país, contando hoje com 55 cozinhas que garantem alimentação de mais de 12 mil pessoas de baixa renda. São mais de 6 milhões de marmitas distribuídas e quase 4,5 milhões de quilos de alimentos produzidos. Além disso, o projeto oferece oficinas, rodas de conversa, atendimento jurídico, psicológico, e de saúde, saraus e cursos de alfabetização para a comunidade, funcionando como um equipamento social importante em locais carentes desses espaços de convivência.</p><p>As Cozinhas Solidárias estão presentes, ainda, nos momentos de maior dificuldade da população mais pobre do país. Estamos vendo, diariamente, notícias de chuvas incessantes e aumento das temperaturas, com enchentes e alagamentos com um número enorme de desabrigados. Por esse motivo, além das cozinhas que já funcionavam em atendimento à população vulnerável, também foram abertas Cozinhas Solidárias Emergenciais em várias regiões do Brasil, tais como Rio Grande do Sul, Minas Gerais, Acre, Rio de Janeiro, Pernambuco, Piauí e São Paulo, garantindo a alimentação de pessoas que, muitas vezes, perderam suas casas e família.</p><p>As Cozinhas Solidárias existem para suprir o vácuo deixado pelo poder público e por isso vem se expandindo, abrindo novas unidades e chegando a mais gente. Mas para seu pleno funcionamento, o projeto precisa muito de apoio. As doações são fundamentais para a manutenção das cozinhas e para a compra dos alimentos distribuídos.</p>';
     $defaults = array(
         'home_top_banner_enabled' => 1,
         'home_top_banner_image_url' => $asset('/img/banner-apoio-cozinhas.webp'),
@@ -70,7 +71,7 @@ function cozinha_solidaria_home_default($field_name)
         'home_project_program_label' => 'PROGRAMA COZINHA SOLIDÁRIA',
         'home_project_button_text' => 'Saiba mais',
         'home_project_button_link' => '/o-projeto/',
-        'home_project_content' => '<p>Em 2024, firmamos um Termo de Colaboração com o Ministério do Desenvolvimento Social, no âmbito do Programa Cozinha Solidária, que garantiu apoio financeiro parcial a mais de 50 Cozinhas Solidárias durante o período de um ano, além de possibilitar a entrega regular de alimentos in natura provenientes do Programa de Aquisição de Alimentos (PAA). Essa política pública visa fortalecer ações de segurança alimentar e nutricional, promovendo o acesso a alimentos saudáveis e o combate à fome em comunidades em situação de vulnerabilidade social.</p><p>A partir de 2023, iniciativas de combate à fome voltaram a ter protagonismo e vimos os números da fome reduzirem. Entretanto, em um país de dimensões continentais como o Brasil, essa realidade não é uniforme e, em várias regiões, principalmente, nas periferias dos grandes centros, as Cozinhas Solidárias ainda cumprem um papel importante: o de garantir alimentação gratuita, de qualidade, rica em nutriente e afeto.</p><p>O projeto teve início no auge da pandemia, sendo a primeira Cozinha Solidária inaugurada em março de 2021. Nesses quase quatro anos, as Cozinhas Solidárias estão presentes em todas as regiões do país, contando hoje com 55 cozinhas que garantem alimentação de mais de 12 mil pessoas de baixa renda. São mais de 6 milhões de marmitas distribuídas e quase 4,5 milhões de quilos de alimentos produzidos. Além disso, o projeto oferece oficinas, rodas de conversa, atendimento jurídico, psicológico, e de saúde, saraus e cursos de alfabetização para a comunidade, funcionando como um equipamento social importante em locais carentes desses espaços de convivência.</p><p>As Cozinhas Solidárias estão presentes, ainda, nos momentos de maior dificuldade da população mais pobre do país. Estamos vendo, diariamente, notícias de chuvas incessantes e aumento das temperaturas, com enchentes e alagamentos com um número enorme de desabrigados. Por esse motivo, além das cozinhas que já funcionavam em atendimento à população vulnerável, também foram abertas Cozinhas Solidárias Emergenciais em várias regiões do Brasil, tais como Rio Grande do Sul, Minas Gerais, Acre, Rio de Janeiro, Pernambuco, Piauí e São Paulo, garantindo a alimentação de pessoas que, muitas vezes, perderam suas casas e família.</p><p>As Cozinhas Solidárias existem para suprir o vácuo deixado pelo poder público e por isso vem se expandindo, abrindo novas unidades e chegando a mais gente. Mas para seu pleno funcionamento, o projeto precisa muito de apoio. As doações são fundamentais para a manutenção das cozinhas e para a compra dos alimentos distribuídos.</p>',
+        'home_project_content' => $home_project_content,
         'home_gallery_title' => 'Galeria',
         'home_gallery_button_text' => 'Ver mais',
         'home_gallery_button_link' => 'https://www.instagram.com/cozinhassolidariasmtst/',
@@ -208,6 +209,19 @@ foreach ($cozinha_solidaria_default_fields as $cozinha_solidaria_default_field) 
 function cozinha_solidaria_acf_home_load_default_value($value, $post_id, $field)
 {
     if ($value !== null && $value !== false && $value !== '') {
+        if (! empty($field['name']) && $field['name'] === 'home_project_content') {
+            $value = preg_replace(
+                '/\\s+src=(["\\\'])(?:[^"\\\']*\\/assets\\/img\\/image\\.(?:webp|png))\\1/i',
+                ' src="' . esc_url(cozinha_solidaria_asset('/img/programa-cozinha-solidaria.jpg')) . '"',
+                (string) $value
+            );
+        }
+
+        if (! empty($field['name']) && $field['name'] === 'home_project_content' && strpos((string) $value, '<img') === false) {
+            $default = cozinha_solidaria_home_default($field['name']);
+            return $default !== '' ? $default : $value;
+        }
+
         return $value;
     }
 

@@ -22,6 +22,21 @@ function cozinha_solidaria_get_field($field_name, $fallback = '', $post_id = fal
     return $value;
 }
 
+function cozinha_solidaria_get_formatted_field($field_name, $fallback = '', $post_id = false)
+{
+    if (! function_exists('get_field')) {
+        return $fallback;
+    }
+
+    $value = get_field($field_name, $post_id, true);
+
+    if ($value === null || $value === false || $value === '') {
+        return $fallback;
+    }
+
+    return $value;
+}
+
 function cozinha_solidaria_get_image_url($field_name, $fallback = '', $post_id = false)
 {
     $image = cozinha_solidaria_get_field($field_name, '', $post_id);

@@ -75,12 +75,13 @@ add_action('acf/init', function () {
 
             array('key' => 'field_home_project_tab', 'label' => 'Secao O Projeto', 'type' => 'tab', 'placement' => 'top'),
             array('key' => 'field_home_project_title', 'label' => 'Titulo', 'name' => 'home_project_title', 'type' => 'text', 'default_value' => cozinha_solidaria_home_default('home_project_title')),
-            array('key' => 'field_home_project_program_label', 'label' => 'Chamada do programa', 'name' => 'home_project_program_label', 'type' => 'text', 'default_value' => cozinha_solidaria_home_default('home_project_program_label')),
+            array('key' => 'field_home_project_program_label', 'label' => 'Titulo do programa', 'name' => 'home_project_program_label', 'type' => 'text', 'default_value' => cozinha_solidaria_home_default('home_project_program_label')),
             array(
                 'key' => 'field_home_project_content',
-                'label' => 'Texto',
+                'label' => 'Conteudo do editor visual',
                 'name' => 'home_project_content',
                 'type' => 'wysiwyg',
+                'instructions' => 'Use este editor para alterar a imagem alinhada a esquerda e todo o texto da secao.',
                 'tabs' => 'all',
                 'toolbar' => 'full',
                 'media_upload' => 1,

@@ -234,6 +234,7 @@ p {
 
 .titulo-secao {
     display: inline-flex;
+    align-items: flex-start;
 }
 
 h2 {
@@ -250,6 +251,10 @@ h2 {
 .titulo-secao h2 {
     padding: 0 30px;
     margin-top: 6px;
+    font-family: Gotham, 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
 }
 
 .videos {
@@ -266,6 +271,105 @@ h2 {
 
 .txt-projeto {
     padding-bottom: 62px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+.txt-projeto *,
+.conteudo-editor-projeto *,
+.txt-projeto p,
+.conteudo-editor-projeto p,
+.txt-projeto div,
+.conteudo-editor-projeto div,
+.txt-projeto figure,
+.conteudo-editor-projeto figure,
+.txt-projeto span,
+.conteudo-editor-projeto span {
+    font-family: 'Roboto', sans-serif !important;
+    color: #fff !important;
+}
+
+.txt-projeto p,
+.conteudo-editor-projeto,
+.conteudo-editor-projeto p {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+}
+
+.txt-projeto .programa-cozinha-titulo {
+    line-height: 2;
+    margin-bottom: 0;
+}
+
+.conteudo-editor-projeto {
+    display: flow-root;
+}
+
+.conteudo-editor-projeto .programa-cozinha-imagem {
+    float: left !important;
+    display: block !important;
+    width: 190px !important;
+    max-width: 190px !important;
+    background-color: #fff !important;
+    margin: 0 14px 10px 0 !important;
+    clear: none !important;
+}
+
+.conteudo-editor-projeto .programa-cozinha-imagem img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    float: none !important;
+    background-color: #fff;
+}
+
+.conteudo-editor-projeto img.alignleft {
+    float: left !important;
+    display: block !important;
+    width: 190px !important;
+    max-width: 190px !important;
+    height: auto !important;
+    background-color: #fff !important;
+    margin: 0 14px 10px 0 !important;
+    clear: none !important;
+}
+
+.conteudo-editor-projeto > p:first-of-type {
+    margin-top: 0;
+}
+
+.txt-projeto img,
+.conteudo-editor-projeto img,
+.txt-projeto img.aligncenter,
+.conteudo-editor-projeto img.aligncenter,
+.txt-projeto img.alignnone,
+.conteudo-editor-projeto img.alignnone,
+.txt-projeto .wp-caption,
+.conteudo-editor-projeto .wp-caption,
+.txt-projeto .wp-block-image,
+.conteudo-editor-projeto .wp-block-image {
+    float: left !important;
+    display: block;
+    max-width: 190px !important;
+    width: auto !important;
+    height: auto !important;
+    background-color: #fff;
+    margin: 0 14px 10px 0 !important;
+    clear: none !important;
+}
+
+.txt-projeto .wp-caption img,
+.conteudo-editor-projeto .wp-caption img,
+.txt-projeto .wp-block-image img,
+.conteudo-editor-projeto .wp-block-image img {
+    float: none !important;
+    margin: 0 !important;
 }
 
 .cta-amarelo {

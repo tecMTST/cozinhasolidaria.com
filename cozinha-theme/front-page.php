@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.min.css')); ?>" /> 
     <link href="<?php echo esc_url(cozinha_solidaria_asset('/bootstrap/css/bootstrap-grid.min.css')); ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/modal.css')); ?>">
-    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/style.css?v1.0.7')); ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/style.css?v1.0.8')); ?>">
     <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/menu-mobile.css')); ?>">
 
     <title>Cozinha Solidária - MTST</title>
@@ -159,8 +159,37 @@
             <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/o-projeto.png')); ?>" alt="">
           </div>
           <div class="txt-projeto">
-            <span style="line-height: 2;"><?php echo esc_html(cozinha_solidaria_get_field('home_project_program_label', cozinha_solidaria_home_default('home_project_program_label'))); ?></span><br /><img src="<?php echo esc_url(cozinha_solidaria_asset('/img/image.webp')); ?>" alt="" style="max-width: 190px;background-color: #fff;text-align: left;float:left;margin-right: 14px;">
-            <?php echo wp_kses_post(cozinha_solidaria_get_field('home_project_content', cozinha_solidaria_home_default('home_project_content'))); ?>
+            <p class="programa-cozinha-titulo"><?php echo esc_html(cozinha_solidaria_get_field('home_project_program_label', cozinha_solidaria_home_default('home_project_program_label'))); ?></p>
+            <?php
+            $project_content = cozinha_solidaria_get_formatted_field('home_project_content', cozinha_solidaria_home_default('home_project_content'));
+
+            if (strpos($project_content, '<img') === false) {
+                $project_content = cozinha_solidaria_home_default('home_project_content');
+            }
+
+            $project_content = preg_replace('/<span[^>]*>\\s*PROGRAMA COZINHA SOLIDÁRIA\\s*<\\/span>\\s*<br\\s*\\/?>/i', '', $project_content);
+            $project_image = '';
+
+            if (preg_match('/<img\\b[^>]*>/i', $project_content, $project_image_match)) {
+                $project_image = $project_image_match[0];
+                $project_image = preg_replace(
+                    '/\\s+src=(["\\\'])(?:[^"\\\']*\\/assets\\/img\\/image\\.(?:webp|png))\\1/i',
+                    ' src="' . esc_url(cozinha_solidaria_asset('/img/programa-cozinha-solidaria.jpg')) . '"',
+                    $project_image
+                );
+                $project_content = preg_replace('/<p>\\s*' . preg_quote($project_image, '/') . '\\s*<\\/p>/i', '', $project_content, 1);
+                $project_content = preg_replace('/<img\\b[^>]*>/i', '', $project_content, 1);
+                $project_content = preg_replace('/<p>\\s*<\\/p>/i', '', $project_content);
+            }
+            ?>
+            <div class="conteudo-editor-projeto">
+              <?php if ($project_image !== '') : ?>
+                <div class="programa-cozinha-imagem">
+                  <?php echo wp_kses_post($project_image); ?>
+                </div>
+              <?php endif; ?>
+              <?php echo wp_kses_post($project_content); ?>
+            </div>
           </div>
           <div class="saiba-mais">
             <a href="<?php echo esc_url(cozinha_solidaria_get_field('home_project_button_link', cozinha_solidaria_home_default('home_project_button_link'))); ?>" class="cta cta-amarelo"><?php echo esc_html(cozinha_solidaria_get_field('home_project_button_text', cozinha_solidaria_home_default('home_project_button_text'))); ?></a>
