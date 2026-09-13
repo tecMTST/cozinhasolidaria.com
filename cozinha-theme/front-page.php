@@ -378,21 +378,27 @@
         <div class="bg-prestacao-de-contas"><img class="conjunto-esq" src="<?php echo esc_url(cozinha_solidaria_asset('/img/panelas-vermelhas.png')); ?>" alt=""></div>
         <div class="container">
           <div class="titulo-secao">
-            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cachecol.png')); ?>" alt=""><h2><?php echo esc_html(cozinha_solidaria_get_field('home_accountability_title', cozinha_solidaria_home_default('home_accountability_title'))); ?></h2>
+            <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/cachecol.png')); ?>" alt=""><h2>Prestação de contas</h2>
           </div>
           <div class="row">
             <div class="col-md-7">
-              <?php $accountability_paragraphs = cozinha_solidaria_get_rows('home_accountability_paragraphs', cozinha_solidaria_home_default('home_accountability_paragraphs')); ?>
-              <?php foreach ($accountability_paragraphs as $paragraph) : ?>
-                <p><?php echo wp_kses_post($paragraph['text'] ?? ''); ?></p>
-              <?php endforeach; ?>
+              <?php echo wp_kses_post(cozinha_solidaria_get_formatted_field('home_accountability_content', cozinha_solidaria_home_default('home_accountability_content'))); ?>
             </div>
             <div class="col-md-5">
-              <img src="<?php echo esc_url(cozinha_solidaria_get_image_url('home_accountability_image', cozinha_solidaria_asset('/img/compa-horta.png'))); ?>" alt="" class="prestacao-img">
+              <img src="<?php echo esc_url(cozinha_solidaria_asset('/img/compa-horta.png')); ?>" alt="" class="prestacao-img">
             </div>
           </div>
           <div class="row dados">
-            <?php $accountability_stats = cozinha_solidaria_get_rows('home_accountability_stats', cozinha_solidaria_home_default('home_accountability_stats')); ?>
+            <?php
+            $accountability_stats = array();
+
+            for ($stat_index = 1; $stat_index <= 5; $stat_index++) {
+                $accountability_stats[] = array(
+                    'number' => cozinha_solidaria_get_field('home_accountability_stat_' . $stat_index . '_number', cozinha_solidaria_home_default('home_accountability_stat_' . $stat_index . '_number')),
+                    'label' => cozinha_solidaria_get_field('home_accountability_stat_' . $stat_index . '_label', cozinha_solidaria_home_default('home_accountability_stat_' . $stat_index . '_label')),
+                );
+            }
+            ?>
             <?php foreach ($accountability_stats as $stat) : ?>
               <div class="col-md-6">
                 <p class="dados-num"><?php echo esc_html($stat['number'] ?? ''); ?></p>
