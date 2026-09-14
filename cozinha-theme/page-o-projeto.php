@@ -11,16 +11,22 @@ Template Name: O Projeto
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:title" content="Cozinha Solidária - MTST">
+    <meta property="og:title" content="O Projeto - Cozinha Solidária MTST">
     <meta property="og:site_name" content="Cozinha Solidária - MTST">
-    <meta name="description" content="Cozinhas Solidárias. Distribuindo refeições gratuitas em diversos estados no Brasil, ajudando a combater a fome nas periferias">
-    <meta property="og:description" content="Cozinhas Solidárias. Distribuindo refeições gratuitas em diversos estados no Brasil, ajudando a combater a fome nas periferias">
-    <meta property="og:image" content="https://cozinhasolidaria.com/assets/img/card-cozinhas.png">
-    <meta property="og:image:type" content="image/jpg">
-    <meta property="og:image:width" content="800"> 
-    <meta property="og:image:height" content="600">
+    <meta name="description" content="Conheça as Cozinhas Solidárias do MTST, uma rede de afeto e solidariedade que combate a fome nas periferias.">
+    <meta property="og:description" content="Conheça as Cozinhas Solidárias do MTST, uma rede de afeto e solidariedade que combate a fome nas periferias.">
+    <meta property="og:image" content="<?php echo esc_url(cozinha_solidaria_asset('/img/og-cozinha-solidaria.png')); ?>">
+    <meta property="og:image:secure_url" content="<?php echo esc_url(cozinha_solidaria_asset('/img/og-cozinha-solidaria.png')); ?>">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200"> 
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Cozinha Solidária - conheça e contribua">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cozinhasolidaria.com">
+    <meta property="og:url" content="<?php echo esc_url(get_permalink()); ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="O Projeto - Cozinha Solidária MTST">
+    <meta name="twitter:description" content="Conheça as Cozinhas Solidárias do MTST, uma rede de afeto e solidariedade que combate a fome nas periferias.">
+    <meta name="twitter:image" content="<?php echo esc_url(cozinha_solidaria_asset('/img/og-cozinha-solidaria.png')); ?>">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url(cozinha_solidaria_asset('/img/icone.ico')); ?>">
 
     <!-- JQuery -->
@@ -35,8 +41,8 @@ Template Name: O Projeto
     <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/vendor/swiper/swiper-bundle.min.css')); ?>" /> 
     <link href="<?php echo esc_url(cozinha_solidaria_asset('/bootstrap/css/bootstrap-grid.min.css')); ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/modal.css')); ?>">
-    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/style.css')); ?>">
-    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/menu-mobile.css')); ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/style.css?v1.0.11')); ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(cozinha_solidaria_asset('/css/menu-mobile.css?v1.0.4')); ?>">
 
     <title>Cozinha Solidária - MTST</title>
 

@@ -1272,6 +1272,10 @@ figure.thumb-menor {
     display: none;
 }
 
+#menuToggle {
+    display: none;
+}
+
 .swiper-pagination {
     display: none;
 }
@@ -1303,7 +1307,7 @@ figure.thumb-menor {
 
 @media (max-width:1440px) {
     .menu-principal {
-        width: 97.04%;
+        width: 100%;
     }
     .container.modal-content {
         max-width: 100%;
@@ -1312,7 +1316,7 @@ figure.thumb-menor {
 
 @media (max-width:1100px) {
     .menu-principal li a {
-        padding: 0 20px 10px;
+        padding: 0 18px 10px;
     }
 }
 
@@ -2080,11 +2084,321 @@ figure.thumb-menor {
     }
     .menu-novo img {
         margin-top: 0;
-        margin-bottom: -40px;
+        margin-bottom: 0;
     }
     .txt-projeto p, .conteudo-editor-projeto, .conteudo-editor-projeto p {
         font-size: 20px;
         line-height: 25px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+    .container,
+    #inicio .container,
+    #projeto .container,
+    #galeria .container,
+    #contribuir .container,
+    #imprensa .container,
+    #prestacao-de-contas .container,
+    #divulgar .container,
+    footer .container,
+    .header-projeto .container,
+    #o-projeto.pagina-projeto .container,
+    #apoie .container {
+        max-width: 92% !important;
+    }
+
+    .menu-principal {
+        display: block !important;
+        width: 100%;
+        padding: 24px 18px 22px;
+        font-size: clamp(22px, 2.35vw, 30px);
+        line-height: 1.1;
+    }
+
+    .menu-principal ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(22px, 4vw, 58px);
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .menu-principal li {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+
+    .menu-principal li a {
+        display: block;
+        padding: 0 0 10px;
+        white-space: nowrap;
+    }
+
+    .nav-link.active {
+        background-size: min(100%, 150px) auto;
+    }
+
+    h2,
+    .pagina-projeto .titulo-secao h2 {
+        font-size: clamp(42px, 4.6vw, 56px);
+        line-height: 1.08;
+    }
+
+    p,
+    .txt-projeto p,
+    .conteudo-editor-projeto,
+    .conteudo-editor-projeto p {
+        font-size: clamp(20px, 2vw, 24px);
+        line-height: 1.25;
+    }
+
+    #inicio {
+        padding-bottom: clamp(90px, 11vw, 150px);
+    }
+
+    #inicio .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .topo.row {
+        width: 100%;
+        min-height: 520px;
+        margin-top: 56px;
+        background-size: contain;
+        background-position: center top;
+    }
+
+    .logo {
+        width: min(72%, 720px);
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .topo p {
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 26px 0 28px;
+        font-size: clamp(24px, 2.5vw, 30px);
+        line-height: 1.35;
+    }
+
+    .sos-enchentes {
+        margin-top: 70px !important;
+    }
+
+    .cozi {
+        display: none;
+    }
+
+    .menu-novo {
+        padding: 118px 20px 36px;
+    }
+
+    .menu-novo img {
+        width: 100%;
+        max-height: 395px;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+    }
+
+    #projeto {
+        margin-top: -45px;
+        padding-bottom: 90px;
+    }
+
+    .bg-projeto {
+        height: 210px;
+        margin-top: -210px;
+    }
+
+    .img-projeto img {
+        max-width: 82%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .txt-projeto {
+        padding-bottom: 42px;
+    }
+
+    .conteudo-editor-projeto .programa-cozinha-imagem,
+    .conteudo-editor-projeto img.alignleft {
+        width: 170px !important;
+        max-width: 170px !important;
+    }
+
+    .videos {
+        padding: 46px 0 24px;
+        align-items: flex-start;
+    }
+
+    .thumb-maior img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .thumb-maior img.player-maior {
+        width: 72px;
+        margin: 18% 42%;
+    }
+
+    .thumb-menor img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .thumb-menor img.player-menor {
+        width: 48px;
+        margin: 17% -47%;
+    }
+
+    #galeria {
+        padding-bottom: 150px;
+    }
+
+    .wraper-galeria {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .wraper-galeria .col-md-4 img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .img-ajudar {
+        max-width: 115%;
+        margin-left: -24%;
+    }
+
+    .content-dir {
+        padding-left: 20px;
+    }
+
+    .content-dir h3 {
+        font-size: clamp(28px, 3vw, 35px) !important;
+        line-height: 1.15 !important;
+    }
+
+    #imprensa .swiper-container {
+        padding: 0 42px;
+    }
+
+    .noticia {
+        min-height: 430px;
+    }
+
+    img.thumb-noticia {
+        height: 210px;
+        object-fit: cover;
+    }
+
+    #prestacao-de-contas .row {
+        align-items: center;
+    }
+
+    .prestacao-img {
+        max-width: 100%;
+    }
+
+    #prestacao-de-contas .dados .dados-num {
+        font-size: clamp(78px, 8vw, 110px);
+        line-height: 1;
+    }
+
+    #divulgar .cozinha-pessoas {
+        max-width: 120%;
+        margin-left: -28%;
+    }
+
+    #divulgar .titulo-secao.linha-dois {
+        width: auto;
+        margin-left: 22%;
+    }
+
+    .desc-divulgar {
+        max-width: 100%;
+    }
+
+    .header-projeto .cont-projeto {
+        margin-top: 40px;
+    }
+
+    #inicio.header-projeto {
+        padding-bottom: 95px;
+    }
+
+    #o-projeto.pagina-projeto {
+        margin-top: -46px;
+    }
+
+    .topo-projeto h3 {
+        font-size: clamp(36px, 4vw, 48px);
+    }
+
+    .topo-projeto p,
+    .apoie-projeto p {
+        font-size: clamp(20px, 2vw, 24px);
+        line-height: 1.28;
+    }
+
+    .img-cozinheira {
+        max-width: 118%;
+        margin-left: -18%;
+    }
+
+    .apoie-projeto p {
+        padding-left: 12%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+    .menu-principal {
+        padding-left: 12px;
+        padding-right: 12px;
+        font-size: clamp(19px, 2.45vw, 23px);
+    }
+
+    .menu-principal ul {
+        gap: clamp(14px, 3vw, 28px);
+    }
+
+    .nav-link.active {
+        background-size: min(100%, 118px) auto;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .topo.row {
+        min-height: 590px;
+    }
+
+    #inicio .col-lg-2.col-md-2 {
+        width: 18%;
+    }
+
+    #inicio .col-lg-10.col-md-10 {
+        width: 82%;
+    }
+
+    .cozi {
+        display: block;
+        margin-left: -80px;
+        max-width: 255px;
+    }
+
+    .topo p {
+        margin-left: 12%;
+    }
+
+    #inicio .cta {
+        margin-left: 28%;
     }
 }
 

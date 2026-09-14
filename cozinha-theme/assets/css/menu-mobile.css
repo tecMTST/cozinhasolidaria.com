@@ -1,17 +1,17 @@
-@media (max-width:768px) {
+@media (max-width:540px) {
 
     .menu-principal {
         display: none!important;
     }
 
-    #menuToggle
-    {
+    #menuToggle {
     display: block;
     position: relative;
-    top: 40px;
+    top: 0;
     left: 20px;
+    margin: 18px 0 16px;
     
-    z-index: 1;
+    z-index: 1001;
     
     -webkit-user-select: none;
     user-select: none;
@@ -117,7 +117,9 @@
     #menu {
         position: absolute;
         width: 80%;
-        margin: -100px 0 0 -50px;
+        max-width: 360px;
+        min-height: 100vh;
+        margin: -78px 0 0 -20px;
         padding: 50px;
         padding-top: 120px;
         background: #DE1833;
@@ -147,7 +149,9 @@
     }
 
     .menu-novo {
-        padding: 70px 16px 24px;
+        padding: 0 16px 24px;
+        position: relative;
+        z-index: 1;
     }
 
     #menu .item-menu {
